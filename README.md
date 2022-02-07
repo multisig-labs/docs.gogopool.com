@@ -1,0 +1,2 @@
+# gogopool-docs
+GoGoPool Docs
