@@ -1,2 +1,7 @@
-# gogopool-docs
-GoGoPool Docs
+---
+description: GoGoPool Documentation.
+---
+
+# GoGoPool Docs
+
+The future home of GoGoPool Docs.
