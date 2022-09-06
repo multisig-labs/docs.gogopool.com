@@ -1,6 +1,5 @@
 ---
 description: Our goals and a brief overview of the protocol.
-layout: editorial
 ---
 
 # GoGoPool Litepaper
