@@ -6,15 +6,13 @@ description: Configuring your wallet for GoGoPool.
 
 ## Supported Wallets & Browsers
 
-During our initial alpha and beta period, we will only be supporting the [Metamask](https://metamask.io/) browser wallet, and will only be supporting desktop usage via [Chrome](https://www.google.com/chrome/), [Firefox](https://www.mozilla.org/en-US/firefox/new/), and [Brave](https://brave.com/).&#x20;
+During our initial alpha and beta period, we will only be supporting the [Metamask](https://metamask.io/) browser wallet, and will only be supporting desktop usage via [Chrome](https://www.google.com/chrome/), [Firefox](https://www.mozilla.org/en-US/firefox/new/), and [Brave](https://brave.com/).
 
 ## Adding Networks To Metamask
 
-Log in to MetaMask -> Click the Network drop-down -> Select Custom RPC
+Log in to MetaMask -> Click the Network drop-down -> Select Add Network
 
-![](../.gitbook/assets/image.png)
-
-
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 #### **Avalanche Mainnet Settings:**
 

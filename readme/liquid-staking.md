@@ -20,9 +20,7 @@ If you are testing out GoGoPool on Fuji, head over to the [official faucet](http
     <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Connect Wallet Button</p></figcaption></figure>
 3.  Switch to the network you are trying to interface with.
 
-    <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Network Select Button</p></figcaption></figure>
-
-
+    <figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Network Select Button</p></figcaption></figure>
 
     <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Network Select Modal</p></figcaption></figure>
 4.  Enter the amount of AVAX you want to deposit.
