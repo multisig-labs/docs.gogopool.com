@@ -1,10 +1,12 @@
 # Table of contents
-
 * [GoGoPool Docs](README.md)
-  * [Wallet Configuration](readme/wallet-configuration.md)
-  * [Liquid Staking](readme/liquid-staking.md)
-  * [Creating a Node](readme/creating-a-node/README.md)
-    * [On the Multisig Labs Testnet](readme/creating-a-node/on-the-multisig-labs-testnet.md)
+  + [Wallet Configuration](readme/wallet-configuration.md)
+  + [Liquid Staking](readme/liquid-staking.md)
+  + [Creating a Node](readme/creating-a-node/README.md)
+    - [On the Multisig Labs Testnet](readme/creating-a-node/on-the-multisig-labs-testnet.md)
 * [About GoGoPool](about-gogopool/README.md)
-  * [GoGoPool Primer](about-gogopool/gogopool-primer.md)
-  * [GoGoPool Litepaper](about-gogopool/gogopool-litepaper.md)
+  + [GoGoPool Primer](about-gogopool/gogopool-primer.md)
+  + [GoGoPool Litepaper](about-gogopool/gogopool-litepaper.md)
+* Design
+  + [ggAVAX via ERC4626](gogopooldesign/ggpavax-via-erc-4626.md)
+  + [Minipool Design](gogopooldesign/MinipoolDesign.md)
