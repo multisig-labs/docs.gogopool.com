@@ -12,7 +12,7 @@ During our initial alpha and beta period, we will only be supporting the [Metama
 
 Log in to MetaMask -> Click the Network drop-down -> Select Add Network
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 #### **Avalanche Mainnet Settings:**
 
