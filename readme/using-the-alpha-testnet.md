@@ -28,7 +28,10 @@ From here, you can copy your wallet address into the box and request AVAX and GG
 
 ### [How to Liquid Stake](staking-with-gogopool/liquid-staking.md)
 
-### [Running a Node](creating-a-node/)
+### Getting a Node ID
 
+During our testnet alpha we will not be supporting the creation of additional nodes. However, you can borrow on of our nodes temporarily so you can test out our Dashboard and the Minipool Creation process. To get a node ID, head over to the [Welcome Page](https://app.gogopool.com/alphaWelcome) and copy the Node ID!
 
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
+From here, the [Create Minipool](https://app.gogopool.com/nodeOperator) page will guide you through the process of creating a minipool! Before you head over there, make sure you have at least 100 GGP and 1000 AVAX in your wallet! If not head over to the [faucet](https://anr-ggp-faucet.fly.dev/)!

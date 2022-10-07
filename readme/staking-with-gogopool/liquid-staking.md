@@ -25,6 +25,6 @@ If you are testing out GoGoPool on Fuji, head over to the [official faucet](http
     <figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Network Select Modal</p></figcaption></figure>
 4.  Enter the amount of AVAX you want to deposit.
 
-    <figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Liquid Staking Form</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Liquid Staking Form</p></figcaption></figure>
 5. Click Deposit!
 6. Wait for them sweet rewards!
