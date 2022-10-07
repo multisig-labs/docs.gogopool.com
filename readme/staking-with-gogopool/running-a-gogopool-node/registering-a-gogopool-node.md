@@ -10,11 +10,11 @@ Once you have an appropriate amount of funds, (for our alpha you need 1001 AVAX 
 
 Then enter your node's ID in the form below!
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>Node ID Register Form</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Node ID Register Form</p></figcaption></figure>
 
 After you've registered your node ID, you have to approve and stake your GGP tokens. The minimum GGP tokens to stake is 100 GGP when depositing 1000 AVAX. If you don't have any GGP on either our testnet or fuji, head over to [the faucet](https://anr-ggp-faucet.fly.dev/) and get some!
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Approve and Stake Form</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (3).png" alt=""><figcaption><p>Approve and Stake Form</p></figcaption></figure>
 
 After the GGP is approved, you now enter your AVAX staking amount and duration! On our testnet, staking duration is set at 15 minutes, and on the Fuji testnet it is statically set to 2 weeks, so this cannot be changed. In the future on the Avalanche mainnet, there will be more options for duration.
 
