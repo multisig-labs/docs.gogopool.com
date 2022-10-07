@@ -8,7 +8,13 @@ description: Configuring your wallet for GoGoPool.
 
 During our initial alpha and beta period, we will only be supporting the [Metamask](https://metamask.io/) browser wallet, and will only be supporting desktop usage via [Chrome](https://www.google.com/chrome/), [Firefox](https://www.mozilla.org/en-US/firefox/new/), and [Brave](https://brave.com/).
 
-## Adding Networks To Metamask
+## Adding the Alpha Network to Metamask
+
+We are using our own custom test network for our Alpha tests. To all this network, all you have to do is connect your wallet to Metamask on [any page on our app](https://app.gogopool.com/alphaWelcome) and accept connecting to the network! That's it!
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+## Adding Other Networks To Metamask
 
 Log in to MetaMask -> Click the Network drop-down -> Select Add Network
 
@@ -29,11 +35,3 @@ Log in to MetaMask -> Click the Network drop-down -> Select Add Network
 * **ChainID**: `43113`
 * **Symbol**: `AVAX`
 * **Explorer**: [https://testnet.snowtrace.io/](https://testnet.snowtrace.io/)
-
-#### Multisig Labs Testnet Settings:
-
-* **Network Name:** Multisig Labs Testnet
-* **New RPC URL:** [https://anr.fly.dev/ext/bc/C/rpc](https://anr.fly.dev/ext/bc/C/rpc)
-* **ChainID:** 43112
-* **Symbol:** AVAX
-* **Explorer:** N/A

@@ -17,7 +17,7 @@ If you are testing out GoGoPool on Fuji, head over to the [official faucet](http
 1. Navigate to our [Liquid Staking](https://beta.gogopool.com/liquidStaking) page.
 2.  Connect your wallet to the app.
 
-    <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Connect Wallet Button</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Connect Wallet Button</p></figcaption></figure>
 3.  Switch to the network you are trying to interface with.
 
     <figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Network Select Button</p></figcaption></figure>
