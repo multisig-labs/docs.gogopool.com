@@ -6,15 +6,11 @@ description: A Decentralized Staking Protocol For Avalanche Subnets.
 
 ## Author
 
-Author: Steven
+Original Author: Steven
 
 Email: steven@multisiglab.org
 
 Last Updated: 06 September 2022
-
-Editor: Chandler
-
-Editor Email: chandler@multisiglabs.org
 
 ## **TL;DR**
 
@@ -82,15 +78,15 @@ It allows anyone to effectively stake any amount of AVAX, and receive instant li
 
 There are a few differences.
 
-1. Lido is a (very successful) liquid staking protocol
-2. Lido centralizes their hardware providers
-3. A Lido-like staking protocol only provides liquidity to stakers, and does not help bring about the promised future of subnets
+1. Lido is a (very successful) liquid staking protocol.
+2. Lido centralizes their hardware providers.
+3. A Lido-like staking protocol only provides liquidity to stakers, and does not help bring about the promised future of subnets.
 
 In contrast, GoGoPool:
 
-1. Is a decentralized staking protocol
-2. Decentralizes hardware operators via community rewards
-3. Allows subnets to join the pool, incentivizing hardware operators to validate the subnet
+1. Is a decentralized staking protocol.
+2. Decentralizes hardware operators via community rewards.
+3. Allows subnets to join the pool, incentivizing hardware operators to validate the subnet.
 
 Avalanche has a big liquid staking problem (60% of AVAX is currently locked up in staking windows), but an even bigger subnet problem (only 17 subnets in production).
 
