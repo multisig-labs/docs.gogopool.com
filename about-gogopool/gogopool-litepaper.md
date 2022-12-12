@@ -32,9 +32,9 @@ GoGoPool aims to trivialize the cost of starting, growing and managing a Subnet 
 
 Our mission is to be the easiest way to stake AVAX a decentralized, trustless and peerless staking network that is easy to use for both individuals, businesses, and Subnets. This has 3 components:&#x20;
 
-1. Liquid Staking
-2. Decentralized Hardware Operators
-3. Subnet Compatibility
+1. liquid staking&#x20;
+2. decentralized hardware operators&#x20;
+3. Subnet compatibility.
 
 * Democratize and decentralize the current state of Avalanche staking + validation
 * Ensure that staking infrastructure and components are as decentralized, trustless and scalable as possible
@@ -104,7 +104,7 @@ Because of the open community orientation of this protocol, no platform fees wil
 
 #### **RialtoDAO**
 
-The RialtoDAO is initially made up of the core developer team, and will be decentralized over time. This DAO operates Rialto (our MPC software) and maintains a few important functions for the GoGoPool protocol.
+The RialtoDAO is initially made up of the core developer team, and will be decentralized over time. This DAO operates Rialto (our MPC software) and maintains a few important functions for the GoGoPool protocol:
 
 1. Facilitate cross chain staking (moving collected funds from C Chain to the P Chain).
 2. Facilitate cross chain staking rewards (moving rewards from P Chain to C Chain).
@@ -117,6 +117,8 @@ To join the RialtoDAO, members must stake a sizable sum of GGP tokens.
 If the majority of members vote that a member of the DAO is not fulfilling their duties appropriately, their stake is burned and the member is kicked/replaced. Stakes must be refreshed at a decided upon time interval.
 
 To incentivize good behavior, 10% of reward GGP is paid out to the DAO.
+
+#### ****
 
 #### ProtocolDAO
 
