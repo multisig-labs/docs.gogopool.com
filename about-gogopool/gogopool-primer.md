@@ -4,14 +4,6 @@ description: A Decentralized Staking Protocol For Avalanche Subnets.
 
 # GoGoPool Primer
 
-## Author
-
-Original Author: Steven
-
-Email: steven@multisiglab.org
-
-Last Updated: 06 September 2022
-
 ## **TL;DR**
 
 1. Subnets are Avalanche’s main scaling mechanism, but aren’t realistic right now because of the cost and limitations of staking
@@ -56,7 +48,7 @@ If Bitcoin and Ethereum are L1s, Avalanche is an L0 and an L1. Any L1 can be cre
 
 ### What is a subnet?
 
-[Tweet storm on Subnets](https://twitter.com/das\_connor/status/1456592161420587017)
+[Tweet storm on Subnets](https://twitter.com/das_connor/status/1456592161420587017)
 
 Subnets are Avalanche’s secret weapon. They allow anyone to create a new L1, which can also operate as an L2. Subnets are mega cool because they represent everything we know about scaling blockchains in one interoperable package — imagine a network of blockchains that are small enough to be fast, but all assets on one blockchain is compatible with every other blockchain.
 

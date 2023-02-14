@@ -1,4 +1,4 @@
-# Protocol Overview
+# Technical Overview
 
 The protocol can be split into 4 components.
 
