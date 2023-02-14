@@ -84,7 +84,7 @@ There are a few differences.
 
 In contrast, GoGoPool:
 
-1. Is a decentralized staking protocol.
+1. Is a permissionless staking protocol.
 2. Decentralizes hardware operators via community rewards.
 3. Allows subnets to join the pool, incentivizing hardware operators to validate the subnet.
 
