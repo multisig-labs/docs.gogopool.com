@@ -1,5 +1,5 @@
 ---
-description: A Decentralized Staking Protocol For Avalanche Subnets.
+description: A Permissionless Staking Protocol For Avalanche Subnets.
 ---
 
 # GoGoPool Primer
@@ -8,7 +8,7 @@ description: A Decentralized Staking Protocol For Avalanche Subnets.
 
 1. Subnets are Avalanche’s main scaling mechanism, but aren’t realistic right now because of the cost and limitations of staking
 2. Liquid staking is just a small part of the problem, and everyone is focused on that (leaving builders out to dry)
-3. GoGoPool solves the entire problem with a decentralized staking protocol combining liquid staking, decentralized hardware, and subnet compatibility. These three elements work together to trivialize the cost of staking + validating -- powering the growth of subnets, and the future of Avalanche
+3. GoGoPool solves the entire problem with a permissionless staking protocol combining liquid staking, decentralized hardware, and subnet compatibility. These three elements work together to trivialize the cost of staking + validating -- powering the growth of subnets, and the future of Avalanche
 
 ## **The Subnet Vision**
 
@@ -24,7 +24,7 @@ Ideally, every subnet should have a one-click launch and grow experience and not
 
 A handful of projects are focused on **liquid staking** as a way to lower the cost of staking on Avalanche, but they are focused on a small part of the problem. Having liquid staking will definitely help the ecosystem grow by providing liquidity, but does not lower the cost of validation for subnets. Entrepreneurs remain locked out of the next generation of opportunities, and Avalanche misses out on its next step function of growth.
 
-We’re doing the hard thing, and building a decentralized staking protocol that has:
+We’re doing the hard thing, and building a permissionless staking protocol that has:
 
 1. Decentralized hardware pools
 2. Liquid staking
