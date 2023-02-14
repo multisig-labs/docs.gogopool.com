@@ -12,4 +12,4 @@ For stakers, GoGoPool offers a way to stake any amount of AVAX and earn real yie
 
 Our mission is to make developing, launching and managing a Subnet as easy as possible in order to reach the Wordpress moment for web3.
 
-If you believe Subnets should be the default option for launching new appchains, join the discussion on the GoGoPool Community Discord. We look forward to working with you!
+If you believe Subnets should be the default option for launching new appchains, join the discussion on the [GoGoPool Community Discord](https://discord.gg/4fNtjkyuNw). We look forward to working with you!
