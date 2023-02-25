@@ -24,20 +24,20 @@ GoGoPool aims to trivialize the cost of starting, growing and managing a Subnet 
 
 ## **Goals**
 
-Our mission is to be the easiest way to launch a Subnet by lowering the cost of staking. This has 3 components:&#x20;
+Our mission is to be the easiest way to launch a Subnet by lowering the cost of staking. This has 3 components:
 
-1. liquid staking&#x20;
-2. decentralized and permissionless hardware operators&#x20;
+1. liquid staking
+2. decentralized and permissionless hardware operators
 3. Subnet compatibility
 
-- Democratize and decentralize the current state of Avalanche staking + validation
-- Ensure that staking infrastructure and components are as decentralized, trustless and scalable as possible
-- Minimize deposit risk and maximize rewards by socializing staking losses and rewards across the network
-- Decentralize protocol development, governance, and security using GGP tokenomics to create a healthy self sustaining community
-- Maximize network rewards by allowing hardware operators and liquid stakers to easily validate Subnets, earning Subnet rewards
-- Create a scalable network that can support Avalanche’s projected Subnet growth, both now and in the long term future
-- Trivialize the cost of starting, growing, and managing a Subnet’s infrastructure
-- Inspire future projects by being a model example of a web3 protocol, helping proliferate the web3 ethos in the developer community
+* Democratize and decentralize the current state of Avalanche staking + validation
+* Ensure that staking infrastructure and components are as decentralized, trustless and scalable as possible
+* Minimize deposit risk and maximize rewards by socializing staking losses and rewards across the network
+* Decentralize protocol development, governance, and security using GGP tokenomics to create a healthy self sustaining community
+* Maximize network rewards by allowing hardware operators and liquid stakers to easily validate Subnets, earning Subnet rewards
+* Create a scalable network that can support Avalanche’s projected Subnet growth, both now and in the long term future
+* Trivialize the cost of starting, growing, and managing a Subnet’s infrastructure
+* Inspire future projects by being a model example of a web3 protocol, helping proliferate the web3 ethos in the developer community
 
 ## **Protocol Overview**
 
@@ -61,19 +61,19 @@ Liquid Stakers are either individuals or users from an API integrated business (
 
 Stakers are given access to instant liquidity, being able to use ggAVAX in any place AVAX could be used. But unlike AVAX, ggAVAX steadily increases in value over time based on the performance of the pool - while not needing to trust any individual node operator (in contrast to the current delegator system, where trust is an explicit requirement).
 
-Anyone can safely become a staker for as little as .01 AVAX - including individuals or businesses. In this way, GoGoPool opens up the entire AVAX economy by providing much needed liquidity to stakers and DeFi apps in a trustless manner.&#x20;
+Anyone can safely become a staker for as little as .01 AVAX - including individuals or businesses. In this way, GoGoPool opens up the entire AVAX economy by providing much needed liquidity to stakers and DeFi apps in a trustless manner.
 
 GoGoPool uses a mix of smart contracts and DAOs to achieve this level of decentralization, despite technical challenges that prevent a pure trustless solution.
 
 ### **Tokenomics Primer**
 
-There is much room for innovation in community-driven organizations, and GoGoPool plans to be on the forefront.&#x20;
+There is much room for innovation in community-driven organizations, and GoGoPool plans to be on the forefront.
 
 We have two tokens: ggAVAX (liquid staking token described above), and GGP (protocol token used for DAO governance, rewards, insurance, and incentivizing long term behavior).
 
 #### **ggAVAX**
 
-When a user deposits AVAX into the deposit pool, they receive a synthetic derivative token called ggAVAX.&#x20;
+When a user deposits AVAX into the deposit pool, they receive a synthetic derivative token called ggAVAX.
 
 ggAVAX represents a staker’s deposit plus the rewards it gains over time. This token is considered liquid and can be used like AVAX - users can hold it to accrue staking rewards, sell it, or use it in DeFi to earn additional yield. If there is floating AVAX in the deposit pool, users will be able to exchange ggAVAX back for AVAX (which burns the ggAVAX, and draws AVAX from the deposit pool). Alternatively, they will have the option to list it on any exchange listing the token and exchange it for any token they would like.
 
@@ -91,9 +91,9 @@ GGP token holders will have the ability to participate in the GoGoPool Protocol 
 
 ### **DAO Primer**
 
-There are two DAOs at play: RialtoDAO and ProtocolDAO. These DAOs work together to keep the protocol running in a decentralized and community owned way.&#x20;
+There are two DAOs at play: RialtoDAO and ProtocolDAO. These DAOs work together to keep the protocol running in a decentralized and community owned way.
 
-Because of the open community orientation of this protocol, no platform fees will be charged. Instead, all rewards are maintained by the ProtocolDAO treasury, and losses due to bad behavior socialized amongst members. This way all members are guaranteed the maximum possible rewards.&#x20;
+Because of the open community orientation of this protocol, no platform fees will be charged. Instead, all rewards are maintained by the ProtocolDAO treasury, and losses due to bad behavior socialized amongst members. This way all members are guaranteed the maximum possible rewards.
 
 #### **RialtoDAO**
 
@@ -119,33 +119,33 @@ The ProtocolDAO will maintain a treasury to pay for security audits and reward c
 
 Some of the governance factors the ProtocolDAO members have influence over are listed below:
 
-- Depositing funds into the treasury wallet.
-- The GGP token inflation schedule and rate. At genesis, there will be 0% inflation for 4 years, at which point the DAO can contemplate adding a 2-5% inflation rate to be used as rewards.
-- GGP reward distribution between Node Operators and DAOs.
-- Configure min/max staking amounts, enabling/disabling registration, etc.&#x20;
-- Decide on liquidity mining and boostrap reward programs
-- Proposing and choosing a donation or charitable cause to donate a percentage of AVAX/GGP rewards to. At genesis, the percentage will be 1% annually.
-- Blacklisting / whitelisting Subnets.
+* Depositing funds into the treasury wallet.
+* The GGP token inflation schedule and rate. At genesis, there will be 0% inflation for 4 years, at which point the DAO can contemplate adding a 2-5% inflation rate to be used as rewards.
+* GGP reward distribution between Node Operators and DAOs.
+* Configure min/max staking amounts, enabling/disabling registration, etc.
+* Decide on liquidity mining and boostrap reward programs
+* Proposing and choosing a donation or charitable cause to donate a percentage of AVAX/GGP rewards to. At genesis, the percentage will be 1% annually.
+* Blacklisting / whitelisting Subnets.
 
 ## **Enabling Subnets & Subnet Compatibility**
 
-Validators of each Subnet must also be a validator for the default Subnet, which is the main Avalanche network. Validators can participate in any arbitrary number of Subnets.&#x20;
+Validators of each Subnet must also be a validator for the default Subnet, which is the main Avalanche network. Validators can participate in any arbitrary number of Subnets.
 
-At the time of writing, the minimum staking amount is 2000 AVAX, which is roughly $37k USD. It is cost prohibitive for a Subnet to start building on top of Avalanche, as they need to bear the cost of running validators for their own network, as well as the 2000 AVAX per node to validate the Primary Network.&#x20;
+At the time of writing, the minimum staking amount is 2000 AVAX, which is roughly $37k USD. It is cost prohibitive for a Subnet to start building on top of Avalanche, as they need to bear the cost of running validators for their own network, as well as the 2000 AVAX per node to validate the Primary Network.
 
 GoGoPool gives Subnet developers a way to contact and incentivize hardware operators in the protocol to validate the Subnet’s chain. This lets hardware operators earn more yield, while getting the Subnet access to validators in a much cheaper and frictionless way.
 
-Subnets that have specific hardware or validator requirements will be able to select node operators based on different attributes that fit the requirements of the Subnet. For example, a Subnet will be able to incentivize node operators that are US citizens (if that were a requirement for the Subnet).&#x20;
+Subnets that have specific hardware or validator requirements will be able to select node operators based on different attributes that fit the requirements of the Subnet. For example, a Subnet will be able to incentivize node operators that are US citizens (if that were a requirement for the Subnet).
 
-For Subnets that want to be a closed system, GoGoPool is a viable staking protocol for use on their blockchain - allowing a Subnet to run a pool on their own network, while taking advantage of minimizing the AVAX staking cost by being matched with funds from the protocol’s main pool. This way, Subnets can maintain control over the hardware requirements if required but still be matched with AVAX from the protocol.&#x20;
+For Subnets that want to be a closed system, GoGoPool is a viable staking protocol for use on their blockchain - allowing a Subnet to run a pool on their own network, while taking advantage of minimizing the AVAX staking cost by being matched with funds from the protocol’s main pool. This way, Subnets can maintain control over the hardware requirements if required but still be matched with AVAX from the protocol.
 
-Subnet developers can add their own validator nodes to the pool as well, and earn rewards by validating other Subnets.&#x20;
+Subnet developers can add their own validator nodes to the pool as well, and earn rewards by validating other Subnets.
 
-That way, any L1 that decides to build on Avalanche’s L0 will be able to take advantage of both the Avalanche ecosystem and GoGoPool’s open protocol as building blocks for their own purposes.&#x20;
+That way, any L1 that decides to build on Avalanche’s L0 will be able to take advantage of both the Avalanche ecosystem and GoGoPool’s open protocol as building blocks for their own purposes.
 
 ## **Acknowledgements**
 
-- Rocketpool, for being the first to create an open, decentralized staking protocol.
-- Ava Labs, for creating a flexible, green and fast L0 and L1 solution.
-- The GoGoPool Dev team, for building the dream.
-- The Ethereum Foundation and Bitcoin for laying the first pieces of a foundation for web3.
+* The Rocketpool team, for pioneering permissionless staking protocols before anyone was thinking about it.&#x20;
+* Ava Labs, for creating a flexible, green and fast L0 and L1 solution.
+* The GoGoPool Dev team, for seeing and building the dream in the very early days.&#x20;
+* The Ethereum Foundation and Bitcoin for laying the first pieces of a foundation for web3.
