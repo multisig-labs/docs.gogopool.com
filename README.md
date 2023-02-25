@@ -1,15 +1,11 @@
-# Welcome
+---
+description: GoGoPool Documentation.
+---
 
-## Overview
+# GoGoPool Docs
 
-GoGoPool is a permissionless staking protocol built for Avalance Subnets.
+## Quick Start
 
-GoGoPool enables node operators to launch new Avalanche validator nodes for 1000 AVAX by using the GGP token, and maximizes their yield and freedom.
+Welcome to the official GoGoPool documentation! If you want to learn more about the protocol, check out our [About GoGoPool](about-gogopool/) section.
 
-For stakers, GoGoPool offers a way to stake any amount of AVAX and earn real yield in a safe way through liquid staking.
-
-## Mission
-
-Our mission is to make developing, launching and managing a Subnet as easy as possible in order to reach the Wordpress moment for web3.
-
-If you believe Subnets should be the default option for launching new appchains, join the discussion on the [GoGoPool Community Discord](https://discord.gg/4fNtjkyuNw). We look forward to working with you!
+If you want to get started using the protocol as a liquid staker, see our [Liquid Staking](readme/staking-with-gogopool/liquid-staking.md) user guide.

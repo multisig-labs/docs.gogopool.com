@@ -4,7 +4,7 @@ description: About our hosted testnet.
 
 # Using the Alpha Testnet
 
-To test our product, we needed total control over the staking reward timings. Our testnet has a reward payout period of 2 minutes, with a flat rate of 10% rewards. This allows our testers to quickly get feedback on their testnet nodes.
+To test our product, we needed total control over the staking reward timings. Our testnet has a reward payout period of 2 minutes, with a flat rate of 10% rewards. This allows our testers to quickly get feedback on their testnet nodes.&#x20;
 
 ### Creating A Wallet
 

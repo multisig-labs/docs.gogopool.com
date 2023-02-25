@@ -129,23 +129,21 @@ Some of the governance factors the ProtocolDAO members have influence over are l
 
 ## **Enabling Subnets & Subnet Compatibility**
 
-Validators of each Subnet must also be a validator for the default Subnet, which is the main Avalanche network. Validators can participate in any arbitrary number of Subnets.
+Validators of a Subnet must also be a validator for the Avalanche Primary Network. Validators can participate in any arbitrary number of Subnets.
 
-At the time of writing, the minimum staking amount is 2000 AVAX, which is roughly $37k USD. It is cost prohibitive for a Subnet to start building on top of Avalanche, as they need to bear the cost of running validators for their own network, as well as the 2000 AVAX per node to validate the Primary Network.
+The minimum staking amount for the Avalanche Primary Network is 2,000 AVAX for a single validator node and 10,000 AVAX for a 5 node subnet. It is cost prohibitive for a Subnet to start building on top of Avalanche, as they need to bear the cost of running validators for their own network as well as sourcing the AVAX required validate the Primary Network.&#x20;
 
-GoGoPool gives Subnet developers a way to contact and incentivize hardware operators in the protocol to validate the Subnet’s chain. This lets hardware operators earn more yield, while getting the Subnet access to validators in a much cheaper and frictionless way.
+GoGoPool gives Subnet operators a way to directly contact and whitelist minipool operators to validate the Subnet. This lets hardware operators earn more yield, while getting the Subnet access to validators in a much cheaper and frictionless way.&#x20;
+
+For Subnets that want to start as closed system, GoGoPool provides a more effective way of using their AVAX by matching their funds with liquid stakers. Subnets launch non-custodial minipools,  able to use the hardware for their own purposes. If this permissioned Subnet wants to explore decentralization, they have a direct path to doing so by utilizing other minipools in the protocol.&#x20;
 
 Subnets that have specific hardware or validator requirements will be able to select node operators based on different attributes that fit the requirements of the Subnet. For example, a Subnet will be able to incentivize node operators that are US citizens (if that were a requirement for the Subnet).
 
-For Subnets that want to be a closed system, GoGoPool is a viable staking protocol for use on their blockchain - allowing a Subnet to run a pool on their own network, while taking advantage of minimizing the AVAX staking cost by being matched with funds from the protocol’s main pool. This way, Subnets can maintain control over the hardware requirements if required but still be matched with AVAX from the protocol.
-
-Subnet developers can add their own validator nodes to the pool as well, and earn rewards by validating other Subnets.
-
-That way, any L1 that decides to build on Avalanche’s L0 will be able to take advantage of both the Avalanche ecosystem and GoGoPool’s open protocol as building blocks for their own purposes.
+Subnets that join the GoGoPool DAO to have a direct say in the future of the protocol roadmap, gain access to early Subnet tooling and features, and interface with liquid stakers and node operators.&#x20;
 
 ## **Acknowledgements**
 
 * The Rocketpool team, for pioneering permissionless staking protocols before anyone was thinking about it.&#x20;
-* Ava Labs, for creating a flexible, green and fast L0 and L1 solution.
+* Ava Labs, for creating a flexible, green and fast L0 and L1 solution with a focus on Developer primitives.&#x20;
 * The GoGoPool Dev team, for seeing and building the dream in the very early days.&#x20;
 * The Ethereum Foundation and Bitcoin for laying the first pieces of a foundation for web3.
