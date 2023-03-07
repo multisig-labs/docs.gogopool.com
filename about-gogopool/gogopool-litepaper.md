@@ -8,7 +8,7 @@ description: Our goals and an overview of the protocol.
 
 ## **Abstract**
 
-GoGoPool allows Avalanche node operators to launch a validator node with a minimum of 1000 AVAX, while providing instant liquidity to stakers. As a permissionless protocol, any individual, business, or Subnet can use the protocol to stake or launch new validator nodes. Our mission is to make is as easy as possible to launch a Subnet. Our vision is to enable the Wordpress moment for web3 via open source tooling, strong community, and an open staking protocol.
+GoGoPool allows Avalanche node operators to launch a validator node with a minimum of 1100 AVAX, while providing instant liquidity to stakers. As a permissionless protocol, any individual, business, or Subnet can use the protocol to stake or launch new validator nodes. Our mission is to make is as easy as possible to launch a Subnet. Our vision is to enable the Wordpress moment for web3 via open source tooling, strong community, and an open staking protocol.
 
 ## **Introduction**
 
@@ -51,7 +51,7 @@ There are two main users of the GoGoPool protocol, each with their own use cases
 
 #### Node Operators
 
-Contribute their own hardware to the pool, and stake a minimum of 1000 AVAX + 100 AVAX (in GGP tokens). Operators maintain their server infrastructure, and are matched with the other 1000 AVAX from a deposit pool of stakers. Operators charge a small operating fee (not unlike the existing delegator fee) for the use of the hardware, and are also incentivized with GGP tokens to maintain good behavior. This allows a node operator to begin staking with less AVAX than is normally required, earn rewards on their staked AVAX, and earn rewards via the operating fee and GGP network rewards.
+Contribute their own hardware to the pool, and stake 1000 AVAX + minimum of 100 AVAX (in GGP tokens). Operators maintain their server infrastructure, and are matched with the other 1000 AVAX from a deposit pool of stakers. Operators charge a small operating fee (not unlike the existing delegator fee) for the use of the hardware, and are also incentivized with GGP tokens to maintain good behavior. This allows a node operator to begin staking with less AVAX than is normally required, earn rewards on their staked AVAX, and earn rewards via the operating fee and GGP network rewards.
 
 This triple incentive structure allows them to earn much higher rewards than staking solo, while providing hardware to generate yield for liquid stakers, and derisks the cost of Subnet development.
 

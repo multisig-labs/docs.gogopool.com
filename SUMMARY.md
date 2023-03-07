@@ -4,7 +4,7 @@
 * [Primer](about-gogopool/gogopool-primer.md)
 * [Litepaper](about-gogopool/gogopool-litepaper.md)
 * [FAQ](about-gogopool/faq.md)
-* [GoGoPool Docs](README.md)
+* [GoGoPool Docs](<README (1).md>)
   * [Using the Alpha Testnet](readme/using-the-alpha-testnet.md)
   * [Wallet Configuration](readme/wallet-configuration.md)
   * [Creating a Node](readme/creating-a-node/README.md)
