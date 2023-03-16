@@ -51,7 +51,7 @@ There are two main users of the GoGoPool protocol, each with their own use cases
 
 #### Node Operators
 
-Contribute their own hardware to the pool, and stake 1000 AVAX + minimum of 100 AVAX (in GGP tokens). Operators maintain their server infrastructure, and are matched with the other 1000 AVAX from a deposit pool of stakers. Operators charge a small operating fee (not unlike the existing delegator fee) for the use of the hardware, and are also incentivized with GGP tokens to maintain good behavior. This allows a node operator to begin staking with less AVAX than is normally required, earn rewards on their staked AVAX, and earn rewards via the operating fee and GGP network rewards.
+Contribute their own hardware to the pool, and stake 1000 AVAX + minimum of 100 AVAX (in GGP tokens). Operators maintain their server infrastructure, and are matched with the other 1000 AVAX from a deposit pool of stakers. Operators charge a small operating fee (not unlike the existing delegator fee) for the use of the hardware, and are also incentivized with GGP tokens to maintain good behavior. This allows a node operator to begin staking with less AVAX than is normally required, earn rewards on their staked AVAX, and earn rewards via the operating fee and GGP network rewards. Lastly, minipools earn compound interest and automatically restake at the end of each validation period. This maximizes the amount of rewards minipool operators earn. 
 
 This triple incentive structure allows them to earn much higher rewards than staking solo, while providing hardware to generate yield for liquid stakers, and derisks the cost of Subnet development.
 
