@@ -690,8 +690,7 @@ The issue has been fixed by Multisig Labs in commit 878b2e.
 In order to receive a reward the staker must be registered for the required amount
 of time. But the current implementation of the protocol allows users to stake most
 of the funds immediately before distribution of the reward. The `isEligible` function
-verifies that the staker should be registered at least `ProtocolDAO`. `RewardsEligibility
-MinSeconds` amount of seconds before the rewards cycle starts (this happens after the
+verifies that the staker should be registered at least `ProtocolDAO`. `RewardsEligibilityMinSeconds` amount of seconds before the rewards cycle starts (this happens after the
 first minipool is created), but this check takes into account only the first staking, and
 the first staked amount may be minimal. Therefore, users can use this possibility to
 their advantage.
@@ -813,7 +812,7 @@ put to cause harm.
 **Intended branches:**
 
 - Should be callable by anyone?
-  □ Test coverage
+  - [ ] Test coverage
 - Should be called after every upgrade.
   □ Test coverage
 
