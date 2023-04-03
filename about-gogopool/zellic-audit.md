@@ -364,7 +364,7 @@ Should an emergency arise, `pauseEverything` will be called. In this case, `Stak
 
 We recommend ensuring that the `Staking` contract is also paused in the `pauseEverything` function as well as un-paused in the `resumeEverything` function.
 
-```
+```Solidity
 function pauseEverything() external onlyDefender {
     ProtocolDAO dao = ProtocolDAO(getContractAddress(“ProtocolDAO”));
     dao.pauseContract(“TokenggAVAX”);
@@ -503,7 +503,7 @@ The issue has ben acknowledged by the Multisig Labs. Their official reply is rep
 
 Some functions at protocol-level make use of the `getGGPPriceInAvax`. This getter retrieves the `price`, which is set by the `Rialto` multisig.
 
-```
+```Solidity
 /// @notice Get the price of GGP denominated in AVAX
 /// @return price of ggp in AVAX
 /// @return timestamp representing when it was updated
@@ -604,7 +604,7 @@ The issue has ben acknowledged by the Multisig Labs. Their official reply is rep
 Multiple functions from the `Vault` contract allow arbitrary tokens to be deposited and
 withdrawn by `networkRegistered` contracts. For example, see the `depositToken` function:
 
-```
+```Solidity
 function depositToken(string memory networkContractName, ERC20 tokenContract, uint256 amount) external guardianOrRegisteredContracts {
   // Valid Amount?
   if (amount == 0 ) {
@@ -636,7 +636,7 @@ Upon discussions with the Multisig Lab team, we settled that the best mitigation
 `whitelisting` the `tokenContract` that are used in each function. This further allows flexibility and security in smoothly upgrading the `Vault` should it support more tokens.
 In that case, the mitigated version of the function could be:
 
-```
+```Solidity
 function depositToken(string memory networkContractName, ERC20 tokenContract, uint256 amount) external guardianOrRegisteredContracts {
 
   require(whitelisted[tokenContract], “tokenContract not whitelisted”);
@@ -744,7 +744,7 @@ the future.
 We recommend paying additional attention when upgrading the contracts. Should
 the same `Storage` be used, the contract itself might not be `re-initializable` since its storage would already be used by the previously initialized contract. For example, this could happen in the `RewardsPool` contract.
 
-```
+```Solidity
 
 function initialize() external onlyGuardian {
   if(getBool(keccak256(“RewardsPool.initialized”))) {
