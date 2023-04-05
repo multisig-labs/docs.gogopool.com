@@ -247,7 +247,7 @@ November 28, 2022 End of primary review period
 The `transferAVAX` function is used to perform transfers of avax between two registered
 contracts.
 
-```Solidity
+```solidity
 function transferAVAX (
     string memory fromContractName,
     string memory toContractName,
@@ -288,7 +288,7 @@ Due to the fact that `fromContractName` can be an arbitrary address, a presumabl
 We recommend removing the `fromContractName` parameter altogether and ensuring
 that the funds can only be transferred by the caller of the function, `msg.sender`.
 
-```Solidity
+```solidity
 // @audit-info doesn't exist in rocketvault
 function transferAVAX (
     string memory fromContractName,
@@ -334,7 +334,7 @@ The issue has been fixed by Multisig Labs in commit 84211f.
 The `pauseEverything` and `resumeEverything` functions are used to restrict access to
 important functions.
 
-```Solidity
+```solidity
 function pauseEverything() external onlyDefender {
     ProtocolDAO dao = ProtocolDAO(getContractAddress(“ProtocolDAO”));
     dao.pauseContract(“TokenggAVAX”);
@@ -364,7 +364,7 @@ Should an emergency arise, `pauseEverything` will be called. In this case, `Stak
 
 We recommend ensuring that the `Staking` contract is also paused in the `pauseEverything` function as well as un-paused in the `resumeEverything` function.
 
-```Solidity
+```solidity
 function pauseEverything() external onlyDefender {
     ProtocolDAO dao = ProtocolDAO(getContractAddress(“ProtocolDAO”));
     dao.pauseContract(“TokenggAVAX”);
@@ -448,7 +448,7 @@ contracts are associated with through the `Storage` contract. This is inherent d
 the need of local storage. For that reason any `registeredContract` can `update` **any**
 storage slot even if it “belongs” to another contract.
 
-```Solidity
+```solidity
 modifier onlyRegisteredNetworkContract() {
   if (booleanStorage[keccak256(abi.encodePacked(“contract.exists”,
   msg.sender))] == false && msg.sender != guardian) {
@@ -503,7 +503,7 @@ The issue has ben acknowledged by the Multisig Labs. Their official reply is rep
 
 Some functions at protocol-level make use of the `getGGPPriceInAvax`. This getter retrieves the `price`, which is set by the `Rialto` multisig.
 
-```Solidity
+```solidity
 /// @notice Get the price of GGP denominated in AVAX
 /// @return price of ggp in AVAX
 /// @return timestamp representing when it was updated
@@ -548,7 +548,7 @@ The finding has been acknowledged by the Multisig Labs team. Their official repl
 
 Due to the nature of the protocol, some fields are queried and used in one intermediary state of the application and then reset in the last state of the application. As an example, see the `avaxNodeOpRewardAmt` value, which is queried and used in `withdrawMinipoolFunds` (which can only be called in the `WITHDRAWABLE` stage)
 
-```Solidity
+```solidity
 function withdrawMinipoolFunds(address nodeID) external nonReentrant {
   int256 minipoolIndex = requireValidMinipool(nodeID);
   address owner = onlyOwner(minipoolIndex);
@@ -604,7 +604,7 @@ The issue has ben acknowledged by the Multisig Labs. Their official reply is rep
 Multiple functions from the `Vault` contract allow arbitrary tokens to be deposited and
 withdrawn by `networkRegistered` contracts. For example, see the `depositToken` function:
 
-```Solidity
+```solidity
 function depositToken(string memory networkContractName, ERC20 tokenContract, uint256 amount) external guardianOrRegisteredContracts {
   // Valid Amount?
   if (amount == 0 ) {
@@ -636,7 +636,7 @@ Upon discussions with the Multisig Lab team, we settled that the best mitigation
 `whitelisting` the `tokenContract` that are used in each function. This further allows flexibility and security in smoothly upgrading the `Vault` should it support more tokens.
 In that case, the mitigated version of the function could be:
 
-```Solidity
+```solidity
 function depositToken(string memory networkContractName, ERC20 tokenContract, uint256 amount) external guardianOrRegisteredContracts {
 
   require(whitelisted[tokenContract], “tokenContract not whitelisted”);
@@ -743,7 +743,7 @@ the future.
 We recommend paying additional attention when upgrading the contracts. Should
 the same `Storage` be used, the contract itself might not be `re-initializable` since its storage would already be used by the previously initialized contract. For example, this could happen in the `RewardsPool` contract.
 
-```Solidity
+```solidity
 
 function initialize() external onlyGuardian {
   if(getBool(keccak256(“RewardsPool.initialized”))) {
