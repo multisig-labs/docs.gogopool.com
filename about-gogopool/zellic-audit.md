@@ -1888,153 +1888,125 @@ There aren’t external calls here.
 **Intended behavior:**
 
 - Create a Minipool. Accepts avax native deposit (which have to be staked in) and it’s open to public.
-- Allowstoanycallertorecreateaminipooliscurrentstateisfinishedorcanceled.
+- Allows to any caller to recreate a minipool is current state is finished or canceled.
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- Ensure that themsg.senderis a registered staker(required checks are added in
+- Ensure that the `msg.sender` is a registered staker (required checks are added in
   each underlying function)
   - [x] Test coverage
-- ShouldensurethattheavaxAssignmentRequestcanbefulfilled(orthatitisatleast
-  achievable)
+- Should ensure that the `avaxAssignmentRequest` can be fulfilled (or that it is atleast achievable)
   - [ ] Test coverage
-- User’savaxbalance should deplete, and the contract’s balance should increase.
+- User’s `avax` balance should deplete, and the contract’s balance should increase.
   - [ ] Test coverage
-- After the call, the current state of the minipool isPrelaunch
+- After the call, the current state of the minipool is `Prelaunch`
   - [x] Test coverage
-- native token balance ofassetsshould increase bymsg.value
+- native token balance of `assets` should increase by `msg.value`
   - [x] Test coverage
-- assetsbalance ofvaultcontract should increase bymsg.value
+- `assets` balance of `vault` contract should increase by `msg.value`
   - [x] Test coverage
-- ifthepoolfornodeIDexistsandthecurrentstateisFinishedorCanceled,minipool
-  data should be reset
+- if the pool for `nodeID` exists and the current state is Finished or Canceled minipool data should be reset
   - [ ] Test coverage
-- create a new poll if the pool fornodeIDdid not exist before
+- create a new poll if the pool for `nodeID` did not exist before
   - [ ] Test coverage
-- Staking.sol:getRewardsStartTime(msg.sender)should be equalblock.timesta
-  mpifRewardsStartTimewas zero before the call
+- `Staking.sol:getRewardsStartTime(msg.sender)` should be equal `block.timestamp` if `RewardsStartTime` was zero before the call
   - [x] Test coverage
-- Staking.sol:getMinipoolCount(msg.sender)should increase by 1
+- `Staking.sol:getMinipoolCount(msg.sender)` should increase by 1
   - [x] Test coverage
-- Staking.sol:getAVAXAssigned(msg.sender)should increase byavaxAssignmentR
-  equest
+- `Staking.sol:getAVAXAssigned(msg.sender)` should increase by `avaxAssignmentRequest`
   - [x] Test coverage
-- Staking.sol:getAVAXStake(msg.sender)should increase bymsg.value
-
-```
-
-- [x] Test coverage
-
-```
+- `Staking.sol:getAVAXStake(msg.sender)` should increase by `msg.value`
+  - [x] Test coverage
 
 **Negative behavior:**
 
 - Shouldn’t work when the contract is paused?/
-  - [x] Negative test? There isn’t test, but function has modifierwhenNotPaused
-- Should assure that thenodeIdhasn’t registered beforehand and is unique basi-
-  cally, so no overwrites can be made.
+  - [x] Negative test? There isn’t test, but function has modifier `whenNotPaused`
+- Should assure that the `nodeId` hasn’t registered beforehand and is unique basically, so no overwrites can be made.
   - [ ] Negative test?
-- should revert if minipool fornodeIDalready exists and the currentStatus ￿ Fin-
-  ished or currentStatus ￿ Canceled
+- should revert if minipool for `nodeID` already exists and the currentStatus is not Finished or currentStatus is not Canceled
   - [ ] Negative test?
-- should revert ifmsg.senderinvalid staker
+- should revert if `msg.sender` invalid staker
   - [x] Negative test?
 
 **Preconditions:**
 
-- Assumes that the suppliedmsg.valuesurpasses the minimum staking amount.
-- Assumes that themultisigthat is to be assigned is≠ 0.
-- Assumes that should theminiPoolexist, it can only be overwritten if the node is
-  either finished or cancelled.
-- In the case that an already existingminiPoolId exists, it assumes that ALL PRIOR
-  STATES HAVE BEEN RESET(FROM ALL CONTRACTS THAT WOULD HAVE IN-
-  TERACTED WITH THIS ONE IN THE FIRST)
-- msg.sendershould be registered staker
+- Assumes that the supplied `msg.value` surpasses the minimum staking amount.
+- Assumes that the `multisig` that is to be assigned is ≠ 0.
+- Assumes that should the`miniPool` exist, it can only be overwritten if the node is either finished or cancelled.
+- In the case that an already existing `miniPoolId` exists, it assumes that ALL PRIOR STATES HAVE BEEN RESET (FROM ALL CONTRACTS THAT WOULD HAVE INTERACTED WITH THIS ONE IN THE FIRST)
+- `msg.sender` should be registered staker
 - msg.sender should stake ggp over Staking.stakeGGP() function
 
 **Inputs:**
 
-- msg.sender:
+- `msg.sender`:
   - **Control** : controlled
-    - **Checks** : staking.increaseAVAXStake()￿requireValidStaker()checksmsg.sender
-      address (should stake ggp over stakeGGP() function)
+  - **Checks** : `staking.increaseAVAXStake()`, `requireValidStaker()` checks `msg.sender` address (should stake ggp over stakeGGP() function)
   - **Impact** : N/A
-- msg.value:
+- `msg.value`:
   - **Control** : N/A
-    - **Checks** :msg.value should be equal avaxAssignmentRequest
+  - **Checks** : `msg.value` should be equal `avaxAssignmentRequest`
   - **Impact** : N/A
-- nodeId:
+- `nodeId`:
   - **Control** : full control
-    - **Checks** : there are some checks on whether thenodeIDhas been registered
-
-```
-
-before; need to look into this
-
-```
-
-- **Impact** : could potentially be overwritten.
-
-- duration:
+  - **Checks** : there are some checks on whether the `nodeID` has been registered before; need to look into this
+  - **Impact** : could potentially be overwritten.
+- `duration`:
   - **Control** : full control
     - **Checks** : There are no checks on the duration amount
   - **Impact** : N/A
-- delegationfee:
+- `delegationfee`:
   - **Control** : full
-    - **Checks** : No checks
+  - **Checks** : No checks
   - **Impact** : N/A
-- avaxAssignmentRequest:
-  - **Control** : full control; needs to matchmsg.valuesince it’s the amount of
-    requestedAVAXTO BE MATCHED IN THE POOL.
-    - **Checks** : there are checks on whether it matchesmsg.value
-- there are also some checks on whether it matches thedao details; assure that
+- `avaxAssignmentRequest`:
+  - **Control** : full control; needs to match `msg.value` since it’s the amount of
+    requested `AVAX` TO BE MATCHED IN THE POOL.
+  - **Checks** : there are checks on whether it matches `msg.value`
+- there are also some checks on whether it matches the `dao` details; assure that
   the data returned from there is not 0?
   - **Impact** : N/A
 
 **Function call analysis**
 
-!!! Important functions(withdraw/ deposit/ etc) shouldn’t work when the contract is
-paused.
+!!! Important functions (withdraw/ deposit/ etc) shouldn’t work when the contract is paused.
 
-- vault.depositAVAX()
+- `vault.depositAVAX()`
   - **What is controllable?** msg.value
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     no problems
-- getCollateralizationRatio()
+- `getCollateralizationRatio()`
   - **What is controllable?** msg.sender
   - **If return value controllable, how is it used and how can it go wrong?** The
     returns collateralization ratio also depends on how much msg.sender de-
     posited ggp
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     no problems
-- increaseMinipoolCount()
-
+- `increaseMinipoolCount()`
   - **What is controllable?** msg.sender (had to deposit ggp before)
-  - **If return value controllable, how is it used and how can it go wrong?** there
-    isn’t return value
-
-- **What happens if it reverts, reenters, or does other unusual control flow?**
-  no problems
-
-- increaseAVAXAssigned()
-  - **What is controllable?** msg.sender (had to deposit ggp before), avaxAs-
-    signmentRequest
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     no problems
-- increaseAVAXStake()
+- `increaseAVAXAssigned()`
+  - **What is controllable?** msg.sender (had to deposit ggp before), avaxAssignmentRequest
+  - **If return value controllable, how is it used and how can it go wrong?** there
+    isn’t return value
+  - **What happens if it reverts, reenters, or does other unusual control flow?**
+    no problems
+- `increaseAVAXStake()`
   - **What is controllable?** msg.sender (had to deposit ggp before), msg.value
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     no problems
 
-### Function:cancelMinipool()\*\*
+### Function: `cancelMinipool()`
 
 **Intended behavior:**
 
@@ -2044,37 +2016,32 @@ paused.
 
 **Intended branches:**
 
-- Should update all details related to the specificnodeId. In such a way that one
-  can then be re-used eventually(create with samenodeId)
+- Should update all details related to the specific `nodeId`. In such a way that one can then be reused eventually (create with same `nodeId`)
   - [x] Test coverage
-- Refund all invested funds to theowner(deployer)
+- Refund all invested funds to the `owner` (deployer)
   - [ ] Test coverage
-- Makesurethattheminipoolisprelaunch(NOTCHECKED);it’sassuredthoughin
-  requireValidStateTransitionbasically,sinceitchecksthecurrentstatusagainst
-  the wanted status update.
+- Make sure that the minipool is prelaunch (NOT CHECKED); it’s assured though in
+  `requireValidStateTransition` basically, since it checks the current status against the wanted status update.
   - [ ] Test coverage
-- Staking.sol:getAVAXAssigned(msg.sender)should decrease byavaxLiquidStak
-  erAmt
+- `Staking.sol:getAVAXAssigned(msg.sender)` should decrease by `avaxLiquidStakerAmt`
   - [x] Test coverage
-- Staking.sol:getAVAXStake(msg.sender)should decrease byavaxNodeOpAmt
+- `Staking.sol:getAVAXStake(msg.sender)` should decrease by `avaxNodeOpAmt`
   - [x] Test coverage
-- Staking.sol:getMinipoolCount(msg.sender)should decrease by 1
-
+- `Staking.sol:getMinipoolCount(msg.sender)` should decrease by 1
   - [x] Test coverage
-
 - the native tokens balance of the caller should increase by the amount of funds
   previously deposited.
   - [x] Test coverage
-- After the call, the current state of the minipool isCanceled
+- After the call, the current state of the minipool is `Canceled`
   - [x] Test coverage
 
 **Negative behavior:**
 
-- Shouldn’tleavepreviouslysetfieldstotheirvalue(eg. theavaxLiquidStakerAmt)
+- Shouldn’t leave previously set fields to their value (eg. the `avaxLiquidStakerAmt`)
   - [x] Negative test?
-- Shouldn’t allow unauthorized access(msg.senderhas to be theowner)
+- Shouldn’t allow unauthorized access(`msg.sender` has to be the `owner`)
   - [x] Negative test?
-- should revert if the current state of mini pool isn’tPrelaunch
+- should revert if the current state of mini pool isn’t `Prelaunch`
   - [x] Negative test?
 - should revert if called non-owner of minipool
   - [x] Negative test?
@@ -2083,47 +2050,45 @@ paused.
 
 **Preconditions:**
 
-- the minipool should be created over thecreateMinipoolfunction
-- the current state of the minipool should bePrelaunch
-- Assumes that thenodeIdhas been created beforehand and that it’s in theprela
-  unchstage
-- Assumes that theownerof thenodeIDcalls it
+- the minipool should be created over the `createMinipool` function
+- the current state of the minipool should be `Prelaunch`
+- Assumes that the `nodeId` has been created beforehand and that it’s in the `prelaunch` stage
+- Assumes that the `owner` of the `nodeID` calls it
 
 **Inputs:**
 
-- nodeId:
+- `nodeId`:
   - **Control** : full control
-    - **Checks** : there’s a check on whether the minipool is valid.
-  - **Impact** : Id of minipool which will be canceled and funds will returned to
-    owner.
-- msg.sender:
+  - **Checks** : there’s a check on whether the minipool is valid.
+  - **Impact** : Id of minipool which will be canceled and funds will returned to owner.
+- `msg.sender`:
   - **Control** : onlyOwner of minipool can call
-    - **Checks** :onlyOwner(index);
+  - **Checks** : `onlyOwner(index);`
   - **Impact** : only the owner should be able to call this function. otherwise,
     users will maliciously close other people’s pools to get more rewards.
 
 **Function call analysis**
 
-- \_cancelMinipoolAndReturnFunds()
-  - **What is controllable?** thenodeIDis controllable.
+- `\_cancelMinipoolAndReturnFunds()`
+  - **What is controllable?** the `nodeID` is controllable.
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value here.
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     can be reverted if there aren’t enough native tokens for withdraw.
-- owner.safeTransferETH()
+- `owner.safeTransferETH()`
   - **What is controllable?** nothing controllable
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value here.
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     no problems
-- vault.withdrawAVAX()
+- `vault.withdrawAVAX()`
   - **What is controllable?** nothing controllable
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t a return value here
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     will revert if contract has not enough shares
 
-### Function:\_cancelMinipoolAndReturnFunds()\*\*
+### Function: `_cancelMinipoolAndReturnFunds()`
 
 **Intended behavior:**
 
@@ -2135,72 +2100,62 @@ paused.
 
 **Intended branches:**
 
-- EnsurethatallstatesareresetafteraMinipoolhasbeencancelledandthatowner
-  no longer has access to it.
+- Ensure that all states are reset after a Minipool has been cancelled and that `owner` no longer has access to it.
   - [ ] Test coverage
-- Ensure that current state allowscancellation.
+- Ensure that current state allows `cancellation`.
   - [x] Test coverage
-- Ensure thatavaxNodeOpAmtis decreased.
+- Ensure that `avaxNodeOpAmt` is decreased.
   - [x] Test coverage
-- Ensure thatavaxLiquidStakerAmtis decreased
+- Ensure that `avaxLiquidStakerAmt` is decreased
   - [x] Test coverage
 
 **Negative behavior:**
 
-- Shouldn’t allowcancellationif the current state!) prelaunch
+- Shouldn’t allow `cancellation` if the current state != `prelaunch`
   - [x] Negative test?
-- Shouldn’t allow cancellation on behalf ofmsg.sender !) owner
+- Shouldn’t allow cancellation on behalf of `msg.sender != owner`
   - [x] Negative test?
 
 **Preconditions:**
 
-- Assumesthatthefunctionhasbeencalledfromaprivilegedone(i.eonethathas
-  a check thatmsg.sender =) owner of market)
+- Assumes that the function has been called from a privileged one (i.e one that has
+  a check that `msg.sender == owner of market`)
 
 **Inputs:**
 
-- nodeID:
+- `nodeID`:
   - **Control** : full control
-    - **Checks** : no checks at this level
-  - **Impact** : nothing is done on thenodeIdat this level, so not that important
-- index:
-  - **Control** : full control(it’s generated in previous function)
-    - **Checks** : no checks
-  - **Impact** : important, as it allows altering states of theminipool
+  - **Checks** : no checks at this level
+  - **Impact** : nothing is done on the `nodeId at this level, so not that important
+- `index`:
+  - **Control** : full control (it’s generated in previous function)
+  - **Checks** : no checks
+  - **Impact** : important, as it allows altering states of the `minipool`
 
 **Function call analysis**
 
-- decreaseAVAXStake()
-  - **What is controllable?** theowner(who’s supposed to be the caller of the
-    function)
-- it basically decreases theavaxNodeOpAmtvalue which is originallyincreasedin
-  the pool creation! The detail here is that it uses.avaxNodeOpAmountto store the
-  amount, while it decreases theavaxNodeOpAmt
+- `decreaseAVAXStake()`
+  - **What is controllable?** the `owner` (who’s supposed to be the caller of the function)
+- it basically decreases the `avaxNodeOpAmt` value which is originally `increased` in the pool creation! The detail here is that it uses `.avaxNodeOpAmount` to store the `amount`, while it decreases the `avaxNodeOpAmt`
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value here
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-- if it reverts it could affect cancelling the pool. (that’s why it’s better to only use
-  one type of amount ^ )
-- decreaseAVAXAssigned()
+- if it reverts it could affect cancelling the pool. (that’s why it’s better to only use one type of amount ^ )
+- `decreaseAVAXAssigned()`
+
   - **What is controllable?** nothing, the values are taken from the storage.
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value here
-  - **What happens if it reverts, reenters, or does other unusual control flow?**
+  - **What happens if it reverts, reenters, or does other unusual control flow?** if current `avaxAssigned` is not enough function will be reverted
 
-```
-
-if currentavaxAssignedis not enough function will be reverted
-
-```
-
-- resetAVAXAssignedHighWater()
+- `resetAVAXAssignedHighWater()`
   - **What is controllable?** nothing, the value is taken from the storage.
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value here
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    allows to set theavaxAssignedHighWaterto the previous value, so that the
+    allows to set the `avaxAssignedHighWater` to the previous value, so that the
     current value is not used when calculating the reward.
-- decreaseMinipoolCount()
+- `decreaseMinipoolCount()`
   - **What is controllable?** nothing, the value is taken from the storage.
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value here
@@ -2208,11 +2163,11 @@ if currentavaxAssignedis not enough function will be reverted
     reduces the number of pools, if it is reset to zero, this staker will not be
     taken into account when calculating the reward.
 
-### Function:withdrawMinipoolFunds()\*\*
+### Function: `withdrawMinipoolFunds()`
 
 **Intended behavior:**
 
-- Node operator can claim allavaxthey are due.(staked + rewards if any)
+- Node operator can claim all `avax` they are due.(staked + rewards if any)
 
 **Branches and code coverage:**
 
@@ -2220,191 +2175,170 @@ if currentavaxAssignedis not enough function will be reverted
 
 **Intended branches:**
 
-- Should decreasemsg.senderstake in theminipoolbyavaxNodeOpAmt
+- Should decrease `msg.sender` stake in the`minipool` by `avaxNodeOpAmt`
   - [ ] Test coverage
-- the native tokens balance of minipool owner should increase bytotalAvaxAmt
-  value (deposited amount + reward)
+- the native tokens balance of minipool owner should increase by `totalAvaxAmt` value (deposited amount + reward)
   - [x] Test coverage
 
 **Negative behavior:**
 
-- Shouldn’t be callable by anymsg.senderor on anynodeId
+- Shouldn’t be callable by any `msg.sender` or on any `nodeId`
   - [x] Negative test?
-- should revert if the owner calls it a second time after the successful first execu-
-  tion
+- should revert if the owner calls it a second time after the successful first execution
   - [ ] Negative test?
-- should revert if the current state of mini pool isn’tWithdrawableorError
-
+- should revert if the current state of minipool isn’t `Withdrawable` or `Error`
   - [ ] Negative test?
-
 - should revert if called non-owner of minipool
-  - [x] Negative test? There isn’t test, but there is a checkonlyOwnerinside the
-        function
-- should revert if minipoll for nodeID doesn’t exist
-  - [x] Negative test? There isn’t test, but there is a checkrequireValidMinipool
-        inside the function
+  - [x] Negative test? There isn’t test, but there is a check `onlyOwner` inside the function
+- should revert if minipool for nodeID doesn’t exist
+  - [x] Negative test? There isn’t test, but there is a check `requireValidMinipool` inside the function
 
 **Preconditions:**
 
-- The minipool should be created over thecreateMinipoolfunction.
+- The minipool should be created over the `createMinipool` function.
 - Assumes that the state can transition tofinished, and that the current state of
-  the minipool should beWithdrawable(afterrecordStakingEndcall) orError.
+  the minipool should be `Withdrawable` (after `recordStakingEnd` call) or `Error`.
 
 **Inputs:**
 
-- msg.sender:
+- `msg.sender`:
   - **Control** : -
-    - **Checks** : there is a check that msg.sender is owner of minipool
-  - **Impact** : allowstoownerofminipoolwithdrawfundswhenstakingfinished
-- nodeID:
+  - **Checks** : there is a check that msg.sender is owner of minipool
+  - **Impact** : allows to owner of minipool withdraw funds when staking finished
+- `nodeID`:
   - **Control** : controlled
-    - **Checks** : there are a check of the status of the minipool and a check of the
-      owner
+  - **Checks** : there are a check of the status of the minipool and a check of the owner
   - **Impact** : allows to return the funds to the owner of minipool if staking was
     finished
 
 **Function call analysis**
 
-- owner.safeTransferETH()
+- `owner.safeTransferETH()`
   - **What is controllable?** nothing controllable
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value here.
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     no problems
-- vault.withdrawAVAX()
+- `vault.withdrawAVAX()`
   - **What is controllable?** nothing controllable
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t a return value here
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     will revert if contract has not enough shares
 
-### Function:claimAndInitiateStaking()\*\*
+### Function: `claimAndInitiateStaking()`
 
 **Intended behavior:**
 
-- Remove theminipool'savax from the protocol and stake it on avalanche, reg-
-  ister node as validator.
+- Remove the `minipool's` avax from the protocol and stake it on avalanche, register node as validator.
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- Ensure onlymultisig rialtocan call this.
+- Ensure only `multisig rialto` can call this.
   - [x] Test coverage
-- Should ensure the status of theminipoolis such that it can be launched
+- Should ensure the status of the `minipool` is such that it can be launched
   - [x] Test coverage
-- Should decrease theavaxassociated to the pool(something with.avaxLiquidSt
-  akerAmt)
+- Should decrease the `avax` associated to the pool (something with `.avaxLiquidStakerAmt`)
   - [ ] Test coverage
 
 **Negative behavior:**
 
-- transaction should be rejected if current status ￿Prelaunch
+- transaction should be rejected if current status != Prelaunch
   - [x] Negative test?
 - transaction should be rejected if msg.sender isn’t approved address
   - [x] Negative test?
 
 **Preconditions:**
 
-- Assumes that contract has enoughwavaxstaked that can be withdrawable.
+- Assumes that contract has enough `wavax` staked that can be withdrawable.
 
 **Inputs:**
 
 - msg.sender:
   - **Control** : -
-    - **Checks** :onlyValidMultisig(nodeID) : msg.sender =) assignedMultisig
-  - **Impact** : only valid multisig can call this function, because the all deposit
-    funds will be transferred to caller.
-- nodeID:
+  - **Checks** : `onlyValidMultisig(nodeID)` : msg.sender == assignedMultisig`
+  - **Impact** : only valid multisig can call this function, because the all deposit funds will be transferred to caller.
+- `nodeID`:
   - **Control** : full control
-    - **Checks** :requireValidMinipool(nodeID)
+    - **Checks** : `requireValidMinipool(nodeID)`
   - **Impact** : no impact
 
 **Function call analysis**
 
-- msg.sender.safeTransferETH()
+- `msg.sender.safeTransferETH()`
   - **What is controllable?** msg.sender is controlled
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value here
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     will revert in case of error
-- vault.withdrawAVAX()
+- `vault.withdrawAVAX()`
+  - **What is controllable?** nothing is controlled
+  - **If return value controllable, how is it used and how can it go wrong?** there isn’t return value here
+  - **What happens if it reverts, reenters, or does other unusual control flow?**
+    allows to withdraw `avaxNodeOpAmt` from vault and transfer this funds to caller
+- `ggAVAX.withdrawForStaking()`
   - **What is controllable?** nothing is controlled
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value here
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    allows to withdrawavaxNodeOpAmtfrom vault and transfer this funds to
-    caller
-- ggAVAX.withdrawForStaking()
-  - **What is controllable?** nothing is controlled
-  - **If return value controllable, how is it used and how can it go wrong?** there
-    isn’t return value here
-  - **What happens if it reverts, reenters, or does other unusual control flow?**
-    allowstowithdrawavaxLiquidStakerAmtfromvaultandtransferthisfunds
-    to caller
+    allows to withdraw `avaxLiquidStakerAmt` from vault and transfer this funds to caller
 
-### Function:recordStakingStart()\*\*
+### Function: `recordStakingStart()`
 
 **Intended behavior:**
 
-- Rialto calls afterclaimAndInitiateStakingsucceeded.
+- Rialto calls after `claimAndInitiateStaking` succeeded.
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- Changes thestarttime. Make sure it’s not in past or future?
+- Changes the `start` time. Make sure it’s not in past or future?
   - [ ] Test coverage
-- Should transition anodeIDinto “staking” period.
+- Should transition a `nodeID` into “staking” period.
   - [x] Test coverage
 
 **Negative behavior:**
 
-- Anyone other thanrialtoshouldn’t be able to call this.
+- Anyone other than `rialto` shouldn’t be able to call this.
   - [x] Negative test?
-- transaction should be rejected if current status ￿Launched
-
-```
-
-- [x] Negative test?
-
-```
+- transaction should be rejected if current status != Launched
+  - [x] Negative test?
 
 **Preconditions:**
 
-- Has to assure that enough values are in theminipool
+- Has to assure that enough values are in the `minipool`
 
 **Inputs:**
 
-- startTime:
+- `startTime`:
   - **Control** : controllable
-    - **Checks** : there isn’t check
-  - **Impact** : if the value is far in the future it will be impossible to complete the
-    stacking successfully only with error state
-- txID:
+  - **Checks** : there isn’t check
+  - **Impact** : if the value is far in the future it will be impossible to complete the stacking successfully only with error state
+- `txID`:
   - **Control** : controllable
-    - **Checks** : there isn’t check
+  - **Checks** : there isn’t check
   - **Impact** : n/a
-- nodeID:
+- `nodeID`:
   - **Control** : partly controllable
-    - **Checks** :requireValidMinipool(nodeID)
+    - **Checks** : `requireValidMinipool(nodeID)`
   - **Impact** : n/a
-- msg.sender:
+- `msg.sender`:
   - **Control** : -
-    - **Checks** :onlyValidMultisig(nodeID) : msg.sender =) assignedMultisig
-  - **Impact** : if a malicious user is able to call the function, he will be able to set
-    startTimevalue,atwhichitwillbeimpossibletosuccessfullycompletethe
-    stacking with only an error state
+  - **Checks** : `onlyValidMultisig(nodeID) : msg.sender == assignedMultisig`
+  - **Impact** : if a malicious user is able to call the function, he will be able to set `startTime` value, at which it will be impossible to successfully complete the stacking with only an error state
 
 **Function call analysis**
 
 There aren’t external function calls here.
 
-### Function:recordStakingEnd()\*\*
+### Function: `recordStakingEnd()`
 
 **Intended behavior:**
 
-- Finish thevalidationperiod of thestakingfor thenodeid.
+- Finish the `validation` period of the `staking` for th `nodeid`.
 
 **Branches and code coverage:**
 
@@ -2412,150 +2346,142 @@ There aren’t external function calls here.
 
 - Should update all states accordingly after the transfers occur.
   - [x] Test coverage
-- End time should be in the future(starttimeand not in past compared toblock.
-  timestamp?)
+- End time should be in the future (`starttime` and not in past compared to `block.timestamp`?)
   - [ ] Test coverage
-- Should only be callable when theendtimeis reached.
+- Should only be callable when the `endtime` is reached.
   - [x] Test coverage
 
 **Negative behavior:**
 
-- Shouldn’tbecallabletwiceorinanyothercircumstanceotherthanthetransition
-  towithdrawable
+- Shouldn’t be callable twice or in any other circumstance other than the transition to `withdrawable`
   - [x] Negative test?
-- transaction should be rejected if msg.value is not enought
+- transaction should be rejected if msg.value is not enough
   - [x] Negative test?
 - transaction should be rejected if msg.sender isn’t approved address
   - [x] Negative test?
-- transaction should be rejected if current status ￿Staking
+- transaction should be rejected if current status != Staking
   - [x] Negative test?
 
 **Preconditions:**
 
-- the current state of the minipool should beStaking.
+- the current state of the minipool should be `Staking`.
 
 **Inputs:**
 
-- msg.value:
+- `msg.value`:
   - **Control** : -
-    - **Checks** :msg.valueshould be equaltotalAvaxAmt + avaxTotalRewardAmt
+  - **Checks** : `msg.value` should be equal `totalAvaxAmt + avaxTotalRewardAmt`
   - **Impact** :
-- avaxTotalRewardAmt:
+- `avaxTotalRewardAmt`:
   - **Control** : full control
-    - **Checks** :msg.valueshould be equaltotalAvaxAmt + avaxTotalRewardAmt
-  - **Impact** : the value completelycontrols how much rewardthe owner of the
-    pool will receive.
-- endTime:
+  - **Checks** : `msg.value` should be `equaltotalAvaxAmt + avaxTotalRewardAmt`
+  - **Impact** : the value completely controls how much reward the owner of the pool will receive.
+- `endTime`:
   - **Control** : controllable
-    - **Checks** : should be more than the startTime and more than current time
+  - **Checks** : should be more than the startTime and more than current time
   - **Impact** : no impact
-- nodeID:
-
+- `nodeID`:
   - **Control** : partly controllable
-
-- **Checks** :requireValidMinipool(nodeID)
-
-- **Impact** : no impact
-
-- msg.sender:
+  - **Checks** : `requireValidMinipool(nodeID)`
+  - **Impact** : no impact
+- `msg.sender`:
   - **Control** : -
-    - **Checks** :onlyValidMultisig(nodeID) : msg.sender =) assignedMultisig
+  - **Checks** : `onlyValidMultisig(nodeID) : msg.sender == assignedMultisig`
   - **Impact** : only valid multisig can control when staking will be finished
 
 **Function call analysis**
 
-- slash()
+- `slash()`
   - **What is controllable?** minipoolIndex
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value here
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     can be reverted if
-- ggAVAX.depositFromStaking
-  - **What is controllable?** avaxLiquidStakerRewardAmt - partly controlled
+- `ggAVAX.depositFromStaking`
+  - **What is controllable?** `avaxLiquidStakerRewardAmt` - partly controlled
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value here
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    revert ifstakingTotalAssetsvalue is less thanavaxLiquidStakerAmt
-- vault.depositAVAX()
-  - **What is controllable?** avaxNodeOpRewardAmt - partly controlled
+    revert if `stakingTotalAssets` value is less than `avaxLiquidStakerAmt`
+- `vault.depositAVAX()`
+  - **What is controllable?** `avaxNodeOpRewardAmt` - partly controlled
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value here
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    revert ifpreviewDepositreturns 0.
+    revert if `previewDeposit` returns 0.
 
-### Function:recordStakingError()\*\*
+### Function: `recordStakingError()`
 
 **Intended behavior:**
 
 A staking error occurred while registering the node as a validator.
 
-Can be called afterclaimAndInitiateStakingorrecordStakingStart
+Can be called after `claimAndInitiateStaking` or `recordStakingStart`
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- After the call the new status isError
+- After the call the new status is `Error`
   - [x] Test coverage
 
 **Negative behavior:**
 
-- transaction should be rejected if current status ￿StakingorLaunched
+- transaction should be rejected if current status != `Staking` or `Launched`
   - [x] Negative test?
 
 **Preconditions:**
 
-- current status should beLaunchedorStaking
+- current status should be`Launched` or `Staking`
 
 **Inputs:**
 
-- msg.value:
+- `msg.value`:
   - **Control** : -
-    - **Checks** :msg.valueshould be equalavaxNodeOpAmt + avaxLiquidStakerAmt - the withdrawn funds
+  - **Checks** : `msg.value` should be equal `avaxNodeOpAmt + avaxLiquidStakerAmt` - the withdrawn funds
   - **Impact** : amount of returned to staker funds. must not be less than the
     funds taken.
-- errorCode:
+- `errorCode`:
   - **Control** : controlled
     - **Checks** : there isn’t check here
   - **Impact** : no problems
-- nodeID:
+- `nodeID`:
   - **Control** : controlled
     - **Checks** : check that minipool exists
-  - **Impact** : theIDoftheminipoolthatwillbecompletedwithanerrorwithout
-    issuing a reward.
+  - **Impact** : the ID of the minipool that will be completed with an error without issuing a reward.
 
 **Function call analysis**
 
-- ggAVAX.depositFromStaking()
+- `ggAVAX.depositFromStaking()`
   - **What is controllable?** nothing is controlled
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value here
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    will revert ifstakingTotalAssetsis less thanavaxLiquidStakerAmt
-- vault.depositAVAX()
-  - **What is controllable?** avaxNodeOpRewardAmt - partly controlled
+    will revert if `stakingTotalAssets` is less than `avaxLiquidStakerAmt`
+- `vault.depositAVAX()`
+  - **What is controllable?** `avaxNodeOpRewardAmt` - partly controlled
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value here
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    revert ifpreviewDepositreturns 0.
+    revert if `previewDeposit` returns 0.
 
-### 5.11 File:MultisigManager
+## 5.11 File: `MultisigManager`
 
-### Function:registerMultisig()\*\*
+### Function: `registerMultisig()`
 
 **Intended behavior:**
 
 - Register a multisig. Defaults to disabled when first registered. The index where
-  themultisigis to be added should be the previously increasedmultisig.count
+  the `multisig` is to be added should be the previously increased `multisig.count`
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
 - “There will never be more than 10 total multisigs” There should be a check that
-  10 total multisigs can be registered (index ￿ 9) and no more
+  10 total multisigs can be registered (index != 9) and no more
   - [ ] Test coverage
-- Should register theaddras a new multisig, only if it doesn’t exist already.
+- Should register the `addr` as a new multisig, only if it doesn’t exist already.
   - [x] Test coverage
 
 **Negative behavior:**
@@ -2569,16 +2495,14 @@ Can be called afterclaimAndInitiateStakingorrecordStakingStart
 
 **Preconditions:**
 
-- AssumesgetIndexOfcalculates theindexproperly and that two addresses can-
-  not point to sameindex.
-- Assumesthere’sawaytode-registeraMultisig? Currently,there’snone;there’s
-  only a way to disable them.
+- Assumes `getIndexOf` calculates the `index` properly and that two addresses cannot point to same `index`.
+- Assumes there’s a way to deregister a `Multisig`? Currently, there’s none; there’s only a way to disable them.
 
 **Inputs:**
 
 **Function call analysis**
 
-### Function:enableMultisig()\*\*
+### Function: `enableMultisig()`
 
 **Intended behavior:**
 
@@ -2588,7 +2512,7 @@ Can be called afterclaimAndInitiateStakingorrecordStakingStart
 
 **Intended branches:**
 
-- The “enabled” of theindexshould be set totrue.
+- The “enabled” of the `index` should be set to `true`.
   - [x] Test coverage
 
 **Negative behavior:**
@@ -2596,21 +2520,20 @@ Can be called afterclaimAndInitiateStakingorrecordStakingStart
 - Shouldn’t update the index of another multisig.
   - [x] Negative test?
 - Shouldn’t be callable by anyone.
-  - [ ] Negative test? Not directly, but theregisterMultisigwhich has the same
-        modifier is tested whenmsg.sender !) guardian
+  - [ ] Negative test? Not directly, but the `registerMultisig` which has the same modifier is tested when `msg.sender != guardian`
 - Shouldn’t enable a multisig that doesn’t exist.
   - [x] Negative test? Not tested, there is a check in the code that prevents this
         from happening.
 
 **Preconditions:**
 
-- Assumes that themultisighas been created beforehand.
+- Assumes that the `multisig` has been created beforehand.
 
 **Inputs:**
 
 **Function call analysis**
 
-### Function:disableMultisig()\*\*
+### Function: `disableMultisig()`
 
 **Intended behavior:**
 
@@ -2620,33 +2543,32 @@ Can be called afterclaimAndInitiateStakingorrecordStakingStart
 
 **Intended branches:**
 
-- The “enabled” of theindexshould be set tofalse.
+- The “enabled” of the `index` should be set to `false`.
   - [x] Test coverage
 
 **Negative behavior:**
 
-- Shouldn’t be callable by anymsg.sender
+- Shouldn’t be callable by any `msg.sender`
   - [x] Negative test?
-- Shouldn’t update an non-existingindex
+- Shouldn’t update an non-existing `index`
   - [x] Negative test? Not tested, there is a check in the code that prevents this
         from happening.
 
 **Preconditions:**
 
-- Assumesthatitcanbecalledunderanycircumstances. Whatifit’scalledduring
-  a transaction where it needs to approve it?
+- Assumes that it can be called under any circumstances. What if it’s called during a transaction where it needs to approve it?
 
 **Inputs:**
 
 **Function call analysis**
 
-### 5.12 File:Ocyticus
+## 5.12 File: `Ocyticus`
 
-### Function:addDefender(),removeDefender()\*\*
+### Function: `addDefender()`, `removeDefender()`
 
 **Intended behavior:**
 
-- Allow guardian toaddorremovedefenders.
+- Allow guardian to `add` or `remove` defenders.
 
 **Branches and code coverage:**
 
@@ -2654,12 +2576,12 @@ Can be called afterclaimAndInitiateStakingorrecordStakingStart
 
 **Intended branches:**
 
-- Should update thedefendersstates properly.
+- Should update the `defenders` states properly.
   - [ ] Test coverage
 
 **Negative behavior:**
 
-- Should only be callable byguardian; covered byonlyGuardianmodifier.
+- Should only be callable by `guardian`; covered by `onlyGuardian` modifier.
   - [x] Negative test?
 
 **Preconditions:**
@@ -2672,30 +2594,29 @@ n/a
 
 **Function call analysis**
 
-### Function:pauseEverything()\*\*
+### Function: `pauseEverything()`
 
 **Intended behavior:**
 
-- Allows thedefendertopauseevery contract that can be paused.
+- Allows the `defender` to `pause` every contract that can be paused.
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- PauseTokenGGAVAX
+- Pause `TokenGGAVAX`
   - [x] Test coverage
-- PauseMinipoolManager
+- Pause `MinipoolManager`
   - [x] Test coverage
-- PauseStaking(MISSING!) - added as remediation
+- Pause `Staking`(MISSING!) - added as remediation
   - [ ] Test coverage
 
 **Negative behavior:**
 
 **Preconditions:**
 
-- Assumes that the contracts can bepaused.
-- Assumes that when paused, no important functions from these contracts can
-  be called! Double check this
+- Assumes that the contracts can be `paused`.
+- Assumes that when paused, no important functions from these contracts can be called! Double check this
 
 **Inputs:**
 
@@ -2705,7 +2626,7 @@ n/a
 
 n/a
 
-### Function:resumeEverything()\*\*
+### Function: `resumeEverything()`
 
 **Intended behavior:**
 
@@ -2713,19 +2634,18 @@ n/a
 
 **Intended branches:**
 
-- UnpauseTokenGGAVAX
+- Unpause `TokenGGAVAX`
   - [x] Test coverage
-- UnpauseMinipoolManager
+- Unpause `MinipoolManager`
   - [x] Test coverage
-- UnpauseStaking- added as remediation
+- Unpause `Staking` - added as remediation
   - [ ] Test coverage
 
 **Negative behavior:**
 
 **Preconditions:**
 
-- Assumes that some other function will reenable allmultisigs? That’s not cov-
-  ered in this contract
+- Assumes that some other function will reenable all `multisigs`? That’s not covered in this contract
 
 **Inputs:**
 
@@ -2735,17 +2655,13 @@ n/a
 
 n/a
 
-### 5.13 File:Oracle.
+## 5.13 File: `Oracle`
 
-### Function:setGGPPriceInAVAX(),getGGPPriceInAVAXFromOneInch,getGGPPriceI
-
-nAVAX\*\*
+### Function: `setGGPPriceInAVAX()`, `getGGPPriceInAVAXFromOneInch` , `getGGPPriceInAVAX`
 
 **Intended behavior:**
 
-- Interface for off-chain aggregated data, used for pricing the tokens and calcu-
-  lating amounts. ThegetGGPPriceInAVAXFromOneInchshould never be used on-
-  chain.
+- Interface for off-chain aggregated data, used for pricing the tokens and calculating amounts. The `getGGPPriceInAVAXFromOneInch` should never be used on chain.
 
 **Branches and code coverage:**
 
@@ -2753,10 +2669,8 @@ nAVAX\*\*
 
 **Intended branches:**
 
-- The functions/ contractsthat makeuse oftheGetGGPPriceInAvaxSHOULD have
-  some slippage check in regards to the timestamp when the price has been up-
-  dated: eg. If the price update happened more than 5 blocks away, revert the
-  transaction.
+- The functions/contracts that make use of the `GetGGPPriceInAvax` SHOULD have
+  some slippage check in regards to the timestamp when the price has been updated: eg. If the price update happened more than 5 blocks away, revert the transaction.
   - [ ] Test coverage
 
 **Negative behavior:**
@@ -2766,17 +2680,16 @@ nAVAX\*\*
 
 **Preconditions:**
 
-- getGGPPriceInAVAXFromOneInchshould only be called off-chain; it’s not reliable
+- `getGGPPriceInAVAXFromOneInch` should only be called off-chain; it’s not reliable
   enough to be called on chain directly.
 
-- Assumes the Multisig update thegetGGPPRiceInAvaxquite often and that they
-  are trustworthy.
+- Assumes the Multisig update the `getGGPPRiceInAvax` quite often and that they are trustworthy.
 
 **Inputs:**
 
 There aren’t input values here.
 
-### Function:setOneInch()\*\*
+### Function: `setOneInch()`
 
 **Intended behavior:**
 
@@ -2786,7 +2699,7 @@ There aren’t input values here.
 
 **Intended branches:**
 
-- after the callOracle.OneInchis updated to new address
+- after the call `Oracle.OneInch` is updated to new address
   - [ ] Test coverage
 
 **Negative behavior:**
@@ -2796,34 +2709,32 @@ There aren’t input values here.
 
 **Preconditions:**
 
-- msg.senderis Guardian
+- `msg.sender` is Guardian
 
 **Inputs:**
 
-- addr:
+- `addr`:
   - **Control** : controlled
     - **Checks** : There isn’t check here.
-  - **Impact** : The contract address which will be called inside viewgetGGPPric
-    eInAVAXFromOneInchfunction
+  - **Impact** : The contract address which will be called inside view `getGGPPriceInAVAXFromOneInch` function
 
 **Function call analysis**
 
 There aren’t external calls here.
 
-### Function:setGGPPriceInAVAX()\*\*
+### Function: `setGGPPriceInAVAX()`
 
 **Intended behavior:**
 
-- ThefunctionisusedbytheMultisigtoupdatetheon-chainprices,withpresum-
-  ably the data retrieved off-chain fromOneInch.
+- The function is used by the Multisig to update the on-chain prices, with presumably the data retrieved off-chain from `OneInch`.
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- Should update theGGPTimestamp
+- Should update the `GGPTimestamp`
   - [ ] Test coverage
-- Should update theGGPPriceInAvax
+- Should update the `GGPPriceInAvax`
   - [ ] Test coverage
 
 **Negative behavior:**
@@ -2833,77 +2744,72 @@ There aren’t external calls here.
 
 **Preconditions:**
 
-- msg.senderis Multisig
+- `msg.sender` is Multisig
 
 **Inputs:**
 
-- price:
+- `price`:
   - **Control** : controlled
-    - **Checks** : price != 0
-  - **Impact** : the price value is used duringcalculateGGPSlashAmtcall
-- timestamp:
+  - **Checks** : price != 0
+  - **Impact** : the price value is used during `calculateGGPSlashAmt` call
+- `timestamp`:
   - **Control** : controlled
-    - **Checks** :timestampshould be >=lastTimestamportimestampshould be <=
-      block.timestamp
+  - **Checks** : `timestamp` should be >= `lastTimestamp` or `timestamp` should be <= `block.timestamp`
   - **Impact** : n/a
 
 **Function call analysis**
 
 There aren’t external calls here.
 
-### 5.14 File:ProtocolDAO.
+## 5.14 File: `ProtocolDAO`
 
-### Function:initialize()\*\*
+### Function: `initialize()`
 
 **Intended behavior:**
 
 - Initialize the contract
-- TotalGGPCirculatingSupply=18.000.000but totalTokenGGPsupply =22.500.000
+- `TotalGGPCirculatingSupply = 18.000.000` but `totalTokenGGPsupply = 22.500.000`
 
 **Branches and code coverage:**
 
-- Not tested in the case of a re-deployment(or upgrade, as discussed with the
-  team).
+- Not tested in the case of a re-deployment (or upgrade, as discussed with the team).
 
 **Intended branches:**
 
-- Allsetparameters should have a getter.
+- All set parameters should have a getter.
   - [x] Test coverage; not test covered, but verified in the code.
 
 **Negative behavior:**
 
-- Setters that deal with rates should range from0.0 - 1.0 ether. This is not di-
-  rectly enforced; The same should be done for the rest of thesetterfunctions
-  from the contract. This was mitigated.
+- Setters that deal with rates should range from `0.0 - 1.0 ether`. This is not directly enforced; The same should be done for the rest of the `setter` functions from the contract. This was mitigated.
   - [ ] Negative test?
 
 **Preconditions:**
 
-- Assumes that it can only be called once, and that is through theonlyGuardian
-- Assumes it will be called BEFORE any other functions that would use the initial-
-  ized variables will be called. Maybe assure in important functions that
-  **-** getBool(keccak256(“ProtocolDAO.initialized”))is TRUE
+- Assumes that it can only be called once, and that is through the `onlyGuardian`
+- Assumes it will be called BEFORE any other functions that would use the initialized variables will be called. Maybe assure in important functions that
+  - `getBool(keccak256(“ProtocolDAO.initialized”))` is TRUE
 
 **Inputs:**
 
 **Function call analysis**
 
-### 5.15 File:RewardsPool.
+## 5.15 File: `RewardsPool`
 
-### Function:initialize()\*\*
+### Function: `initialize()`
 
 **Intended behavior:**
 
-- Re-initializeallRewardsPoolvariablesforanewRewardsPool; Thisisupgradeable
+- Re-initialize all `RewardsPool` variables for a new `RewardsPool`; This is upgradeable
 
 **Branches and code coverage:**
 
-- Not tested in the case of a re-deployment(or upgrade, as discussed with the
+- Not tested in the case of a re-deployment (or upgrade, as discussed with the
   team).
 
 **Intended branches:**
 
-- Should set theRewardsPoolvariables to their initial values.
+- Should set the `RewardsPool` variables to their initial values.
   - [ ] Test coverage
 
 **Negative behavior:**
@@ -2920,11 +2826,11 @@ There aren’t input values here.
 
 There aren’t external calls here.
 
-### Function:inflate()\*\*
+### Function: `inflate()`
 
 **Intended behavior:**
 
-- Called to release moreGGPfrom the total supply.
+- Called to release more `GGP` from the total supply.
 - says “mint” new tokens, but all of them are already minted.
 
 **Branches and code coverage:**
@@ -2933,7 +2839,7 @@ There aren’t external calls here.
 
 - Should update the rewardsCycle total amount.
   - [ ] Test coverage
-- Should update theinflationIntervalElapsedSeconds
+- Should update the `inflationIntervalElapsedSeconds`
   - [ ] Test coverage
 - Should increase circulating supply of tokens.
   - [ ] Test coverage
@@ -2948,14 +2854,14 @@ There aren’t input values here.
 
 **Function call analysis**
 
-- dao.setTotalGGPCirculatingSupply(newTotalSupply)
+- `dao.setTotalGGPCirculatingSupply(newTotalSupply)`
   - **What is controllable?** -
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value here
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     no problems
 
-### Function:startRewardsCycle()\*\*
+### Function: `startRewardsCycle()`
 
 **Intended behavior:**
 
@@ -2967,27 +2873,24 @@ There aren’t input values here.
 
 **Intended branches:**
 
-- if dao allotmentexists ￿ transferdaoAllotmentto DAO ￿ its balance should in-
-  crease
+- if `dao allotment` exists != transfer `daoAllotment` to DAO != its balance should increase
   - [x] Test coverage
-- if nop allotmentexists ￿ transfernopAllotmentto NOP ￿ its balance should in-
-  crease
+- if `nop allotment` exists != transfer `nopAllotment` to NOP != its balance should increase
   - [x] Test coverage
-- if multisig allotmentexists ￿ transfermultisigAllotmentto MULTISIG ￿ its bal-
-  ance should increase
+- if `multisig allotment` exists != transfer `multisigAllotment` to MULTISIG != its balance should increase
   - [x] Test coverage
-- Make sure allotments add up to 100%(the percentages)
+- Make sure allotments add up to 100% (the percentages)
   - [ ] Test coverage
 
 **Negative behavior:**
 
-- Shouldn’t be callable whenever(rewardscycleshould be scheduled)
+- Shouldn’t be callable whenever (`rewardscycle` should be scheduled)
   - [x] Negative test?
 
 **Preconditions:**
 
-- Assumes that therewardsCycleis startable.
-- Also assumes that each allotment is>0. works even if that’s not the case.
+- Assumes that the `rewardsCycle` is startable.
+- Also assumes that each allotment is > 0. works even if that’s not the case.
 
 **Inputs:**
 
@@ -2995,445 +2898,379 @@ There aren’t input values here.
 
 **Function call analysis**
 
-- nopClaim.setRewardsCycleTotal(nopClaimContractAllotment)
+- `nopClaim.setRewardsCycleTotal(nopClaimContractAllotment)`
   - **What is controllable?** -
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value here
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     no problems
-- vault.transferToken()
+- `vault.transferToken()`
   - **What is controllable?** -
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value here
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    revert iftokenBalanceis less thanamountvalue, or ifamountis zero
+    revert if `tokenBalance` is less than `amount` value, or if `amount` is zero
 
-### Function:distributeMultisigAllotment()\*\*
+### Function: `distributeMultisigAllotment()`
 
 **Intended behavior:**
 
-- Should distribute theggpto the multisigs.
+- Should distribute the `ggp` to the multisigs.
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- Should only be called with legitimateggptokens.
+- Should only be called with legitimate `ggp` tokens.
   - [x] Test coverage
 
 **Negative behavior:**
 
 **Lacks negative testing**
 
-- Should not distribute rewards to deactivatedmultisigs.
+- Should not distribute rewards to deactivated `multisigs`.
   - [ ] Test coverage
 
 **Preconditions:**
 
 - Assumes there aren’t that many multisigs
-- Assumes that if multisigs gets deleted, they won’t be eligible forrewards.
+- Assumes that if multisigs gets deleted, they won’t be eligible for `rewards`.
 
 **Inputs:**
 
-- allotment:
-  - **Control** : value is calculated insidegetClaimingContractDistribution(“Cla
-    imMultisig”)
-    - **Checks** : nochecksatthisfunctionlevel, however, theremaybesomeleft-
-      overtokensdue to rounding errors; assure that these are sent somewhere
-      after all allotments? (instartRewardsCycle)
-  - **Impact** : determinesthetotalamountoftokensthatwillbesenttomultisigs.
-- vault:
-  - **Control** : address is taken fromVault(getContractAddress(“Vault”))
-    - **Checks** : passed from previous function; same asggpparameter.
+- `allotment`:
+  - **Control** : value is calculated inside `getClaimingContractDistribution(“ClaimMultisig”)`
+  - **Checks** : no checks at this function level, however, there maybes ome leftover tokens due to rounding errors; assure that these are sent somewhere after all allotments? (in `startRewardsCycle`)
+  - **Impact** : determines the total amount of tokens that will be sent to multisigs.
+- `vault`:
+  - **Control** : address is taken from `Vault(getContractAddress(“Vault”))`
+  - **Checks** : passed from previous function; same as`ggp` parameter.
   - **Impact** : n/a
-- ggp:
-  - **Control** : address is taken fromTokenGGP(getContractAddress(“TokenGGP”)
-    )
-    - **Checks** : full control; it’s passed from the previous function; ENSURE that
-      it’s never called somewhere else or with a different GGP than here
+- `ggp`:
+  - **Control** : address is taken from `TokenGGP(getContractAddress(“TokenGGP”))`
+  - **Checks** : full control; it’s passed from the previous function; ENSURE that it’s never called somewhere else or with a different GGP than here
   - **Impact** : n/a
 
 **Function call analysis**
 
-- mm.getCount();
+- `mm.getCount();`
   - **What is controllable?** -
   - **If return value controllable, how is it used and how can it go wrong?** out
     of gas inside the for loop if count value is too big
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     no problems
-- mm.getMultisig(i)
+- `mm.getMultisig(i)`
   - **What is controllable?** -
-  - **If return value controllable, how is it used and how can it go wrong?** re-
-    turns address and status of multisig, if enabled then this address will re-
-    ceive ggp tokens.
+  - **If return value controllable, how is it used and how can it go wrong?** returns address and status of multisig, if enabled then this address will receive ggp tokens.
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     no problems
-- vault.withdrawToken(enabledMultisigs[i], ggp, tokensPerMultisig)
-  **- Whatiscontrollable?** sincethis isan internal call, all inputvalues aretaken
-  from storage.
-
+- `vault.withdrawToken(enabledMultisigs[i], ggp, tokensPerMultisig)`
+  - **What is controllable?** since this is an internal call, all input values are taken from storage.
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value here.
+  - **What happens if it reverts, reenters, or does other unusual control flow?**
+    will revert if `safeTransfer` call reverts and if `tokenBalances` less than amount value
 
-- **What happens if it reverts, reenters, or does other unusual control flow?**
-  willrevertifsafeTransfercallrevertsandiftokenBalanceslessthanamount
-  value
+## 5.16 File: `Staking`
 
-### 5.16 File:Staking
-
-### Function:GGP staking components\*\*
+### Function: `GGP staking components`
 
 **Intended behavior:**
 
 - Limited negative testing
-- getGGPStake= view current stake
-- increaseGGPStake= increase.ggpStaked
-- decreaseGGPStake= decrease.ggpStaked
+- `getGGPStake` = view current stake
+- `increaseGGPStake` = increase `.ggpStaked`
+- `decreaseGGPStake` = decrease `.ggpStaked`
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- Should retrieve / increase / decrease theggpStaked.
+- Should retrieve / increase / decrease the `ggpStaked`.
   - [ ] Test coverage
 
 **Negative behavior:**
 
-- Shouldn’t update an unregisteredstakerIndex.
+- Shouldn’t update an unregistered `stakerIndex`.
   - [ ] Negative test?
 
 **Preconditions:**
 
-- increaseassumesthatuserhasdepositedtheggpandthatthecontract’sbalance
-  has/ will increase
-- decreaseassumes that the user haswithdrawnand that theggpbalance of the
-  contract willdecrease+ggpbalance of user willincrease.
+- `increase` assumes that user has `deposited` the `ggp` and that the contract’s balance has/will increase
+- `decrease` assumes that the user has `withdrawn` and that the `ggp` balance of the contract will `decrease + ggp` balance of user will `increase`.
 
 **Where are the functions used:**
 
-- increaseGGPSTake: Used in_stakeGGP
-- decreaseGGPStake: Used inslashGGP,withdrawGGP
+- `increaseGGPSTake`: Used in `_stakeGGP`
+- `decreaseGGPStake`: Used in `slashGGP`, `withdrawGGP`
 
-### Function:increaseAVAXStake()\*\*
+### Function: `increaseAVAXStake()`
 
 **Intended behavior:**
 
 Increase the amount of AVAX for stakerAddr.
 
-The function is called only fromMinipoolManager.createMinipool.
+The function is called only from `MinipoolManager.createMinipool`.
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- After the function call thegetAVAXStakeforstakerAddrincreased by theamount
-  value
+- After the function call the `getAVAXStake` for `stakerAddr` increased by the `amount` value
   - [x] Test coverage
 
 **Negative behavior:**
 
-- The function will revert ifstakerAddris not valid staker
+- The function will revert if `stakerAddr` is not valid staker
   - [ ] Negative test?
-- The function will revert if msg.sender is notMinipoolManagercontract
+- The function will revert if msg.sender is not `MinipoolManager` contract
   - [ ] Negative test?
 
 **Preconditions:**
 
-- stakerAddrcalledstakeGGPand was registered as a staker.
+- `stakerAddr` called `stakeGGP` and was registered as a staker.
 
 **Inputs:**
 
-- msg.sender:
+- `msg.sender`:
   - **Control** : -
-    - **Checks** : onlySpecificRegisteredContract(“MinipoolManager”, msg.sende
-      r)
-  - **Impact** : access to the function by untrusted addresses will allow manipu-
-    lating the number of tokens staked.
-- amount:
-  - **Control** :msg.valueis passed from the functionMinipoolManager.createMi
-    nipoolto ths function. limited control.
-    - **Checks** : there are no checks.
-  - **Impact** : thisvaluereflectsthenumberofstackedtokens. manipulatingthis
-    value will allow an attacker to specify the number of tokens that have not
+  - **Checks** : `onlySpecificRegisteredContract(“MinipoolManager”, msg.sender)`
+  - **Impact** : access to the function by untrusted addresses will allow manipulating the number of tokens staked.
+- `amount`:
+  - **Control** : `msg.value` is passed from the function `MinipoolManager.createMinipool` to ths function. limited control.
+  - **Checks** : there are no checks.
+  - **Impact** : this value reflects the number of stacked tokens. manipulating this value will allow an attacker to specify the number of tokens that have not
     actually been deposited.
-- stakerAddr:
-
-  - **Control** :msg.senderfromMinipoolManager.createMinipool. notcontrolled.
-    - **Checks** : therequireValidStakerfunction checks the address. If this ad-
-      dress isn’t staker, will revert.
-
-- **Impact** : in case of full access it will allow any user to increase the number
-  of tokens deposited.
+- `stakerAddr`:
+  - **Control** : `msg.sender` from `MinipoolManager.createMinipool`. not controlled.
+  - **Checks** : the `requireValidStaker` function checks the address. If this address isn’t staker, will revert.
+  - **Impact** : in case of full access it will allow any user to increase the number of tokens deposited.
 
 **Function call analysis**
 
-- requireValidStaker()
-  - **What is controllable?** stakerAddr
-  - **If return value controllable, how is it used and how can it go wrong?** re-
-    turn thestakerIndexcorresponding to thestakerAddr. The Index must be
+- `requireValidStaker()`
+  - **What is controllable?** `stakerAddr`
+  - **If return value controllable, how is it used and how can it go wrong?** return the `stakerIndex` corresponding to the `stakerAddr`. The Index must be
     unique, otherwise will be possible to lose funds.
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    will be reverted ifstakerAddris not a valid staker.
-- addUint()
+    will be reverted if `stakerAddr` is not a valid staker.
+- `addUint()`
   **- What is controllable? amount**
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     it can be reverted in overflow case,
 
-### Function:decreaseAVAXStake()\*\*
+### Function: `decreaseAVAXStake()`
 
 **Intended behavior:**
 
 Decrease the amount of AVAX for stakerAddr.
 
-The function is called fromMinipoolManager.withdrawMinipoolFundsandMinipoolMan
-ager.\_cancelMinipoolAndReturnFunds.
+The function is called from `MinipoolManager.withdrawMinipoolFunds` and `MinipoolManager._cancelMinipoolAndReturnFunds`.
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- After the function call thegetAVAXStakeforstakerAddrdecreased by theamount
-  value
+- After the function call the `getAVAXStake` for `stakerAddr` decreased by the `amount` value
   - [x] Test coverage
 
 **Negative behavior:**
 
-- The function will revert ifstakerAddris not valid staker
+- The function will revert if `stakerAddr` is not valid staker
   - [ ] Negative test?
-- The function will revert if theavaxStakedfor thestakerAddris less thanamount
+- The function will revert if the `avaxStaked` for the `stakerAddr` is less than `amount`
   - [ ] Negative test?
-- The function will revert if msg.sender is notMinipoolManagercontract
+- The function will revert if msg.sender is not `MinipoolManager` contract
   - [ ] Negative test?
 
 **Preconditions:**
 
-- stakerAddrhave calledstakeGGPand was registered as a staker.
-- stakerAddrhas non zeroavaxStakedvalue
+- `stakerAddr` have called `stakeGGP` and was registered as a staker.
+- `stakerAddr` has non zero `avaxStaked` value
 
 **Inputs:**
 
-- msg.sender:
+- `msg.sender`:
   - **Control** : -
-    - **Checks** : onlySpecificRegisteredContract(“MinipoolManager”, msg.sende
-      r)
-  - **Impact** : access to the function by untrusted addresses will allow manipu-
-    lating the number of tokens staked
-- amount:
-  - **Control** :getUint(keccak256(abi.encodePacked(“minipool.item”, minipoo
-    lIndex, “.avaxNodeOpAmt”)))value fromgogoStorage, limited control.
-    - **Checks** : this value cannot be more than current theavaxStakedvalue
-  - **Impact** : thisvaluereflectsthenumberofstackedtokens. manipulatingthis
-    value will allow an attacker to specify the number of tokens that have not
-    actually been withdrawn.
-- stakerAddr:
+  - **Checks** : `onlySpecificRegisteredContract(“MinipoolManager”, msg.sender)`
+  - **Impact** : access to the function by untrusted addresses will allow manipulating the number of tokens staked
+- `amount`:
+  - **Control** : `getUint(keccak256(abi.encodePacked(“minipool.item”, minipoolIndex, “.avaxNodeOpAmt”)))` value from `gogoStorage`, limited control.
+  - **Checks** : this value cannot be more than current the `avaxStaked` value
+  - **Impact** : this value reflects the number of stacked tokens. manipulating this value will allow an attacker to specify the number of tokens that have not actually been withdrawn.
+- `stakerAddr`:
   - **Control** : owner of minipool. not controlled.
-    - **Checks** : therequireValidStakerfunction checks the address. If this ad-
-      dress isn’t staker, will revert.
-  - **Impact** : in case of full access it will allow any user to decrease the number
-    of tokens deposited.
+    - **Checks** : the `requireValidStaker` function checks the address. If this address isn’t staker, will revert.
+  - **Impact** : in case of full access it will allow any user to decrease the number of tokens deposited.
 
 **Function call analysis**
 
-- subUint()
+- `subUint()`
   - **What is controllable?** amount
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    will revert ifavaxStakedless thanamount.
-- requireValidStaker()
+    will revert if `avaxStaked` less than `amount`.
+- `requireValidStaker()`
   - **What is controllable?** stakerAddr
   - **If return value controllable, how is it used and how can it go wrong?** re-
-    turn thestakerIndexcorresponding to thestakerAddr. The Index must be
+    turn the `stakerIndex` corresponding to the `stakerAddr`. The Index must be
     unique, otherwise will be possible to lose funds.
-  - **What happens if it reverts, reenters, or does other unusual control flow?**
+  - **What happens if it reverts, reenters, or does other unusual control flow?** will be reverted ifstakerAddris not a valid staker.
 
-```
-
-will be reverted ifstakerAddris not a valid staker.
-
-```
-
-### Function:increaseAVAXAssigned()\*\*
+### Function: `increaseAVAXAssigned()`
 
 **Intended behavior:**
 
 Increase the amount of AVAX a given staker is assigned by the protocol
 
-The function is called only fromMinipoolManager.createMinipool.
+The function is called only from `MinipoolManager.createMinipool`.
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- After the function call thegetAVAXAssignedforstakerAddrincreased by theamou
-  ntvalue
+- After the function call the `getAVAXAssigned` for `stakerAddr` increased by the `amount` value
   - [x] Test coverage
 
 **Negative behavior:**
 
-- The function will revert ifstakerAddris not valid staker
+- The function will revert if `stakerAddr` is not valid staker
   - [ ] Negative test?
-- The function will revert if msg.sender is notMinipoolManagercontract
+- The function will revert if msg.sender is not `MinipoolManager` contract
   - [ ] Negative test?
 
 **Preconditions:**
 
-- stakerAddrhave calledstakeGGPand was registered as a staker.
+- `stakerAddr` have called `stakeGGP` and was registered as a staker.
 
 **Inputs:**
 
-- amount:
-  - **Control** :avaxAssignmentRequestis passed from the functionMinipoolMan
-    ager.createMinipoolto ths function and should be equal themsg.sender
-    value. limited control.
-    - **Checks** : there are no checks
+- `amount`:
+  - **Control** : `avaxAssignmentRequest` is passed from the function `MinipoolManager.createMinipool` to ths function and should be equal the `msg.sender` value. limited control.
+  - **Checks** : there are no checks
   - **Impact** : this value reflects the number of assigned tokens. Manipulating
     this value will allow an attacker to specify the number of tokens that have
     not actually been assigned.
-- msg.sender:
+- `msg.sender`:
   - **Control** : -
-    - **Checks** : onlySpecificRegisteredContract(“MinipoolManager”, msg.sende
-      r)
-  - **Impact** : access to the function by untrusted addresses will allow manipu-
-
-```
-
-lating the number of tokens assigned.
-
-```
-
-- stakerAddr:
-  - **Control** :msg.senderfromMinipoolManager.createMinipool. notcontrolled.
-    - **Checks** : therequireValidStakerfunction checks the address. If this ad-
-      dress isn’t staker, will revert.
-  - **Impact** : in case of full access it will allow any user to increase the number
-    of tokens assign.
+  - **Checks** : `onlySpecificRegisteredContract(“MinipoolManager”, msg.sender)`
+  - **Impact** : access to the function by untrusted addresses will allow manipulating the number of tokens assigned.
+- `stakerAddr`:
+  - **Control** : `msg.sender` from `MinipoolManager.createMinipool`. not controlled.
+  - **Checks** : the `requireValidStaker` function checks the address. If this address isn’t staker, will revert.
+  - **Impact** : in case of full access it will allow any user to increase the number of tokens assign.
 
 **Function call analysis**
 
-- setUint(...))“.avaxAssignedHighWater”)
+- `setUint(...))“.avaxAssignedHighWater”)`
   - **What is controllable?** -
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     no problems
-- addUint(...))“.avaxAssigned”)
+- `addUint(...))“.avaxAssigned”)`
   - **What is controllable?** amount
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     no problems
 
-### Function:decreaseAVAXAssigned()\*\*
+### Function: `decreaseAVAXAssigned()`
 
 **Intended behavior:**
 
 Allows to decrease the amount of AVAX a given staker is assigned by the protocol
 
-The function is called fromMinipoolManager.recordStakingEndandMinipoolManager.
-recordStakingErrorandMinipoolManager.\_cancelMinipoolAndReturnFunds.
+The function is called from `MinipoolManager.recordStakingEnd`and `MinipoolManager.
+recordStakingError` and `MinipoolManager._cancelMinipoolAndReturnFunds`.
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- After the function call thegetAVAXAssignedforstakerAddrdecreased by theamo
-  untvalue
+- After the function call the `getAVAXAssigned` for `stakerAddr` decreased by the `amount` value
   - [x] Test coverage
 
 **Negative behavior:**
 
-- The function will revert ifstakerAddris not valid staker
-
+- The function will revert if `stakerAddr` is not valid staker
   - [ ] Negative test?
-
-- The function will revert if theavaxAssignedfor thestakerAddris less thanamount
+- The function will revert if the `avaxAssigned` for the `stakerAddr` is less than `amount`
   - [ ] Negative test?
-- The function will revert if msg.sender is notMinipoolManagercontract
+- The function will revert if msg.sender is not `MinipoolManager` contract
   - [ ] Negative test?
 
 **Preconditions:**
 
-- stakerAddrhave calledstakeGGPand was registered as a staker.
-- stakerAddrhas non zeroavaxAssignedvalue
+- `stakerAddr` have called `stakeGGP` and was registered as a staker.
+- `stakerAddr` has non zero `avaxAssigned` value
 
 **Inputs:**
 
-- msg.sender:
+- `msg.sender`:
   - **Control** : -
-    - **Checks** : onlySpecificRegisteredContract(“MinipoolManager”, msg.sende
-      r)
-  - **Impact** : access to the function by untrusted addresses will allow manipu-
-    lating the number of tokens assign.
-- amount:
-  - **Control** :getUint(keccak256(abi.encodePacked(“minipool.item”, minipoo
-    lIndex, “.avaxLiquidStakerAmt”)))value fromgogoStorage, limited con-
-    trol.
-    - **Checks** : this value cannot be more than current theavaxAssignedvalue
+  - **Checks** : `onlySpecificRegisteredContract(“MinipoolManager”, msg.sender)`
+  - **Impact** : access to the function by untrusted addresses will allow manipulating the number of tokens assign.
+- `amount`:
+  - **Control** : `getUint(keccak256(abi.encodePacked(“minipool.item”, minipoolIndex, “.avaxLiquidStakerAmt”)))` value from `gogoStorage`, limited control.
+  - **Checks** : this value cannot be more than current the `avaxAssigned` value
   - **Impact** : this value reflects the number of staked tokens. Manipulating this
     value will allow an attacker to specify the number of tokens that have not
     actually been deposited.
-- stakerAddr:
+- `stakerAddr`:
   - **Control** : owner of minipool. not controlled.
-    - **Checks** : therequireValidStakerfunction checks the address. If this ad-
-      dress isn’t staker, will revert.
-  - **Impact** : incaseoffullaccessitwillallowanyusertodecreasedthenumber
-    of tokens assigned.
+  - **Checks** : the `requireValidStaker` function checks the address. If this address isn’t staker, will revert.
+  - **Impact** : incase of full access i will allow any user to decreased the number of tokens assigned.
 
 **Function call analysis**
 
-- subUint()
+- `subUint()`
 
   - **What is controllable?** amount
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    will revert ifavaxAssignedless thanamount.
+    will revert if `avaxAssigned` less than `amount`.
 
-- requireValidStaker()
+- `requireValidStaker()`
   - **What is controllable?** stakerAddr
-  - **If return value controllable, how is it used and how can it go wrong?** re-
-    turn thestakerIndexcorresponding to thestakerAddr. The Index must be
-    unique, otherwise will be possible to lost funds.
+  - **If return value controllable, how is it used and how can it go wrong?** return the `stakerIndex` corresponding to the `stakerAddr`. The Index must be unique, otherwise will be possible to lost funds.
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    will be reverted ifstakerAddris not a valid staker.
+    will be reverted if `stakerAddr` is not a valid staker.
 
-### Function:setRewardsStartTime\*\*
+### Function: `setRewardsStartTime`
 
 **Intended behavior:**
 
-- Rewards start time refers to thetimestampwhen the staker registered forGGPre
-  wards
+- Rewards start time refers to the `timestamp` when the staker registered for `GGPRewards`
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- Ensure thattimeis in the future?
+- Ensure that `time` is in the future?
   - [ ] Test coverage
-- Should allowsettingtherewardStartTime
+- Should allow `setting` the `rewardStartTime`
   - [ ] Test coverage
 
 **Negative behavior:**
 
-- Also, assuming thatonlyRegisteredNetworkContractcalls it. Also I think they
-  whitelist their ownStakingcontract(basicallyaddress(this)
+- Also, assuming that `onlyRegisteredNetworkContract` calls it. Also I think they whitelist their own `Staking` contract (basically address(this))
   - [ ] Negative test?
 
 **Preconditions:**
 
-- Assumes that it’s called fromonlySpecificRegisteredContract(“ClaimNodeOp”,
-  msg.sender)
+- Assumes that it’s called from `onlySpecificRegisteredContract(“ClaimNodeOp”, msg.sender)`
 
 **Inputs:**
 
-- time:
+- `time`:
   - **Control** : full control
-    - **Checks** : there’s no check on whether thetimeis in the future or not
-  - **Impact** : the value is used during reward distribution, if zero, the staker will
-    not receive reward
+  - **Checks** : there’s no check on whether the `time` is in the future or not
+  - **Impact** : the value is used during reward distribution, if zero, the staker will not receive reward
 
 **Function call analysis**
 
@@ -3441,13 +3278,13 @@ There aren’t external calls here.
 
 **Where are the functions used:**
 
-- setRewardsStartTime: used inMinipoolManagerandClaimNodeOp
+- `setRewardsStartTime`: used in `MinipoolManager` and `ClaimNodeOp`
 
-### Function:GGP Rewards()\*\*
+### Function: `GGP Rewards()`
 
 **Intended behavior:**
 
-- Shouldget, increase, decreasetheGGPRewardsassigned to a staker.
+- Should `get, increase, decrease` the `GGPRewards` assigned to a staker.
 
 **Branches and code coverage:**
 
@@ -3455,19 +3292,17 @@ There aren’t external calls here.
 
 - These should update whenever the staker claims / is issued rewards.
   - [ ] Test coverage
-- Shouldretrieve/increase/decreasetheamountofGGPrewardsastakerhas **earned**
-  and **not claimed yet.**
+- Should retrieve/increase/decrease the amount of `GGPrewards` a staker has **earned** and **not claimed yet.**
   - [ ] Test coverage
 
 **Negative behavior:**
 
-- Should revert if anyone other than theClaimNodeOpcontract calls them.
+- Should revert if anyone other than the `ClaimNodeOp` contract calls them.
   - [ ] Negative test?
 
 **Preconditions:**
 
-- Assumes that the calling contract holds the correct accounting for how theggp
-  rewards are issued and maintained.
+- Assumes that the calling contract holds the correct accounting for how the `ggp` rewards are issued and maintained.
 
 **Function call analysis**
 
@@ -3475,14 +3310,14 @@ There aren’t external calls here.
 
 **Where are the functions used:**
 
-- increaseGGPRewards: used inClaimNodeOP
-- decreaseGGPrewards: used inClaimNodeOP
+- `increaseGGPRewards`: used in `ClaimNodeOP`
+- `decreaseGGPrewards`: used in `ClaimNodeOP`
 
-### Function:increaseMinipoolCount()\*\*
+### Function: `increaseMinipoolCount()`
 
 **Intended behavior:**
 
-The function is called fromMinipoolManager.createMinipool
+The function is called from `MinipoolManager.createMinipool`
 
 Increase the number of minipools the given staker has
 
@@ -3490,546 +3325,483 @@ Increase the number of minipools the given staker has
 
 **Intended branches:**
 
-- After the function call the.minipoolCountincreased by 1
+- After the function call the `.minipoolCount` increased by 1
   - [x] Test coverage
 
 **Negative behavior:**
 
-- The function will revert if the.minipoolCountis zero
+- The function will revert if the `.minipoolCount` is zero
   - [ ] Negative test?
-- The function will revert if msg.sender is notMinipoolManagercontract
+- The function will revert if msg.sender is not `MinipoolManager` contract
   - [ ] Negative test?
 
 **Preconditions:**
 
-- stakerAddrhave calledstakeGGPand was registered as a staker.
+- `stakerAddr` have called `stakeGGP` and was registered as a staker.
 
 **Inputs:**
 
-- stakerAddr:
+- `stakerAddr`:
   - **Control** : owner of minipool. not controlled.
-    - **Checks** : therequireValidStakerfunction checks the address. If this ad-
-      dress isn’t staker, will revert.
-  - **Impact** : in case of full access it will allow any user to increase the amount
-    of minipools
-- msg.sender:
+  - **Checks** : the `requireValidStaker` function checks the address. If this address isn’t staker, will revert.
+  - **Impact** : in case of full access it will allow any user to increase the amount of minipools
+- `msg.sender`:
   - **Control** : -
-    - **Checks** : onlySpecificRegisteredContract(“MinipoolManager”, msg.sende
-      r)
-  - **Impact** : access to the function by untrusted addresses will allow manipu-
-    lating the number of the given staker minipools. ThesetRewardsStartTime
-    value depends of the amount of minipools, if minipoolCount = 0RewardsSt
-    artTimewill be reset. IfRewardsStartTime== 0 thenRewardsStartTimewill
-    be set during minipool creation. And ifRewardsStartTime== 0 then owner
-    of minipool doesn’t get the GGP rewards
+    - **Checks** : `onlySpecificRegisteredContract(“MinipoolManager”, msg.sender)`
+  - **Impact** : access to the function by untrusted addresses will allow manipulating the number of the given staker minipools. The `setRewardsStartTime` value depends of the amount of minipools, if minipoolCount = 0 `RewardsStartTime` will be reset. If `RewardsStartTime == 0` then `RewardsStartTime` will be set during minipool creation. And if `RewardsStartTime == 0` then owner of minipool doesn’t get the GGP rewards
 
 **Function call analysis**
 
-- addUint()
+- `addUint()`
   - **What is controllable?** -
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     no problems
-- requireValidStaker()
+- `requireValidStaker()`
   - **What is controllable?** stakerAddr
-  - **If return value controllable, how is it used and how can it go wrong?** re-
-    turn thestakerIndexcorresponding to thestakerAddr. The Index must be
+  - **If return value controllable, how is it used and how can it go wrong?** return the `stakerIndex` corresponding to the `stakerAddr`. The Index must be
     unique, otherwise will be possible to lost funds.
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    will be reverted ifstakerAddris not a valid staker.
+    will be reverted if `stakerAddr` is not a valid staker.
 
-### Function:decreaseMinipoolCount()\*\*
+### Function: `decreaseMinipoolCount()`
 
 **Intended behavior:**
 
 Decrease the number of minipools the given staker has
 
-The function is called fromMinipoolManager.recordStakingEndandMinipoolManager
-.\_cancelMinipoolAndReturnFunds
+The function is called from `MinipoolManager.recordStakingEnd` and `MinipoolManager._cancelMinipoolAndReturnFunds`
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- After the function call the.minipoolCountdecreased by 1
+- After the function call the `.minipoolCount` decreased by 1
   - [x] Test coverage
 
 **Negative behavior:**
 
-- The function will revert ifstakerAddris not valid staker
+- The function will revert if `stakerAddr` is not valid staker
   - [ ] Negative test?
-- The function will revert if the.minipoolCountis zero
+- The function will revert if the `.minipoolCount` is zero
   - [ ] Negative test?
-- The function will revert if msg.sender is notMinipoolManagercontract
+- The function will revert if msg.sender is not `MinipoolManager` contract
   - [ ] Negative test?
 
 **Preconditions:**
 
-- stakerAddrhave calledstakeGGPand was registered as a staker.
+- `stakerAddr` have called `stakeGGP` and was registered as a staker.
 
-- The.minipoolCountis not zero
+- The `.minipoolCount` is not zero
 
 **Inputs:**
 
-- stakerAddr:
+- `stakerAddr`:
   - **Control** : owner of minipool. not controlled.
-    - **Checks** : therequireValidStakerfunction checks the address. If this ad-
-      dress isn’t staker, will revert.
-  - **Impact** : in case of full access it will allow any user to decrease the amount
-    of minipools
-- msg.sender:
+  - **Checks** : the `requireValidStaker` function checks the address. If this address isn’t staker, will revert.
+  - **Impact** : in case of full access it will allow any user to decrease the amount of minipools
+- `msg.sender`:
   - **Control** : -
-    - **Checks** : onlySpecificRegisteredContract(“MinipoolManager”, msg.sende
-      r)
-  - **Impact** : access to the function by untrusted addresses will allow manipu-
-    lating the number of the given staker minipools. ThesetRewardsStartTime
-    value depends of the amount of minipools, if minipoolCount = 0RewardsSt
-    artTimewill be reset. ifRewardsStartTime== 0 thenRewardsStartTimewill
-    be set during minipool creation. And ifRewardsStartTime== 0 then owner
-    of minipoll doesn’t get the GGP rewards
+  - **Checks** : `onlySpecificRegisteredContract(“MinipoolManager”, msg.sender)`
+  - **Impact** : access to the function by untrusted addresses will allow manipulating the number of the given staker minipools. The `setRewardsStartTime` value depends of the amount of minipools, if minipoolCount = 0 `RewardsStartTime` will be reset. if `RewardsStartTime == 0` then `RewardsStartTime` will be set during minipool creation. And if `RewardsStartTime == 0` then owner of minipoll doesn’t get the GGP rewards
 
 **Function call analysis**
 
-- subUint()
+- `subUint()`
   - **What is controllable?** -
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    will revert if.minipoolCountis 0.
-- requireValidStaker()
+    will revert if `.minipoolCount` is 0.
+- `requireValidStaker()`
   - **What is controllable?** stakerAddr
-  - **If return value controllable, how is it used and how can it go wrong?** re-
-    turn thestakerIndexcorresponding to thestakerAddr. The Index must be
-    unique, otherwise will be possible to lost funds.
+  - **If return value controllable, how is it used and how can it go wrong?** return the `stakerIndex` corresponding to the `stakerAddr`. The Index must be unique, otherwise will be possible to lost funds.
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    will be reverted ifstakerAddris not a valid staker.
+    will be reverted if `stakerAddr` is not a valid staker.
 
-### Function:setRewardsStartTime()\*\*
+### Function: `setRewardsStartTime()`
 
 **Intended behavior:**
 
 Set the timestamp when the staker registered for GGP rewards.
 
-ThesetRewardsStartTimevaluedependsoftheamountofminipools,ifminipoolCount
-= 0RewardsStartTimewill be reset inside thecalculateAndDistributeRewards()func-
-tion, which called fromprocessGGPRewardsifisEligibletrue (is not true ifRewards
-StartTime== 0). ifRewardsStartTime== 0 thenRewardsStartTimewill be set during
+The `setRewardsStartTime` value depends of the amount of minipools, if minipoolCount = 0 `RewardsStartTime` will be reset inside the `calculateAndDistributeRewards()` function, which called from `processGGPRewards` if `isEligible` true (is not true if `RewardsStartTime == 0`). if `RewardsStartTime == 0` then `RewardsStartTime` will be set during
 minipool creation.
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- After the function call the.rewardsStartTimeis equal totime
+- After the function call the `.rewardsStartTime` is equal to `time`
   - [x] Test coverage
 
 **Negative behavior:**
 
-- The function will revert ifstakerAddris not valid staker
+- The function will revert if `stakerAddr` is not valid staker
   - [ ] Negative test?
-- The function will revert ifmsg.senderis notRegisteredNetworkContract
+- The function will revert if `msg.sender` is not `RegisteredNetworkContract`
   - [ ] Negative test?
 
 **Preconditions:**
 
-- stakerAddrhave calledstakeGGPand was registered as a staker.
+- `stakerAddr` have called `stakeGGP` and was registered as a staker.
 
 **Inputs:**
 
-- time:
-  - **Control** : partly controlled: during minipool creationblock.timestampis
-    passed
-    - **Checks** : there aren’t any checks
-  - **Impact** : ifsetto0thanownerofminipoolcannotgettheGGPrewardsand
-    if non zero will be able to get (isEligible(): if(block.timestamp - reward
-    sStartTime)￿dao.getRewardsEligibilityMinSeconds())
-- stakerAddr:
+- `time`:
+  - **Control** : partly controlled: during minipool creation `block.timestamp` is passed
+  - **Checks** : there aren’t any checks
+  - **Impact** : if set to 0 than owner of minipool cannot get the GGP rewards and
+    if non zero will be able to get `(isEligible(): if (block.timestamp - rewardsStartTime) != dao.getRewardsEligibilityMinSeconds())`
+- `stakerAddr`:
   - **Control** : owner of minipool. not controlled.
-    - **Checks** : therequireValidStakerfunction checks the address. If this ad-
-      dress isn’t staker, will revert.
-  - **Impact** : in case of full access it will allow any user to set theRewardsStart
-    Timeand bypass theisEligiblecheck.
-- msg.sender:
+  - **Checks** : the `requireValidStaker` function checks the address. If this address isn’t staker, will revert.
+  - **Impact** : in case of full access it will allow any user to set the `RewardsStartTime` and bypass the `isEligible` check.
+- `msg.sender`:
   - **Control** : -
-    - **Checks** :onlyRegisteredNetworkContract
-  - **Impact** : access to the function by untrusted addresses will allow manipu-
-
-```
-
-lating theRewardsStartTimevalue. IfRewardsStartTime!= 0 then owner of
-minipool will be able to get the GGP rewards
-
-```
+  - **Checks** : `onlyRegisteredNetworkContract`
+  - **Impact** : access to the function by untrusted addresses will allow manipulating the `RewardsStartTime` value. If `RewardsStartTime != 0` then owner of minipool will be able to get the GGP rewards
 
 **Function call analysis**
 
-- setUint()
+- `setUint()`
   - **What is controllable?** -
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     no problems
-- requireValidStaker()
+- `requireValidStaker()`
   - **What is controllable?** stakerAddr
   - **If return value controllable, how is it used and how can it go wrong?** re-
-    turn thestakerIndexcorresponding to thestakerAddr. The Index must be
+    turn the `stakerIndex` corresponding to the `stakerAddr`. The Index must be
     unique, otherwise will be possible to lost funds.
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    will be reverted ifstakerAddris not a valid staker.
+    will be reverted if `stakerAddr` is not a valid staker.
 
-### Function:increaseGGPRewards()\*\*
+### Function: increaseGGPRewards()`
 
 **Intended behavior:**
 
 Increase the amount of GGP rewards the staker has earned and not claimed
 
-The function is called fromClaimNodeOp.calculateAndDistributeRewards
+The function is called from `ClaimNodeOp.calculateAndDistributeRewards`
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- After the call the.ggpRewardsamount will be increased byamount
+- After the call the `.ggpRewards` amount will be increased by `amount`
   - [x] Test coverage
 
 **Negative behavior:**
 
-- The function will revert ifstakerAddris not valid staker
+- The function will revert if `stakerAddr` is not valid staker
   - [ ] Negative test?
-- The function will revert ifmsg.senderis notClaimNodeOpcontract
+- The function will revert if `msg.sender` is not `ClaimNodeOp` contract
   - [ ] Negative test?
 
 **Preconditions:**
 
-- stakerAddrhave calledstakeGGPand was registered as a staker.
+- `stakerAddr` have called `stakeGGP` and was registered as a staker.
 
 **Inputs:**
 
-- amount:
+- `amount`:
   - **Control** :
-    - **Checks** : there aren’t checks
+  - **Checks** : there aren’t checks
   - **Impact** : The value determines how much the user will be able to receive
-    rewards. In case of full access to the function, users will be able to steal all
-    funds from the vault.
-- stakerAddr:
+    rewards. In case of full access to the function, users will be able to steal all funds from the vault.
+- `stakerAddr`:
   - **Control** : owner of minipool. not controlled.
-    - **Checks** : therequireValidStakerfunction checks the address. If this ad-
-      dress isn’t staker, will revert.
-  - **Impact** : in case of full access it will allow any user to increase the.ggpRew
-    ards
-- msg.sender:
+  - **Checks** : the `requireValidStaker` function checks the address. If this address isn’t staker, will revert.
+  - **Impact** : in case of full access it will allow any user to increase the.ggpRewards
+- `msg.sender`:
   - **Control** : -
-    - **Checks** :onlySpecificRegisteredContract(“ClaimNodeOp”, msg.sender)
-  - **Impact** : access to the function by untrusted addresses will allow manipu-
-    lating the.ggpRewardsvalue.
+  - **Checks** : `onlySpecificRegisteredContract(“ClaimNodeOp”, msg.sender)`
+  - **Impact** : access to the function by untrusted addresses will allow manipulating the `.ggpRewards` value.
 
 **Function call analysis**
 
-- requireValidStaker()
+- `requireValidStaker()`
   - **What is controllable?** stakerAddr
   - **If return value controllable, how is it used and how can it go wrong?** re-
-    turn thestakerIndexcorresponding to thestakerAddr. The Index must be
+    turn the `stakerIndex` corresponding to the `stakerAddr`. The Index must be
     unique, otherwise will be possible to lost funds.
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    will be reverted ifstakerAddris not a valid staker.
-- addUint()
+    will be reverted if `stakerAddr` is not a valid staker.
+- `addUint()`
   - **What is controllable?** amount
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     no problems
 
-### Function:decreaseGGPRewards()\*\*
+### Function: `decreaseGGPRewards()`
 
 **Intended behavior:**
 
 Decrease the amount of GGP rewards the staker has earned and not claimed.
 
-The function is called fromClaimNodeOp.claimAndRestake
+The function is called from `ClaimNodeOp.claimAndRestake`
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- After the call the.ggpRewardsis decreased by theamountvalue.
+- After the call the `.ggpRewards` is decreased by the `amount` value.
   - [x] Test coverage
 
 **Negative behavior:**
 
-- The function will revert ifstakerAddris not valid staker
+- The function will revert if `stakerAddr` is not valid staker
   - [ ] Negative test?
-- The function will revert if the.ggpRewardsis less thanamount
+- The function will revert if the `.ggpRewards` is less than `amount`
   - [ ] Negative test?
-- The function will revert if msg.sender is notClaimNodeOpcontract
+- The function will revert if msg.sender is not `ClaimNodeOp` contract
   - [ ] Negative test?
 
 **Preconditions:**
 
-- stakerAddrhave calledstakeGGPand was registered as a staker.
-- The.ggpRewardsissetbytheClaimNodeOp.calculateAndDistributeRewardsfunc-
-  tion call
+- `stakerAddr` have called `stakeGGP` and was registered as a staker.
+- The `.ggpRewards` is set by the `ClaimNodeOp.calculateAndDistributeRewards` function call
 
 **Inputs:**
 
-- amount:
+- `amount`:
   - **Control** : not controlled
-    - **Checks** : there aren’t checks
-  - **Impact** : in case of an untrusted caller, the.ggpRewardscan be reset and
-    owner of pool will not be able to get reward
-- stakerAddr:
+  - **Checks** : there aren’t checks
+  - **Impact** : in case of an untrusted caller, the `.ggpRewards` can be reset and owner of pool will not be able to get reward
+- `stakerAddr`:
   - **Control** : owner of minipool. not controlled.
-    - **Checks** : therequireValidStakerfunction checks the address. If this ad-
-      dress isn’t staker, will revert.
-  - **Impact** : in case of full access it will allow any user to decrease the.ggpRe
-    wards
-- msg.sender:
+    - **Checks** : the `requireValidStaker` function checks the address. If this address isn’t staker, will revert.
+  - **Impact** : in case of full access it will allow any user to decrease the `.ggpRewards`
+- `msg.sender`:
   - **Control** : -
-    - **Checks** :onlySpecificRegisteredContract(“ClaimNodeOp”, msg.sender)
-  - **Impact** : access to the function by untrusted addresses will allow manipu-
-    lating the.ggpRewardsvalue.
+  - **Checks** : `onlySpecificRegisteredContract(“ClaimNodeOp”, msg.sender)`
+  - **Impact** : access to the function by untrusted addresses will allow manipulating the `.ggpRewards` value.
 
 **Function call analysis**
 
-- requireValidStaker()
+- `requireValidStaker()`
   - **What is controllable?** stakerAddr
-  - **If return value controllable, how is it used and how can it go wrong?** re-
-    turn thestakerIndexcorresponding to thestakerAddr. The Index must be
-    unique, otherwise will be possible to lost funds.
+  - **If return value controllable, how is it used and how can it go wrong?** return the `stakerIndex` corresponding to the `stakerAddr`. The Index must be unique, otherwise will be possible to lost funds.
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    will be reverted ifstakerAddris not a valid staker.
-- subUint()
+    will be reverted if `stakerAddr` is not a valid staker.
+- `subUint()`
   - **What is controllable?** amount
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    will revert if.ggpRewardsis less thanamount.
+    will revert if `.ggpRewards` is less than `amount`.
 
-### Function:setLastRewardsCycleCompleted()\*\*
+### Function: `setLastRewardsCycleCompleted()`
 
 **Intended behavior:**
 
 Set the most recent reward cycle number that the staker has been paid out for.
 
-The function is called fromClaimNodeOp.calculateAndDistributeRewards
+The function is called from `ClaimNodeOp.calculateAndDistributeRewards`
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- After the call the.lastRewardsCycleCompletedis equal to thecycleNumbervalue
+- After the call the `.lastRewardsCycleCompleted` is equal to the `cycleNumber` value
   - [ ] Test coverage
 
 **Negative behavior:**
 
-- The function will revert ifstakerAddris not valid staker
+- The function will revert if `stakerAddr` is not valid staker
   - [ ] Negative test?
-- The function will revert if msg.sender is notClaimNodeOpcontract
+- The function will revert if msg.sender is not `ClaimNodeOp` contract
   - [ ] Negative test?
 
 **Preconditions:**
 
-- stakerAddrhave calledstakeGGPand was registered as a staker.
+- `stakerAddr` have called `stakeGGP` and was registered as a staker.
 
 **Inputs:**
 
-- cycleNumber:
+- `cycleNumber`:
 
-- **Control** : the value from therewardsPool.getRewardsCycleCount()function
-  call
+  - **Control** : the value from the `rewardsPool.getRewardsCycleCount()` function
+    call
   - **Checks** : there aren’t checks
-- **Impact** : prevents re-receiving the reward in the same cycle.
+  - **Impact** : prevents rereceiving the reward in the same cycle.
 
-- stakerAddr:
+- `stakerAddr`:
   - **Control** : owner of minipool. not controlled.
-    - **Checks** : therequireValidStakerfunction checks the address. If this ad-
-      dress isn’t staker, will revert.
-  - **Impact** : in case of full access it will allow any user to decrease the.ggpRe
-    wards
-- msg.sender:
+  - **Checks** : the `requireValidStaker` function checks the address. If this address isn’t staker, will revert.
+  - **Impact** : in case of full access it will allow any user to decrease the `.ggpRewards`
+- `msg.sender`:
   - **Control** : -
-    - **Checks** :onlySpecificRegisteredContract(“ClaimNodeOp”, msg.sender)
-  - **Impact** : access to the function by untrusted addresses will allow manipu-
-    lating the.lastRewardsCycleCompletedvalue.
+  - **Checks** : `onlySpecificRegisteredContract(“ClaimNodeOp”, msg.sender)`
+  - **Impact** : access to the function by untrusted addresses will allow manipulating the `.lastRewardsCycleCompleted` value.
 
 **Function call analysis**
 
-- requireValidStaker()
+- `requireValidStaker()`
   - **What is controllable?** stakerAddr
   - **If return value controllable, how is it used and how can it go wrong?** re-
-    turn thestakerIndexcorresponding to thestakerAddr. The Index must be
+    turn the `stakerIndex` corresponding to the `stakerAddr`. The Index must be
     unique, otherwise will be possible to lost funds.
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    will be reverted ifstakerAddris not a valid staker.
-- setUint()
-  - **What is controllable?** cycleNumber
+    will be reverted if `stakerAddr` is not a valid staker.
+- `setUint()`
+  - **What is controllable?** `cycleNumber`
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     no problems
 
-### Function:getMinimumGGPStake()\*\*
+### Function: `getMinimumGGPStake()`
 
 **Intended behavior:**
 
-- Retrieve staker’s minimumGGPstake, based on currentGGPprice.
+- Retrieve staker’s minimum `GGP` stake, based on current `GGP` price.
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- Ensure thatstakerAddris valid; currently not checked
+- Ensure that `stakerAddr` is valid; currently not checked
   - [ ] Test coverage
 
 **Preconditions:**
 
-- Assumes that thestakerAddrhas someavaxAssignedto them.
+- Assumes that the `stakerAddr` has some `avaxAssigned` to them.
 
 **Function call analysis**
 
-- (uint256 ggpPriceInAvax, ) = oracle.getGGPPriceInAVAX();
+- `(uint256 ggpPriceInAvax, ) = oracle.getGGPPriceInAVAX();`
   - **What is controllable?** -
   - **If return value controllable, how is it used and how can it go wrong?** Part
-    of the return value is ignored(that refers to the block.timestamp when the
+    of the return value is ignored (that refers to the block.timestamp when the
     price has been updated) Maybe it’s a good idea to also return that? The
-    pricecouldbereallyoutdated;Addsomethinglikeamaxamountofblocks
+    price could be really outdated; Add something like a max amount of blocks
     that go without update?
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    will revert ifpriceis zero
+    will revert if `price` is zero
 
-### Function:getCollateralizationRatio()\*\*
+### Function: `getCollateralizationRatio()`
 
 **Intended behavior:**
 
-- Return collateralization ratio based on currentGGPprice.
+- Return collateralization ratio based on current `GGP` price.
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- Ensure thatstakerAddris valid; currently not checked
+- Ensure that `stakerAddr` is valid; currently not checked
   - [ ] Test coverage
 
 **Preconditions:**
 
-- Assumes that thestakerAddrhas someavaxAssignedto them.
+- Assumes that the `stakerAddr` has some `avaxAssigned` to them.
 
 **Function call analysis**
 
-- (uint256 ggpPriceInAvax, ) = oracle.getGGPPriceInAVAX();
+- `(uint256 ggpPriceInAvax, ) = oracle.getGGPPriceInAVAX();`
   - **What is controllable?** -
   - **If return value controllable, how is it used and how can it go wrong?** Part
-    of the return value is ignored(that refers to the block.timestamp when the
+    of the return value is ignored (that refers to the block.timestamp when the
     price has been updated) Maybe it’s a good idea to also return that? The
-    pricecouldbereallyoutdated;Addsomethinglikeamaxamountofblocks
-
-```
-
-that go without update?
-
-```
-
-- **What happens if it reverts, reenters, or does other unusual control flow?**
-  will revert ifpriceis zero
+    price could be really outdated; Add something like a max amount of blocks that go without update?
+  - **What happens if it reverts, reenters, or does other unusual control flow?**
+    will revert if `price` is zero
 
 **Where is the function used:**
 
-- MinipoolManager:
-- Staking:
+- `MinipoolManager`:
+- `Staking`:
 
-### Function:getEffectiveRewardsRatio()\*\*
+### Function: `getEffectiveRewardsRatio()`
 
 **Intended behavior:**
 
-- return effective collateralization ratio used to pay rewards based onGGPprice
-  andAVAXhigh water.
+- return effective collateralization ratio used to pay rewards based on `GGP` price
+  and `AVAX` high water.
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- Ensure thatstakerAddris valid; currently not checked
+- Ensure that `stakerAddr` is valid; currently not checked
   - [ ] Test coverage
 
 **Preconditions:**
 
-- Assumes that thestakerAddrhas someGGPstakedalready.
+- Assumes that the `stakerAddr` has some `GGPstaked` already.
 
 **Function call analysis**
 
-- (uint256 ggpPriceInAvax, ) = oracle.getGGPPriceInAVAX();
+- `(uint256 ggpPriceInAvax, ) = oracle.getGGPPriceInAVAX();`
   - **What is controllable?** -
   - **If return value controllable, how is it used and how can it go wrong?** Part
-    of the return value is ignored(that refers to the block.timestamp when the
+    of the return value is ignored (that refers to the block.timestamp when the
     price has been updated) Maybe it’s a good idea to also return that? The
-    pricecouldbereallyoutdated;Addsomethinglikeamaxamountofblocks
+    price could be really outdated; Add something like a max amount of blocks
     that go without update?
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    will revert ifpriceis zero
-- dao.getMaxCollateralizationRatio();
+    will revert if `price` is zero
+- `dao.getMaxCollateralizationRatio();`
   - **What is controllable?** -
   - **If return value controllable, how is it used and how can it go wrong?** re-
     turn the max collateralization ratio of GGP to Assigned AVAX eligible for
-    rewards. This value is used forEffectiveGGPStakedvalue calculations for
+    rewards. This value is used for `EffectiveGGPStaked` value calculations for reward distribution process
+  - **What happens if it reverts, reenters, or does other unusual control flow?**
+    no problems
 
-```
-
-reward distribution process
-
-```
-
-- **What happens if it reverts, reenters, or does other unusual control flow?**
-  no problems
-
-### Function:getEffectiveGGPStaked()\*\*
+### Function: `getEffectiveGGPStaked()`
 
 **Intended behavior:**
 
-- Get amount ofggpthat will count towards therewardscycle.
+- Get amount of `ggp` that will count towards the `rewards` cycle.
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- Ensure thatstakerAddris valid; currently not checked
+- Ensure that `stakerAddr` is valid; currently not checked
   - [ ] Test coverage
 
 **Preconditions:**
 
-- thepricevalue is set inside Oracle contract
+- the `price` value is set inside Oracle contract
 
 **Function call analysis**
 
-- (uint256 ggpPriceInAvax, ) = oracle.getGGPPriceInAVAX();
+- `(uint256 ggpPriceInAvax, ) = oracle.getGGPPriceInAVAX();`
   - **What is controllable?** -
   - **If return value controllable, how is it used and how can it go wrong?** Part
-    of the return value is ignored(that refers to the block.timestamp when the
+    of the return value is ignored (that refers to the block.timestamp when the
     price has been updated) Maybe it’s a good idea to also return that? The
-    pricecouldbereallyoutdated;Addsomethinglikeamaxamountofblocks
+    price could be really outdated; Add something like a max amount of blocks
     that go without update?
   - **What happens if it reverts, reenters, or does other unusual control flow?**
-    will revert ifpriceis zero
+    will revert if `price` is zero
 
 **Where is the function used:**
 
-- ClaimNodeOp:
+- `ClaimNodeOp`:
 
-### Function:stakeGGP()and_stakeGGP\*\*
+### Function: `stakeGGP()` and `_stakeGGP`
 
 **Intended behavior:**
 
-- Should allow any user tostake GGPinto the contract.
+- Should allow any user to stake `GGP` into the contract.
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- Should revert ifmsg.sendertransferred less thanamounttokens.
+- Should revert if `msg.sender` transferred less than `amount` tokens.
   - [x] Test coverage
-- Theggpbalanceofthemsg.sendershoulddepletebyamount, whilstthecontract
-  should have enough todepositinto thevault(like a middleman)
+- The ggp balance of the `msg.sender` should deplete by amount, whilst the `contract` should have enough to `deposit` into the `vault(like a middleman)`
   - [x] Test coverage
-- TheGGPStakeof the user should be increased by thestakedamount.
+- The `GGPStake` of the user should be increased by the `staked` amount.
   - [x] Test coverage
 
 **Negative behavior:**
@@ -4040,48 +3812,42 @@ reward distribution process
 
 **Preconditions:**
 
-- Assumesmsg.senderis registered as a staker in the contract; however, if that’s
-  not the case, it creates an index for a new staker:
-- Assumesthatmsg.senderhaspreviouslyapprovedtheamountthatistobetrans-
-  ferred bystakeGGP.
+- Assumes `msg.sender` is registered as a staker in the contract; however, if that’s not the case, it creates an index for a new staker:
+- Assumes that `msg.sender` has previously approved the amount that is to be transferred by `stakeGGP`.
 
 **Inputs:**
 
-- amount:
+- `amount`:
   - **Control** : full control
-    - **Checks** : there are no 0 checks, however, they dosafeTransferFromuser
-      with theamount
+    - **Checks** : there are no 0 checks, however, they do `safeTransferFrom` user with the `amount`
   - **Impact** : n/a
 
 **Function call analysis**
 
-- ggp.safeTransferFrom()
+- `ggp.safeTransferFrom()`
   - **What is controllable?** amount
   - **If return value controllable, how is it used and how can it go wrong?** there
     ins’t return value
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     will revert if msg.sender doesn’t have enough ggp tokens.
-- \_stakeGGP()
-
+- `_stakeGGP()`
   - **What is controllable?** amount
+  - **If return value controllable, how is it used and how can it go wrong?** there
+    isn’t return value
+  - **What happens if it reverts, reenters, or does other unusual control flow?**
+    no problems
 
-- **If return value controllable, how is it used and how can it go wrong?** there
-  isn’t return value
-- **What happens if it reverts, reenters, or does other unusual control flow?**
-  no problems
-
-### Function:restakeGGP()\*\*
+### Function: `restakeGGP()`
 
 **Intended behavior:**
 
-- allow restaking for claimedGGP rewards
+- allow restaking for `claimedGGP` rewards
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- after the call the.ggpStakedvalue ofstakerAddrwill be increased byamount
-  value
+- after the call the `.ggpStaked` value of `stakerAddr` will be increased by `amount` value
   - [x] Test coverage
 
 **Negative behavior:**
@@ -4090,160 +3856,120 @@ Limited negative testing
 
 - if msg.sender doesn’t have enough ggp tokens, transaction will be reverted
   - [ ] Negative test?
-- ifmsg.senderisnottrustedClaimNodeOpcontract, transactionwillbereverted
+- if msg.sender is not trusted ClaimNodeOp contract, transaction will be reverted
   - [ ] Negative test?
 
 **Preconditions:**
 
-- Assumesmsg.senderisClaimNodeOp
+- Assumes `msg.sender` is `ClaimNodeOp`
 - msg.sender must have at least the amount value of ggp tokens
 
 **Inputs:**
 
-- amount:
+- `amount`:
   - **Control** : limited control
-    - **Checks** : safeTransferFrom will revert if msg.sender balance less thanamou
-      nt
+  - **Checks** : safeTransferFrom will revert if msg.sender balance less than `amount`
   - **Impact** : -
-- stakerAddr:
-
+- `stakerAddr`:
   - **Control** : full control
-    - **Checks** : there aren’t any checks
+  - **Checks** : there aren’t any checks
   - **Impact** : -
-
-- msg.sender:
+- `msg.sender`:
   - **Control** : -
-    - **Checks** : onlySpecificRegisteredContract(“ClaimNodeOp”, msg.sender)
-  - **Impact** : thefunctionallowscallertoincrease.ggpStakedvalueforanyuser.
-    but caller should send this value of ggp tokens to contract
+    - **Checks** : `onlySpecificRegisteredContract(“ClaimNodeOp”, msg.sender)`
+  - **Impact** : the function allows caller to increase `.ggpStaked` value for any user. but caller should send this value of ggp tokens to contract
 
 **Function call analysis**
 
-- ggp.safeTransferFrom()
+- `ggp.safeTransferFrom()`
   - **What is controllable?** amount
   - **If return value controllable, how is it used and how can it go wrong?** there
     ins’t return value
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     will revert if msg.sender doesn’t have enough ggp tokens.
-- \_stakeGGP()
+- `_stakeGGP()`
   - **What is controllable?** amount
   - **If return value controllable, how is it used and how can it go wrong?** there
     isn’t return value
   - **What happens if it reverts, reenters, or does other unusual control flow?**
     no problems
 
-### Function:withdrawGGP()\*\*
+### Function: `withdrawGGP()`
 
 **Intended behavior:**
 
-- Allows withdrawingGGPtokens.
+- Allows withdrawing `GGP` tokens.
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- Should ensure that the.ggpStakeddecreases.
+- Should ensure that the `.ggpStaked` decreases.
   - [ ] Test coverage
 
 **Negative behavior:**
 
-- Shouldneverlock-upggp;thiscouldhappeninascenariowherethemsg.sender
-  is never over 150% collateralization
+- Should never lock-up ggp; this could happen i a scenario where the `msg.sender` is never over 150% collateralization
   - [ ] Negative test?
 
 **Preconditions:**
 
-- Assumes that the user is over150%in collateralization ratio.
-
-- AssurethatmaxCollateralizationRatioissyncedup! Maybecheckthelastblock
-  and compare it with the last block fromgetCollateralizationRatioas well?! a
+- Assumes that the user is over `150%` in collateralization ratio.
+- Assure that `maxCollateralizationRatio` is synced up! Maybe check the last block
+  and compare it with the last block from `getCollateralizationRatio` as well?! a
   de-sync could lead to lower threshold of withdrawals. Any huge fluctuations
   would greatly affect this.
 
 **Inputs:**
 
-- amount:
+- `amount`:
   - **Control** : full controll
-    - **Checks** : checks thatamount > getGGPStakeand check thatgetCollaterali
-      zationRatio(msg.sender)at least 150 after withdraw
+    - **Checks** : checks that `amount > getGGPStake` and check that `getCollateralizationRatio(msg.sender)` at least 150 after withdraw
   - **Impact** : could lead to loss of funds if not depleted properly.
 
-### Function:slashGGP()\*\*
+### Function: `slashGGP()`
 
 **Intended behavior:**
 
-- Should be used by theMinipoolManagerin case that aminipoolhas ended; this
+- Should be used by the `MinipoolManage` in case that a `minipool` has ended; this
   happen
 
 **Branches and code coverage:**
 
 **Intended branches:**
 
-- Decrease theggpStakeof thestaker(assumingstakerhas some left)
+- Decrease the `ggpStake` of the `staker`(assuming `staker` has some left)
   - [x] Test coverage
-- StakerAddrmust be registered.
+- `StakerAddr` must be registered.
   - [ ] Test coverage
 
 **Negative behavior:**
 
-- Only allowminipoolmanagerto call this.
+- Only allow `minipoolmanager` to call this.
   - [ ] Negative test?
 
 **Preconditions:**
 
-- AssumesthatdecreaseGGPSTakecanbecalledonthestakerAddr(thisimpliesthat
-  stakerAddrhas been registered beforehand)
+- Assumes that `decreaseGGPSTake` can be called on the `stakerAddr` (this implies that `stakerAddr` has been registered beforehand)
 
 **Inputs:**
 
-- ggpAmt:
+- `ggpAmt`:
   - **Control** : full control
-    - **Checks** : assumes thatdecreaseGGPStakeproperly decreases the amount
-
-```
-
-that thestakerAddrhas
-
-```
-
-- **Impact** : n/a
+  - **Checks** : assumes that `decreaseGGPStake` properly decreases the amount that the `stakerAddr` has
+  - **Impact** : n/a
 
 ## 6 Audit Results
 
 At the time of our audit, the code was not deployed to mainnet Avalanche.
 
-DuringourassessmentonthescopedGoGoPoolcontracts,wediscoveredsevenfind-
-ings. Of the seven findings, four were of high severity, one was of medium severity,
-one was of low severity and the remaining finding was informational. Multisig Labs
-acknowledged all findings and implemented fixes.
+During our assessment on the scoped GoGoPool contracts, we discovered seven findings. Of the seven findings, four were of high severity, one was of medium severity, one was of low severity and the remaining finding was informational. Multisig Labs acknowledged all findings and implemented fixes.
 
-### 6.1 Disclaimers.
+### 6.1 Disclaimers
 
 This assessment does not provide any warranties about finding all possible issues
-within its scope; in other words, the evaluation results do not guarantee the absence
-of any subsequent issues. Zellic, of course, also cannot make guarantees about any
-additional code added to the assessed project after the audit version of our assess-
-ment. Furthermore, because a single assessment can never be considered compre-
-hensive,wealwaysrecommendmultipleindependentassessmentspairedwithabug
-bounty program.
+within its scope; in other words, the evaluation results do not guarantee the absence of any subsequent issues. Zellic, of course, also cannot make guarantees about any additional code added to the assessed project after the audit version of our assessment. Furthermore, because a single assessment can never be considered comprehensive, we always recommend multiple independent assessments paired with a bug bounty program.
 
-For each finding, Zellic provides a recommended solution. All code in these recom-
-mendations are intended to convey how an issue may be resolved (i.e., the idea), but
-they may not be tested or functional code.
+For each finding, Zellic provides a recommended solution. All code in these recommendations are intended to convey how an issue may be resolved (i.e., the idea), but they may not be tested or functional code.
 
-Finally, the contents of this assessment report are for informational purposes only;
-do not construe any information in this report as legal, tax, investment, or financial
-advice. Nothing contained in this report constitutes a solicitation or endorsement of
-a project by Zellic.
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
+Finally, the contents of this assessment report are for informational purposes only; do not construe any information in this report as legal, tax, investment, or financial advice. Nothing contained in this report constitutes a solicitation or endorsement of a project by Zellic.
