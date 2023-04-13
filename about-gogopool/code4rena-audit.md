@@ -1,10 +1,8 @@
-findings: https://github.com/code-423n4/2022-12-gogopool-findings/issues
-
 # Overview
 
 ## About C4
 
-Code4rena (C4) is an open organization consisting of security researchers, auditors, developers, and individuals with domain expertise in smart contracts.
+[Code4rena (C4)](https://code4rena.com/) is an open organization consisting of security researchers, auditors, developers, and individuals with domain expertise in smart contracts.
 
 A C4 audit contest is an event in which community participants, referred to as Wardens, review, audit, or analyze smart contract logic in exchange for a bounty provided by sponsoring projects.
 
@@ -139,6 +137,8 @@ The C4 analysis yielded an aggregated total of 28 unique vulnerabilities. Of the
 Additionally, C4 analysis included 15 reports detailing issues with a risk rating of LOW severity or non-critical. There were also 12 reports recommending gas optimizations.
 
 All of the issues presented here are linked back to their original finding.
+
+[Findings Repo](https://github.com/code-423n4/2022-12-gogopool-findings/issues)
 
 # Scope
 

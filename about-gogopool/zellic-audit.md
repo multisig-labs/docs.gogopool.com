@@ -12,52 +12,52 @@ Zellic Inc.
 
 # Contents
 
-- About Zellic
-- 1 Executive Summary
-- 2 Introduction
-  - 2.1 About GoGoPool
-  - 2.2 Methodology
-  - 2.3 Scope
-  - 2.4 Project Overview
-  - 2.5 Project Timeline
-- 3 Detailed Findings
-  - 3.1 The `transferAVAX` function allows arbitrary transfers
-  - 3.2 Ocyticus does not include the `Staking` pause
-  - 3.3 The reward amount manipulation.
-  - 3.4 Network registered contracts have absolute storage control
-  - 3.5 Oracle may reflect an outdated price
-  - 3.6 Fields are not reset exactly after their usage
-  - 3.7 Contracts can deposit arbitrary tokens in the Vault
-- 4 Discussion
-  - 4.1 Ther `ewardsCycleEnd` calculation
-  - 4.2 Lack of checks.
-  - 4.3 The process of distributing ggp rewards
-  - 4.4 Checks-effects-interactions pattern
-  - 4.5 Missing status update.
-  - 4.6 Unused variables
-  - 4.7 Contract upgrades
-  - 4.8 IWithdrawer inheritance
-  - 4.9 Protocol DAO setters range
-  - 4.10 Leftover tokens in `RewardsPool`
-- 5 Threat Model
-  - 5.1 File: `TokenggAVAX`
-  - 5.2 File: `ClaimNodeOP`
-  - 5.3 File: `ClaimProtocolDAO.sol`
-  - 5.4 File: `BaseUpgradeable.sol`
-  - 5.5 File: `Base.sol`
-  - 5.6 File: `BaseAbstract.sol`
-  - 5.7 File: `Storage.sol`
-  - 5.8 File: `TokenGGP.sol`
-  - 5.9 File: `Vault.sol`
-  - 5.10 File: `MinipoolManager`
-  - 5.11 File: `MultisigManager`
-  - 5.12 File: `Ocyticus`
-  - 5.13 File: `Oracle`
-  - 5.14 File: `ProtocolDAO`
-  - 5.15 File: `RewardsPool`
-  - 5.16 File: `Staking`
-- 6 Audit Results
-  - 6.1 Disclaimers.
+- [About Zellic](#about-zellic)
+- [1 Executive Summary](#1-executive-summary)
+- [2 Introduction](#2-introduction)
+  - [2.1 About GoGoPool](#21-about-gogopool)
+  - [2.2 Methodology](#22-methodology)
+  - [2.3 Scope](#23-scope)
+  - [2.4 Project Overview](#24-project-overview)
+  - [2.5 Project Timeline](#25-project-timeline)
+- [3 Detailed Findings](#3-detailed-findings)
+  - [3.1 The `transferAVAX` function allows arbitrary transfers](#31-the-transferavax-function-allows-arbitrary-transfers)
+  - [3.2 Ocyticus does not include the `Staking` pause](#32-ocyticus-does-not-include-the-staking-pause)
+  - [3.3 The reward amount manipulation.](#33-the-reward-amount-manipulation)
+  - [3.4 Network registered contracts have absolute storage control](#34-network-registered-contracts-have-absolute-storage-control)
+  - [3.5 Oracle may reflect an outdated price](#35-oracle-may-reflect-an-outdated-price)
+  - [3.6 Fields are not reset exactly after their usage](#36-fields-are-not-reset-exactly-after-their-usage)
+  - [3.7 Contracts can deposit arbitrary tokens in the Vault](#37-contracts-can-deposit-arbitrary-tokens-in-the-vault)
+- [4 Discussion](#4-discussion)
+  - [4.1 The `rewardsCycleEnd` calculation](#41-the-rewardscycleend-calculation)
+  - [4.2 Lack of checks.](#42-lack-of-checks)
+  - [4.3 The process of distributing ggp rewards](#43-the-process-of-distributing-ggp-rewards)
+  - [4.4 Checks-effects-interactions pattern](#44-checks-effects-interactions-pattern)
+  - [4.5 Missing status update.](#45-missing-status-update)
+  - [4.6 Unused variables](#46-unused-variables)
+  - [4.7 Contract upgrades](#47-contract-upgrades)
+  - [4.8 IWithdrawer inheritance](#48-iwithdrawer-inheritance)
+  - [4.9 Protocol DAO setters range](#49-protocol-dao-setters-range)
+  - [4.10 Leftover tokens in `RewardsPool`](#410-leftover-tokens-in-rewardspool)
+- [5 Threat Model](#5-threat-model)
+  - [5.1 File: `TokenggAVAX`](#51-file-tokenggavax)
+  - [5.2 File: `ClaimNodeOP`](#52-file-claimnodeop)
+  - [5.3 File: `ClaimProtocolDAO.sol`](#53-file-claimprotocoldaosol)
+  - [5.4 File: `BaseUpgradeable.sol`](#54-filebaseupgradeablesol)
+  - [5.5 File: `Base.sol`](#55-file-basesol)
+  - [5.6 File: `BaseAbstract.sol`](#56-file-baseabstractsol)
+  - [5.7 File: `Storage.sol`](#57-file-storagesol)
+  - [5.8 File: `TokenGGP.sol`](#58-file-tokenggpsol)
+  - [5.9 File: `Vault.sol`](#59-file-vaultsol)
+  - [5.10 File: `MinipoolManager`](#510-file-minipoolmanager)
+  - [5.11 File: `MultisigManager`](#511-file-multisigmanager)
+  - [5.12 File: `Ocyticus`](#512-file-ocyticus)
+  - [5.13 File: `Oracle`](#513-file-oracle)
+  - [5.14 File: `ProtocolDAO`](#514-file-protocoldao)
+  - [5.15 File: `RewardsPool`](#515-file-rewardspool)
+  - [5.16 File: `Staking`](#516-file-staking)
+- [6 Audit Results](#6-audit-results)
+  - [6.1 Disclaimers.](#61-disclaimers)
 
 # About Zellic
 
@@ -155,7 +155,7 @@ models, their business needs, their project timelines, and so forth. We aim to p
 useful and actionable advice to our partners that consider their long-term goals rather
 than simply provide a list of security issues at present.
 
-## 2.3 Scope.
+## 2.3 Scope
 
 The engagement involved a review of the following targets:
 
@@ -252,7 +252,7 @@ function transferAVAX (
     string memory fromContractName,
     string memory toContractName,
     uint256 amount
-) externalonlyRegisteredNetworkContract{
+) external onlyRegisteredNetworkContract{
 
     // Valid Amount?
     if (amount == 0 ) {
@@ -260,7 +260,7 @@ function transferAVAX (
     }
 
     // Emit transfer event
-    emitAVAXTransfer(fromContractName, toContractName, amount);
+    emit AVAXTransfer(fromContractName, toContractName, amount);
 
     // Make sure the contracts are valid, will revert if not
     getContractAddress(fromContractName);
@@ -285,8 +285,7 @@ Due to the fact that `fromContractName` can be an arbitrary address, a presumabl
 
 ### Recommendations
 
-We recommend removing the `fromContractName` parameter altogether and ensuring
-that the funds can only be transferred by the caller of the function, `msg.sender`.
+We recommend removing the `fromContractName` parameter altogether and ensuring that the funds can only be transferred by the caller of the function, `msg.sender`.
 
 ```solidity
 // @audit-info doesn't exist in rocketvault
@@ -345,7 +344,7 @@ function pauseEverything() external onlyDefender {
 /// @notice Reestablish all contract's abilities
 /// @dev Multisigs will need to be enabled seperately, we dont know which  ones to enable
 function resumeEverything() external onlyDefender {
-    ProtocolDAO dao=ProtocolDAO(getContractAddress(“ProtocolDAO”));
+    ProtocolDAO dao = ProtocolDAO(getContractAddress(“ProtocolDAO”));
     dao.resumeContract(“TokenggAVAX”);
     dao.resumeContract(“MinipoolManager”);
 }
