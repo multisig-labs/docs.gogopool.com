@@ -4,6 +4,8 @@ description: A Permissionless Staking Protocol For Avalanche Subnets.
 
 # GoGoPool Primer
 
+## A Permissionless Staking Protocol For Avalanche Subnets.
+
 ## **TL;DR**
 
 1. Subnets are Avalanche’s main scaling mechanism, but aren’t realistic right now because of the cost and limitations of staking
