@@ -1,6 +1,7 @@
 # Table of contents
 
-- [Welcome](README.md)
+- [Welcome](about-gogopool/introducing-gogopool.md)
+- [Our Mission](about-gogopool/team-mission.md)
 - [Primer](about-gogopool/gogopool-primer.md)
 - [Litepaper](about-gogopool/gogopool-litepaper.md)
 - [FAQ](about-gogopool/faq.md)
