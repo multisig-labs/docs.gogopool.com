@@ -9,8 +9,6 @@
   * [🔐 Code4rena Audit](about-gogopool/code4rena-audit.md)
   * [🔐 Zellic Audit](about-gogopool/zellic-audit.md)
 * [GoGoPool Docs](<README (1).md>)
-  * [Using the Alpha Testnet](readme/using-the-alpha-testnet.md)
-  * [Wallet Configuration](readme/wallet-configuration.md)
   * [Creating a Node](readme/creating-a-node/README.md)
     * [Creating an Avalanche Node](https://docs.avax.network/nodes)
   * [Staking with GoGoPool](readme/staking-with-gogopool/README.md)
