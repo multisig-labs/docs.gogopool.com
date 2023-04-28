@@ -16,6 +16,7 @@
     * [Running a GoGoPool Node](readme/staking-with-gogopool/running-a-gogopool-node/README.md)
       * [On the Multisig Labs Testnet](readme/staking-with-gogopool/running-a-gogopool-node/on-the-multisig-labs-testnet.md)
       * [Registering a GoGoPool Node](readme/staking-with-gogopool/running-a-gogopool-node/registering-a-gogopool-node.md)
+  * [🪙 Tokens and Utility](readme-1/tokens-and-utility.md)
 * [Protocol Design](design/README.md)
   * [Deployed Contract Addresses](design/deployed-contract-addresses.md)
   * [ggAVAX via ERC4626](gogopooldesign/ggpavax-via-erc-4626.md)
