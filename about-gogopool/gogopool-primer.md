@@ -14,13 +14,13 @@ description: A Permissionless Staking Protocol For Avalanche Subnets.
 
 ## **The Subnet Vision**
 
-[Avalanche](https://www.avax.network/) promises to be a fast, low cost and eco friendly blockchain - thanks to **subnets.** Subnets let anyone build a blockchain without having to worry about its infrastructure, getting Avalanche’s best features for free.
+Thanks to **Subnets,** [Avalanche](https://www.avax.network/) promises to be a fast, low-cost, eco-friendly blockchain**.** Subnets let anyone build a blockchain without worrying about its infrastructure, getting Avalanche’s best features for free.
 
-As a single example: DeFi Kingdoms (the most popular blockchain game, lives on Harmony network) wants to launch an expansion to their game, but launching on Harmony is going to be expensive and slow for their users and they need more customization. They are launching a subnet on Avalanche, taking advantage of fast transaction times and with their own dedicated set of validators - leading to a fast and cheap experience for their users. Launching via subnets also lets DFK to experiment with tokenomics — tying the tokenomic of their blockchain directly to game mechanics.
+One example, DeFi Kingdoms, which is the most popular blockchain game running on the Harmony network, plans to launch an expansion. But, if they launch on Harmony, they face two main challenges. Firstly, the launch would be slow and costly for their users and would require additional customization. Creating a Subnet on the Avalanche network will help them overcome these issues. It will allow them to take advantage of the network's fast transaction times and create a dedicated set of validators, resulting in a faster and more affordable experience for their users. Additionally, launching via subnets will enable DeFi Kingdoms to experiment with tokenomics, which means they can tie their blockchain's tokenomics directly to the game mechanics.
 
-Basically, subnets power the explosive growth of Avalanche by allowing infinite horizontal scaling and rapid experimentation with new models and ideas.
+In short, subnets power the explosive growth of Avalanche by allowing infinite horizontal scaling and rapid experimentation with new models and ideas.
 
-But in reality, subnets are expensive to start, grow and manage. Right now, they are held back by the cost and limitations of staking.
+But in reality, subnets are expensive to start, grow, and manage. Right now, they are held back by the cost and limitations of staking.
 
 Ideally, every subnet should have a one-click launch and grow experience and not have to worry about their validators because the cost of staking is so low.
 
