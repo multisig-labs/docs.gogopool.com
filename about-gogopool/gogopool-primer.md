@@ -16,13 +16,13 @@ description: A Permissionless Staking Protocol For Avalanche Subnets.
 
 Thanks to **Subnets,** [Avalanche](https://www.avax.network/) promises to be a fast, low-cost, eco-friendly blockchain**.** Subnets let anyone build a blockchain without worrying about its infrastructure, getting Avalanche’s best features for free.
 
-One example, DeFi Kingdoms, which is the most popular blockchain game running on the Harmony network, plans to launch an expansion. But, if they launch on Harmony, they face two main challenges. Firstly, the launch would be slow and costly for their users and would require additional customization. Creating a Subnet on the Avalanche network will help them overcome these issues. It will allow them to take advantage of the network's fast transaction times and create a dedicated set of validators, resulting in a faster and more affordable experience for their users. Additionally, launching via subnets will enable DeFi Kingdoms to experiment with tokenomics, which means they can tie their blockchain's tokenomics directly to the game mechanics.
+One example, DeFi Kingdoms, which is the most popular blockchain game running on the Harmony network, plans to launch an expansion. But, if they launch on Harmony, they face two main challenges. Firstly, the launch would be slow and costly for their users and require additional customization. Creating a Subnet on the Avalanche network will help them overcome these issues. It will allow them to take advantage of the network's fast transaction times and create a dedicated set of validators, resulting in a faster and more affordable experience for their users. Additionally, launching via subnets will enable DeFi Kingdoms to experiment with tokenomics, which means they can tie their blockchain's tokenomics directly to the game mechanics.
 
-In short, subnets power the explosive growth of Avalanche by allowing infinite horizontal scaling and rapid experimentation with new models and ideas.
+In short, Subnets power the explosive growth of Avalanche by allowing infinite horizontal scaling and rapid experimentation with new models and ideas.
 
-But in reality, subnets are expensive to start, grow, and manage. Right now, they are held back by the cost and limitations of staking.
+But in reality, Subnets are expensive to start, grow, and manage, and continue to be held back by the cost and limitations of staking.
 
-Ideally, every subnet should have a one-click launch and grow experience and not have to worry about their validators because the cost of staking is so low.
+Ideally, every Subnet should have a one-click launch and growth experience and not have to worry about their validators because the cost of staking is so low.
 
 A handful of projects are focused on **liquid staking** as a way to lower the cost of staking on Avalanche, but they are focused on a small part of the problem. Having liquid staking will definitely help the ecosystem grow by providing liquidity, but does not lower the cost of validation for subnets. Entrepreneurs remain locked out of the next generation of opportunities, and Avalanche misses out on its next step function of growth.
 
