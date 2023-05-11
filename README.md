@@ -12,6 +12,6 @@ GoGoPool is the first permissionless staking protocol built exclusively for [Ava
 
 ### For liquid stakers, we offer:
 
-* Affordable staking for everyone for as little as .01 AVAX
-* Staking with a validator pool to reduce loss risks from slashing and provide instant liquidity
-* Join from an API-integrated business, deposit AVAX into a pool, and receive ggAVAX tokens that earn you rewards
+* Affordable staking for as little as .01 AVAX.
+* Staking with a validator pool to reduce loss risks from slashing and provide instant liquidity.
+* Join from an API-integrated business, deposit AVAX into a pool, and receive ggAVAX tokens that earn you rewards.&#x20;
