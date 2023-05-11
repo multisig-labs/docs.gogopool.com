@@ -2,15 +2,15 @@
 description: A Permissionless Staking Protocol For Avalanche Subnets.
 ---
 
-# GoGoPool Primer
+# Primer
 
 ## A Permissionless Staking Protocol For Avalanche Subnets.
 
 ## **TL;DR**
 
-1. Subnets are Avalanche’s main scaling mechanism, but aren’t realistic right now because of the cost and limitations of staking
+1. Subnets are Avalanche’s main scaling mechanism but aren’t realistic right now because of the cost and limitations of staking
 2. Liquid staking is just a small part of the problem, and everyone is focused on that (leaving builders out to dry)
-3. GoGoPool solves the entire problem with a permissionless staking protocol combining liquid staking, decentralized hardware, and subnet compatibility. These three elements work together to trivialize the cost of staking + validating -- powering the growth of subnets, and the future of Avalanche
+3. GoGoPool solves the problem of Subnet adoption with a permissionless staking protocol that combines liquid staking, decentralized hardware, and subnet compatibility. These three elements work together to trivialize the cost of staking + validating -- powering the growth of subnets, and the future of Avalanche
 
 ## **The Subnet Vision**
 
