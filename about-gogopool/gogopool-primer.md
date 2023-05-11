@@ -22,7 +22,7 @@ In short, Subnets power the explosive growth of Avalanche by allowing infinite h
 
 But in reality, Subnets are expensive to start, grow, and manage, and continue to be held back by the cost and limitations of staking.
 
-Ideally, every Subnet should have a one-click launch and growth experience and not have to worry about their validators because the cost of staking is so low.
+Subnets should ideally offer a streamlined launch and growth process, with a user-friendly one-click experience and minimal concern regarding validators, as the staking cost is kept low.
 
 A handful of projects are focused on **liquid staking** as a way to lower the cost of staking on Avalanche, but they are focused on a small part of the problem. Having liquid staking will definitely help the ecosystem grow by providing liquidity, but does not lower the cost of validation for subnets. Entrepreneurs remain locked out of the next generation of opportunities, and Avalanche misses out on its next step function of growth.
 
