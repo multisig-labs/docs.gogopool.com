@@ -1,4 +1,4 @@
-# Minipool Design
+# Minipool Statuses
 
 Each minipool is equivalent to an Avalanche validator with a nodeID
 

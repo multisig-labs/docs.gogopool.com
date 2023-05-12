@@ -10,7 +10,7 @@ Every Subnet requires validators to operate, and every Subnet validator must als
 
 ## What is ggAVAX and what can users do with it?
 
-[ggAVAX is an ERC4626](ggpavax-via-erc-4626.md). When users stake AVAX, ggAVAX is minted and given to them in exchange.&#x20;
+[ggAVAX is an ERC4626](../../gogopooldesign/ggpavax-via-erc-4626.md). When users stake AVAX, ggAVAX is minted and given to them in exchange.&#x20;
 
 This token is considered liquid and can be used like AVAX whereby users can hold it to accrue staking rewards, sell it, or use it to earn additional yield.&#x20;
 
