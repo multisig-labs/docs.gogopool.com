@@ -23,7 +23,7 @@ Avalanche’s C-Chain is an example of one subnet. It serves as a blockchain tha
 
 ## What is staking for node operators?
 
-In Proof of Stake blockchains, validator nodes validate the blockchain and earn staking rewards as compensation.
+In [Proof of Stake](https://www.avax.network/proof-of-stake-pos) blockchains, validator nodes validate the blockchain and earn staking rewards as compensation.
 
 For Avalanche, a node operator must set up their hardware to validate the chain and put up a minimum of 2000 AVAX as their stake. The AVAX is locked up for the duration of the staking window, and accrues rewards. After the staking window (max of 1 year), the AVAX is returned as well as any staking rewards they earned.
 
@@ -50,8 +50,6 @@ In contrast, GoGoPool:
 Avalanche has a big liquid staking problem (60% of AVAX is currently locked up in staking windows), but an even bigger subnet problem (only 17 subnets in production).
 
 While Lido addresses the first problem, we have set out to tackle the more challenging task of developing a protocol that provides a solution for both issues at hand.
-
-
 
 ## How did you come up with the idea for GoGoPool?
 

@@ -10,6 +10,6 @@ To use GoGoPool as a node operator, and earn rewards on your staked GGP, you hav
 
 ## How to make a Minipool
 
-A minipool is a term we borrowed from RocketPool. It represents a validator that was funded via AVAX contributed from liquid stakers via the deposit pool and AVAX contributed from node operators during their registration with GoGoPool.
+A minipool is a term we borrowed from RocketPool. It represents a validator that was funded via AVAX contributed from liquid stakers using the deposit pool and AVAX contributed from node operators during their registration with GoGoPool.
 
 Steps and visuals coming soon.

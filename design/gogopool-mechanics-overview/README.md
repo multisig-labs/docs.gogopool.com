@@ -4,7 +4,7 @@ description: Overview on how GoGoPool works
 
 # GoGoPool Mechanics Overview
 
-GoGoPool core mechanics revolve around the concept of a minipool. This term was originally coined by RocketPool, which GoGoPool is based on.  A GoGoPool minipool represents a validator that was funded via AVAX contributed from liquid stakers via the deposit pool and AVAX contributed from node operators during their registration with GoGoPool.
+GoGoPool's core mechanics revolve around the concept of a minipool. This term was originally coined by RocketPool, which GoGoPool is based on.  A GoGoPool minipool represents a validator that was funded via AVAX contributed from liquid stakers using the deposit pool and AVAX contributed from node operators during their registration with GoGoPool.
 
 To become a validator on Avalanche, the current requirement is 2000 AVAX. With GoGoPool's minipool design, the upfront cost for node operators drops to 1100 AVAX. Learn more about how minipools work here (coming soon).
 
@@ -14,4 +14,4 @@ To ensure good behavior and collateralize the AVAX the node operators are borrow
 \
 If a validator fails to get rewarded by Avalanche, then the node operator's staked GGP gets slashed to make up for the liquid staker's loss of rewards.\
 \
-The protocol operates with two DAOs. The ProtocolDAO, which is tasked with the longterm sustainability fo the protocol and is goverened with the GGP token. And the OracleDAO which is tasked with handling offchian interactions. Learn more about the two DAOs here (coming soon).
+The protocol operates with two DAOs. The ProtocolDAO, which is tasked with the longterm sustainability of the protocol and is goverened with the GGP token. And the OracleDAO which is tasked with handling offchian interactions. Learn more about the two DAOs here (coming soon).
