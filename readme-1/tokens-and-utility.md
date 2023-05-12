@@ -47,8 +47,8 @@ GGP token holders will have the ability to participate in the GoGoPool Protocol 
 \*\*\*GGP Staking Rewards are split between 3 parties, and unlocked when issued:
 
 * 70% to node operators
-* 15% to Rialto DAO
-* 15% to Protocol DAO Treasury
+* 10% to Oracle DAO
+* 20% to Protocol DAO Treasury
 
 #### Vesting Following TGE:
 

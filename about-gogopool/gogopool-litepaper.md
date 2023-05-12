@@ -95,17 +95,17 @@ There are two DAOs at play: RialtoDAO and ProtocolDAO. These DAOs work together 
 
 Because of the open community orientation of this protocol, no platform fees will be charged. Instead, all rewards are maintained by the ProtocolDAO treasury, and losses due to bad behavior socialized amongst members. This way all members are guaranteed the maximum possible rewards.
 
-#### **RialtoDAO**
+#### **OracleDAO**&#x20;
 
-The RialtoDAO is initially made up of the core developer team, and will be decentralized over time. This DAO operates Rialto (MPC software) and maintains a few important functions for the GoGoPool protocol:
+The OracleDAO is initially made up of the core developer team, and will be decentralized over time. This DAO operates Rialto (MPC software) and maintains a few important functions for the GoGoPool protocol:
 
 1. Facilitate cross chain staking (moving collected funds from C Chain to the P Chain).
 2. Facilitate distribution of staking rewards (moving rewards from P Chain to C Chain).
-3. If no node operators are present and the amount of unstaked AVAX in the deposit pool is over a decided upon threshold, RialtoDAO members may form pools with their own hardware.
+3. If no node operators are present and the amount of unstaked AVAX in the deposit pool is over a decided upon threshold, OracleDAO members may form pools with their own hardware.
 4. Serve as an initial price oracle to smart contracts.
 5. Further the GGP community and protocol in the wider Avalanche community.
 
-To join the RialtoDAO, members must stake a sizable sum of GGP tokens.
+To join the OracleDAO, members must stake a sizable sum of GGP tokens.
 
 If the majority of members vote that a member of the DAO is not fulfilling their duties appropriately, their stake is burned and the member is kicked/replaced. Stakes must be refreshed at a decided upon time interval.
 
