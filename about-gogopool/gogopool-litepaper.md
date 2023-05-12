@@ -2,7 +2,7 @@
 description: Our goals and an overview of the protocol.
 ---
 
-# Litepaper
+# 🧠 Litepaper
 
 ## GoGoPool: A Permissionless Staking Protocol for Subnets
 
@@ -51,7 +51,7 @@ There are two main users of the GoGoPool protocol, each with their own use cases
 
 #### Node Operators
 
-Contribute their own hardware to the pool, and stake 1000 AVAX + minimum of 100 AVAX (in GGP tokens). Operators maintain their server infrastructure, and are matched with the other 1000 AVAX from a deposit pool of stakers. Operators charge a small operating fee (not unlike the existing delegator fee) for the use of the hardware, and are also incentivized with GGP tokens to maintain good behavior. This allows a node operator to begin staking with less AVAX than is normally required, earn rewards on their staked AVAX, and earn rewards via the operating fee and GGP network rewards. Lastly, minipools earn compound interest and automatically restake at the end of each validation period. This maximizes the amount of rewards minipool operators earn. 
+Contribute their own hardware to the pool, and stake 1000 AVAX + minimum of 100 AVAX (in GGP tokens). Operators maintain their server infrastructure, and are matched with the other 1000 AVAX from a deposit pool of stakers. Operators charge a small operating fee (not unlike the existing delegator fee) for the use of the hardware, and are also incentivized with GGP tokens to maintain good behavior. This allows a node operator to begin staking with less AVAX than is normally required, earn rewards on their staked AVAX, and earn rewards via the operating fee and GGP network rewards. Lastly, minipools earn compound interest and automatically restake at the end of each validation period. This maximizes the amount of rewards minipool operators earn.
 
 This triple incentive structure allows them to earn much higher rewards than staking solo, while providing hardware to generate yield for liquid stakers, and derisks the cost of Subnet development.
 
@@ -131,19 +131,19 @@ Some of the governance factors the ProtocolDAO members have influence over are l
 
 Validators of a Subnet must also be a validator for the Avalanche Primary Network. Validators can participate in any arbitrary number of Subnets.
 
-The minimum staking amount for the Avalanche Primary Network is 2,000 AVAX for a single validator node and 10,000 AVAX for a 5 node subnet. It is cost prohibitive for a Subnet to start building on top of Avalanche, as they need to bear the cost of running validators for their own network as well as sourcing the AVAX required validate the Primary Network.&#x20;
+The minimum staking amount for the Avalanche Primary Network is 2,000 AVAX for a single validator node and 10,000 AVAX for a 5 node subnet. It is cost prohibitive for a Subnet to start building on top of Avalanche, as they need to bear the cost of running validators for their own network as well as sourcing the AVAX required validate the Primary Network.
 
-GoGoPool gives Subnet operators a way to directly contact and whitelist minipool operators to validate the Subnet. This lets hardware operators earn more yield, while getting the Subnet access to validators in a much cheaper and frictionless way.&#x20;
+GoGoPool gives Subnet operators a way to directly contact and whitelist minipool operators to validate the Subnet. This lets hardware operators earn more yield, while getting the Subnet access to validators in a much cheaper and frictionless way.
 
-For Subnets that want to start as closed system, GoGoPool provides a more effective way of using their AVAX by matching their funds with liquid stakers. Subnets launch non-custodial minipools,  able to use the hardware for their own purposes. If this permissioned Subnet wants to explore decentralization, they have a direct path to doing so by utilizing other minipools in the protocol.&#x20;
+For Subnets that want to start as closed system, GoGoPool provides a more effective way of using their AVAX by matching their funds with liquid stakers. Subnets launch non-custodial minipools, able to use the hardware for their own purposes. If this permissioned Subnet wants to explore decentralization, they have a direct path to doing so by utilizing other minipools in the protocol.
 
 Subnets that have specific hardware or validator requirements will be able to select node operators based on different attributes that fit the requirements of the Subnet. For example, a Subnet will be able to incentivize node operators that are US citizens (if that were a requirement for the Subnet).
 
-Subnets that join the GoGoPool DAO to have a direct say in the future of the protocol roadmap, gain access to early Subnet tooling and features, and interface with liquid stakers and node operators.&#x20;
+Subnets that join the GoGoPool DAO to have a direct say in the future of the protocol roadmap, gain access to early Subnet tooling and features, and interface with liquid stakers and node operators.
 
 ## **Acknowledgements**
 
-* The Rocketpool team, for pioneering permissionless staking protocols before anyone was thinking about it.&#x20;
-* Ava Labs, for creating a flexible, green and fast L0 and L1 solution with a focus on Developer primitives.&#x20;
-* The GoGoPool Dev team, for seeing and building the dream in the very early days.&#x20;
+* The Rocketpool team, for pioneering permissionless staking protocols before anyone was thinking about it.
+* Ava Labs, for creating a flexible, green and fast L0 and L1 solution with a focus on Developer primitives.
+* The GoGoPool Dev team, for seeing and building the dream in the very early days.
 * The Ethereum Foundation and Bitcoin for laying the first pieces of a foundation for web3.

@@ -2,7 +2,7 @@
 description: A Permissionless Staking Protocol For Avalanche Subnets.
 ---
 
-# Primer
+# 👀 Primer
 
 ## A Permissionless Staking Protocol For Avalanche Subnets.
 

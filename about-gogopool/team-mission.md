@@ -1,4 +1,4 @@
-# GoGoPool's Mission
+# 🎈 Our Mission
 
 ### Subnets have 3 barriers to massive adoption: financial, technical, and community.
 

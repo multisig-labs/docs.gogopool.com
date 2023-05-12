@@ -1,11 +1,3 @@
----
-description: GoGoPool Documentation.
----
+# 🧑💻 How to use GoGoPool
 
-# GoGoPool Docs
-
-## Quick Start
-
-Welcome to the official GoGoPool documentation! If you want to learn more about the protocol, check out our [About GoGoPool](broken-reference) section.
-
-If you want to get started using the protocol as a liquid staker, see our [Liquid Staking](readme/staking-with-gogopool/liquid-staking.md) user guide.
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td>As a Node Operator</td><td></td><td><a href="readme-1/as-a-node-operator.md">as-a-node-operator.md</a></td><td></td></tr><tr><td></td><td>As a Liquid Staker</td><td></td><td><a href="readme/staking-with-gogopool/">staking-with-gogopool</a></td><td><a href=".gitbook/assets/liquidStakingMachine.jpeg">liquidStakingMachine.jpeg</a></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
