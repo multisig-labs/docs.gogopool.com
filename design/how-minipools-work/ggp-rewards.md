@@ -14,7 +14,7 @@ GGP has a fixed supply of 22.5 million. On genesis 18 million GGP were minted. L
 
 ## What are the requirements to be eligible?
 
-* A user's minipool has to have validated for at least 15 days out of the 30-day cycle.
+* Any one of a user's minipools has to have started validating for at least 15 days before the end of the rewards cycle.
 * A user must have GGP staked at the time of the rewards calculation.
 
 ## How much is distributed each month?
