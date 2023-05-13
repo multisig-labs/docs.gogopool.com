@@ -14,6 +14,22 @@ Every Subnet requires validators to operate, and every Subnet validator must als
 
 Learn more about how Liquid Staking on GoGoPool works [here](../../design/how-liquid-staking-works/).
 
+{% hint style="info" %}
+The visuals below show how to liquid stake on Fuji. The steps are the same as on Mainnet.
+{% endhint %}
+
 ## How Stake with GoGoPool
 
-Steps and visuals coming soon.
+### Step 1: Deposit AVAX
+
+Your wallet provider will prompt you to transfer AVAX
+
+<figure><img src="../../.gitbook/assets/gogopool_liquid_stake_avax.png" alt=""><figcaption></figcaption></figure>
+
+### Step 2: Recieve ggAVAX
+
+Check your wallet to see the ggAVAX.
+
+<figure><img src="../../.gitbook/assets/gogopool_ui_liquid_stake_success.png" alt=""><figcaption><p>A success message will be visible at the top of the screen</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/gogopool_metamask_wallet_sees_ggavax.png" alt=""><figcaption><p>The ggAVAX should be visible in your wallet. If you do not see it, make sure you have imported ggAVAX.</p></figcaption></figure>
