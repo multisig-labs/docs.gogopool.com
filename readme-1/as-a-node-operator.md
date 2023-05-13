@@ -16,6 +16,8 @@ A minipool is a term we borrowed from RocketPool. It represents a validator that
 The visuals below show how to create a minipool on Fuji. The steps are the same as on Mainnet, but the AVAX and GGP requirements are different.
 {% endhint %}
 
+To test GoGoPool on Fuji, use our [faucet](https://anr-ggp-faucet.fly.dev/) to get test GGP.
+
 ### Step 1: Register a NodeId with GoGoPool
 
 <figure><img src="../.gitbook/assets/gogopool_register_node.png" alt=""><figcaption><p>Place your NodeId in the input box as shown, then press next.</p></figcaption></figure>
