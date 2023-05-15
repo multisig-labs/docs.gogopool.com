@@ -17,6 +17,7 @@
   * [How Liquid Staking Works](design/how-liquid-staking-works/README.md)
     * [ggAVAX via ERC4626](gogopooldesign/ggpavax-via-erc-4626.md)
   * [How Minipools Work](design/how-minipools-work/README.md)
+    * [The Life of a Minipool](design/how-minipools-work/the-life-of-a-minipool.md)
     * [GGP Rewards](design/how-minipools-work/ggp-rewards.md)
     * [Minipool Statuses](gogopooldesign/MinipoolDesign.md)
 * [❓ FAQ](about-gogopool/faq.md)
