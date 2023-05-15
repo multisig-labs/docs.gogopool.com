@@ -35,7 +35,7 @@ Zellic Inc.
   * [4.2 Lack of checks.](zellic-audit.md#42-lack-of-checks)
   * [4.3 The process of distributing ggp rewards](zellic-audit.md#43-the-process-of-distributing-ggp-rewards)
   * [4.4 Checks-effects-interactions pattern](zellic-audit.md#44-checks-effects-interactions-pattern)
-  * [4.5 Missing status update.](zellic-audit.md#45-missing-status-update)
+  * [4.5 Missing status update](zellic-audit.md#45-missing-status-update)
   * [4.6 Unused variables](zellic-audit.md#46-unused-variables)
   * [4.7 Contract upgrades](zellic-audit.md#47-contract-upgrades)
   * [4.8 IWithdrawer inheritance](zellic-audit.md#48-iwithdrawer-inheritance)
@@ -79,7 +79,7 @@ Specifically, taking into account GoGoPool’s threat model, we focused heavily 
 
 During our assessment on the scoped GoGoPool contracts, we discovered seven findings. Of the seven findings, four were of high severity, one was of medium severity, one was of low severity and the remaining finding was informational.
 
-Additionally, Zellic recorded its notes and observations from the audit for Multisig Labs’s benefit in the Discussion section ( 4 ) at the end of the document.
+Additionally, Zellic recorded its notes and observations from the audit for Multisig Labs’s benefit in the Discussion section [( 4 )](#user-content-fn-1)[^1] at the end of the document.
 
 ### Breakdown of Finding Impacts
 
@@ -95,7 +95,7 @@ Additionally, Zellic recorded its notes and observations from the audit for Mult
 
 ### 2.1 About GoGoPool
 
-GoGoPool allows Avalanche users to stake a minimum of 0.01 AVAX and operate a validator node with a minimum of 1000 AVAX, while providing instant liquidity and earningrewardsforvalidatingsubnets. Asanopenprotocol, anyindividual, business, or subnet can plug into the protocol without being charged platform fees.
+GoGoPool allows Avalanche users to stake a minimum of 0.01 AVAX and operate a validator node with a minimum of 1000 AVAX, while providing instant liquidity and earning rewards for validating subnets. As an open protocol, any individual, business, or subnet can plug into the protocol without being charged platform fees.
 
 ### 2.2 Methodology
 
@@ -3612,3 +3612,5 @@ This assessment does not provide any warranties about finding all possible issue
 For each finding, Zellic provides a recommended solution. All code in these recommendations are intended to convey how an issue may be resolved (i.e., the idea), but they may not be tested or functional code.
 
 Finally, the contents of this assessment report are for informational purposes only; do not construe any information in this report as legal, tax, investment, or financial advice. Nothing contained in this report constitutes a solicitation or endorsement of a project by Zellic.
+
+[^1]: 

@@ -1,10 +1,10 @@
 # Table of contents
 
 * [🖖 Welcome](README.md)
-* [🎈 Our Mission](about-gogopool/team-mission.md)
+* [Our Mission](about-gogopool/team-mission.md)
 * [👀 Primer](about-gogopool/gogopool-primer.md)
 * [🧠 Litepaper](about-gogopool/gogopool-litepaper.md)
-* [🔒 Audits](about-gogopool/audits.md)
+* [Audits](about-gogopool/audits.md)
   * [🔐 Code4rena Audit](about-gogopool/code4rena-audit.md)
   * [🔐 Zellic Audit](about-gogopool/zellic-audit.md)
 * [🪙 Tokens and Utility](readme-1/tokens-and-utility.md)
