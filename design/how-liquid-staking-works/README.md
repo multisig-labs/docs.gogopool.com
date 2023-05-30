@@ -4,7 +4,7 @@
 
 When a user liquid stakes with GoGoPool, their $AVAX goes directly towards growing the Avalanche network and getting more subnets and validators launched.\
 \
-Their AVAX is staked into a deposit pool. These deposit pool funds are used to match with node operators who want to become a validator for Avlanche's primary network. To learn more about how Avalanche utilizes proof-of-stake validation, check out [Avalanche's official documentation](https://www.avax.network/proof-of-stake-pos).\
+Their AVAX is staked into a deposit pool. These deposit pool funds are used to match with node operators who want to become a validator for Avalanche's primary network. To learn more about how Avalanche utilizes proof-of-stake validation, check out [Avalanche's official documentation](https://www.avax.network/proof-of-stake-pos).\
 \
 Every Subnet requires validators to operate, and every Subnet validator must also validate the Avalanche Primary network. Currently, there is no cohesive way for Subnets in need of validators and validators who want to validate Subnets to get in contact. GoGoPool aims to solve this by incentivizing node operators to run through the protocol, in order to create a set of validators that are oriented towards helping Subnets. Our community of Liquid Stakers is essential for this mission to succeed.
 
