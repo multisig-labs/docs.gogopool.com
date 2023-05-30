@@ -1,5 +1,7 @@
 # How Liquid Staking Works
 
+<figure><img src="../../.gitbook/assets/liquid_staking_illu.png" alt=""><figcaption></figcaption></figure>
+
 ## Overview
 
 When a user liquid stakes with GoGoPool, their $AVAX goes directly towards growing the Avalanche network and getting more subnets and validators launched.\

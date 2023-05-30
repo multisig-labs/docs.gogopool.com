@@ -1,4 +1,6 @@
-# Our Mission
+# 🫂 Our Mission
+
+<figure><img src="../.gitbook/assets/intro_gogopool_subnet.jpeg" alt=""><figcaption></figcaption></figure>
 
 ### Subnets have 3 barriers to massive adoption: financial, technical, and community.
 

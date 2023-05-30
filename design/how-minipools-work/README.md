@@ -1,5 +1,7 @@
 # How Minipools Work
 
+<figure><img src="../../.gitbook/assets/minipool_launch.jpeg" alt=""><figcaption></figcaption></figure>
+
 A GoGoPool minipool represents a validator that was funded via AVAX contributed from liquid stakers using the deposit pool and AVAX contributed from node operators during their registration with GoGoPool.
 
 ## How are minipools created?

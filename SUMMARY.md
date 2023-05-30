@@ -1,7 +1,7 @@
 # Table of contents
 
 * [🖖 Welcome](README.md)
-* [Our Mission](about-gogopool/team-mission.md)
+* [🫂 Our Mission](about-gogopool/team-mission.md)
 * [👀 Primer](about-gogopool/gogopool-primer.md)
 * [🧠 Litepaper](about-gogopool/gogopool-litepaper.md)
 * [Audits](about-gogopool/audits.md)
