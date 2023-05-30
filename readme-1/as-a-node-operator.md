@@ -4,16 +4,16 @@ description: How to use GoGoPool as a Node Operator
 
 # As a Node Operator
 
-Creating a Fuji or Mainnet node
+## Creating a Fuji or Mainnet node
 
-To use GoGoPool as a node operator, and earn rewards on your staked GGP, you have to have an Avalanche node. To create a node, see the [Official Avalanche guides](https://docs.avax.network/nodes). Once you have a NodeId, come back to gogopool to register as a validator.
+To use GoGoPool as a node operator, and earn rewards on your staked GGP, you have to have an Avalanche node. To create a node, see the [Official Avalanche guides](https://docs.avax.network/nodes). Once you have a NodeId, come back to GoGoPool to register as a validator.
 
 ## How to make a Minipool
 
-A minipool is a term we borrowed from RocketPool. It represents a validator that was funded via AVAX contributed from liquid stakers using the deposit pool and AVAX contributed from node operators during their registration with GoGoPool.
+A Minipool is a term we borrowed from RocketPool. It represents a validator that was funded via AVAX contributed from liquid stakers using the deposit pool and AVAX contributed from node operators during their registration with GoGoPool.
 
 {% hint style="info" %}
-The visuals below show how to create a minipool on Fuji. The steps are the same as on Mainnet, but the AVAX and GGP requirements are different.
+The visuals below show how to create a Minipool on Fuji. The steps are the same as on Mainnet, but the AVAX and GGP requirements are different.
 {% endhint %}
 
 To test GoGoPool on Fuji, use our [faucet](https://anr-ggp-faucet.fly.dev/) to get test GGP.
@@ -38,10 +38,10 @@ Your wallet provider will prompt you to transfer AVAX
 
 ### Step 4: Minipool created!
 
-Once you deposit AVAX, your minipool is created! You can use the hash to see the transaction on your block explorer of choice.
+Once you deposit AVAX, your Minipool is created! You can use the hash to see the transaction on your block explorer of choice.
 
-<figure><img src="../.gitbook/assets/gogopool_minipool_successfully_created.png" alt=""><figcaption><p>Minipool successfully created! Use the hash to view the transaction on a block explorer. Proceed to the dashboard to view your minipool.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/gogopool_minipool_successfully_created.png" alt=""><figcaption><p>Minipool successfully created! Use the hash to view the transaction on a block explorer. Proceed to the dashboard to view your Minipool.</p></figcaption></figure>
 
-### Step 5: View the new minipool on your dashboard
+### Step 5: View the new Minipool on your dashboard
 
-<figure><img src="../.gitbook/assets/gogopool_minipool_dashboard.png" alt=""><figcaption><p>The dashboard is useful for keeping up to date with your minipools</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/gogopool_minipool_dashboard.png" alt=""><figcaption><p>The dashboard is useful for keeping up to date with your Minipools</p></figcaption></figure>
