@@ -28,7 +28,7 @@ Your wallet provider will prompt you to transfer AVAX
 
 <figure><img src="../.gitbook/assets/gogopool_liquid_stake_avax.png" alt=""><figcaption></figcaption></figure>
 
-### Step 2: Recieve ggAVAX
+### Step 2: Receive ggAVAX
 
 Check your wallet to see the ggAVAX.
 
