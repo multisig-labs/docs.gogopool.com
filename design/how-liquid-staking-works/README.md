@@ -18,11 +18,11 @@ This token is considered liquid and can be used like AVAX whereby users can hold
 
 ## What happens to the user's staked AVAX?
 
-When a user deposits AVAX as a liquid staker on GoGoPool, their AVAX gets staked to the TokenggAVAX contract, this is also known as the deposit pool. Each time a new minipool is launched, 1000 AVAX is withdrawn from this contract (code reference). Together with the minipool owner's staked 1000 AVAX, Avalanche's minimum 2000 AVAX requirement is met for the minipool to become a validator. GoGoPool's advanced multisig technology transfers those funds from the C-chain to the P-chain and registers the minipool as a validator with Avalanche.
+When a user deposits AVAX as a liquid staker on GoGoPool, their AVAX gets staked to the TokenggAVAX contract, this is also known as the deposit pool. Each time a new Minipool is launched, 1000 AVAX is withdrawn from this contract (code reference). Together with the Minipool owner's staked 1000 AVAX, Avalanche's minimum 2000 AVAX requirement is met for the Minipool to become a validator. GoGoPool's advanced multisig technology transfers those funds from the C-chain to the P-chain and registers the minipool as a validator with Avalanche.
 
-Every 15 days a minipool finishes its validation period. At this time, the minipool funds and the rewards it earned from validating are transferred back to the C-chain. Because the 1000 AVAX  from the deposit pool did work by validating, it gets part of the rewards the minipool earned from Avalanche. Those rewards and the original 1000 AVAX are put back into the deposit pool. Over time as the deposit pool grows due to the rewards it has earned and ggAVAX accrues value.
+Every 15 days a Minipool finishes its validation period. At this time, the Minipool funds and the rewards it earned from validating are transferred back to the C-chain. Because the 1000 AVAX  from the deposit pool did work by validating, it gets part of the rewards the Minipool earned from Avalanche. Those rewards and the original 1000 AVAX are put back into the deposit pool. Over time as the deposit pool grows due to the rewards it has earned and ggAVAX accrues value.
 
 ## What happens when ggAVAX is redeemed for AVAX?
 
-When you redeem your ggAVAX for AVAX your ggAVAX gets burned.
+When funds are available in the pool, ggAVAX holders can swap their ggAVAX for AVAX. However, if all funds in the pool are validating on-chain in a Minipool, users must wait until a Minipool has completed before swapping. Once a user successfully redeems their ggAVAX for AVAX, the ggAVAX is burned.
 
