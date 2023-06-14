@@ -1,3 +1,8 @@
+---
+cover: .gitbook/assets/Gitbook - Cover Image (8).png
+coverY: 0
+---
+
 # 🖖 Welcome
 
 <figure><img src=".gitbook/assets/gogopool_cover.jpeg" alt=""><figcaption></figcaption></figure>
