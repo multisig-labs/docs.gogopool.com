@@ -1,15 +1,28 @@
-# Welcome
+---
+cover: .gitbook/assets/Gitbook - Cover Image (8).png
+coverY: 0
+---
 
-## Overview
+# 🖖 Welcome
 
-GoGoPool is a permissionless staking protocol built for Avalance Subnets.
+<figure><img src=".gitbook/assets/gogopool_cover.jpeg" alt=""><figcaption></figcaption></figure>
 
-GoGoPool enables node operators to launch new Avalanche validator nodes for 1000 AVAX by using the GGP token, and maximizes their yield and freedom.
+## What is GoGoPool?
 
-For stakers, GoGoPool offers a way to stake any amount of AVAX and earn real yield in a safe way through liquid staking.
+GoGoPool is the first permissionless staking protocol built for [Avalanche Subnets](https://docs.avax.network/subnets) and node operators to launch  for cheaper and faster using the GGP token. Currently, we cater to node operators and liquid stakers.
 
-## Mission
+### With GoGoPool, a node operator can:
 
-Our mission is to make developing, launching and managing a Subnet as easy as possible in order to reach the Wordpress moment for web3.
+* Launch their node for 1000 AVAX + 100 AVAX in GGP tokens, nearly half the price of the traditional avenue!
+* Earn rewards on their staked AVAX, their staked GGP, and an operating fee for running a node.
+* Become a validator with just a few clicks.
 
-If you believe Subnets should be the default option for launching new appchains, join the discussion on the [GoGoPool Community Discord](https://discord.gg/4fNtjkyuNw). We look forward to working with you!
+Start your minipool today: [app.gogopool.com/create-minipool](https://app.gogopool.com/create-minipool)
+
+### For liquid stakers, we offer:
+
+* Affordable staking for as little as .01 AVAX.
+* A token, ggAVAX, to provide instant liquidity that accrues value overtime.
+* Be a part of directly growing the Avalanche network and getting more subnets and validators launched.&#x20;
+
+Stake with GoGoPool today: [app.gogopool.com/liquid-staking](https://app.gogopool.com/liquid-staking)
