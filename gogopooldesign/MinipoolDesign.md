@@ -8,10 +8,10 @@ Each Minipool has a status field
 
 ### **Prelaunch (0)**
 
-* Minipool is created in [Storage.sol](https://github.com/multisig-labs/gogopool-contracts/blob/master/contracts/contract/Storage.sol) Key-Value data structure
-* Node Operator has deposited 1K AVAX, specified a duration, and submitted their Avalanche NodeID. Their minipool is collateralized by at least 10% with staked GGP.
-* Can be moved to status `Canceled` by the Owner of the node after a 5 day waiting period and all AVAX returned.
-* The minipool is now in a queue, and awaits getting matched with liquid staking funds.
+- Minipool is created in [Storage.sol](https://github.com/multisig-labs/gogopool/blob/master/contracts/contract/Storage.sol) Key-Value data structure
+- Node Operator has deposited 1K AVAX and specified duration and Avalanche NodeID. Their minipool is collateralized by atleast 10% with staked GGP.
+- Can be moved to status `Canceled` by the Owner of the node after a 5 day waiting period and all AVAX returned.
+- The minipool is now in a queue, and awaits getting matched with liquid staking funds.
 
 ### **Launched (1)**
 
@@ -20,9 +20,10 @@ Each Minipool has a status field
 
 ### **Staking (2)**
 
-* Minipool is now **locked** for the duration of the validation period.
-* Rialto will Export/Import 2K AVAX plus any rewards back to MinipoolManager.sol.
-* MinipoolManager.sol will handle all funds distribution to liquid staking pool, GGP slashing, etc, then set status to `Withdrawable`.
+- Minipool is now **locked** for the duration of the validation period.
+- Nothing will happen until the duration is over and validation has ended.
+- Rialto will Export/Import 2K AVAX plus any rewards back to [MinipoolManager.sol](https://github.com/multisig-labs/gogopool/blob/master/contracts/contract/MinipoolManager.sol).
+- MinipoolManager.sol will handle all funds distribution to liq staking users, GGP slashing, etc, then set status to `Withdrawable`.
 
 ### **Withdrawable (3)**
 
