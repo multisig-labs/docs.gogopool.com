@@ -8,7 +8,7 @@
   * [🔐 Code4rena Audit](about-gogopool/code4rena-audit.md)
   * [🔐 Zellic Audit](about-gogopool/zellic-audit.md)
 * [🪙 Tokens and Utility](readme-1/tokens-and-utility.md)
-* [🧑💻 How to use GoGoPool](<README (1).md>)
+* [🧑💻 🧑💻 How to use GoGoPool](<README (1).md>)
   * [As a Node Operator](readme-1/as-a-node-operator.md)
   * [As a Liquid Staker](readme-1/staking-with-gogopool.md)
 * [⚙ How GoGoPool works](design/README.md)
