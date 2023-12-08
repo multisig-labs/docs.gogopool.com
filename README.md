@@ -9,7 +9,7 @@ coverY: 0
 
 ## What is GoGoPool?
 
-GoGoPool is the first permissionless staking protocol built for [Avalanche Subnets](https://docs.avax.network/subnets) and node operators to launch  for cheaper and faster using the GGP token. Currently, we cater to node operators and liquid stakers.
+GoGoPool is the first permissionless staking protocol built for [Avalanche Subnets](https://docs.avax.network/subnets), allowing node operators to launch validators cheaper and faster using the GGP token. Currently, we cater to node operators and liquid stakers.
 
 ### With GoGoPool, a node operator can:
 
