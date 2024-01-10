@@ -42,7 +42,7 @@ $$ \text{APR} = \left( \frac{{ggpRewardsAsAvax} + {AvaxRewards}}{{AvaxStaked + g
 In order for minipools to be available, there must be 1000 available staking avax. For every 
 1000 staking Avax, 1 new minipool can be made. Therefore:
 
-$$ \text{Available Minipools} = \left(\frac{\text Available Staking Avax}{1000} \right) $$
+$$ \text{Available Minipools} = \left(\frac\text{Available Staking Avax}{1000} \right) $$
 
 ### Active Minipools 
 
@@ -108,7 +108,7 @@ increases in relation to the supply. Liquid staking puts Avax into the Avax Tota
 Total Supply. The ratio is increased by ggAvax last rewards, when the rewards from the minipool are 
 put into the assets, but not the total supply. 
 
-||Assets|Supply|
+|Event|Avax Total Assets|Avax Total Supply|
 |----|----|----|
 |Liquid Stake| + | + |
 |Rewards Cycle| + |  |
