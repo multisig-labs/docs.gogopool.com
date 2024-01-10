@@ -26,7 +26,7 @@ This number is an estimate. The way we calculate liquid staking APY is by viewin
 of ggAvax over the course of 90 days, and multiplying by 4 to get an estimate of it's performance over 
 the course of the year.
 
-$$ \text{ggAVAX APY} = \left( \frac{\text{Current Exchange} - \text{90 days ago Exchange}}{\text{90 days ago Exchange}} \right) \times 100\% \times 4\ $$
+$$ \text{ggAVAX APY} = \left(\frac{\text{Current Exchange} - \text{90 days ago Exchange}}{\text{90 days ago Exchange}} \right) \times 100\% \times 4\ $$
 
 ### NodeOp APR
 
@@ -35,14 +35,12 @@ a one month cycle multiplied by 12 to get an estimate for a year.
 
 $$ \text{APR} = \left( \frac{{ggpRewardsAsAvax} + {AvaxRewards}}{{AvaxStaked + ggpStakedAsAvax}} \right) \times 100\% \times 12 $$
 
-*The number displayed on Grafana is currently inaccurate*
-
 ### Available Minipools
 
 In order for minipools to be available, there must be 1000 available staking avax. For every 
 1000 staking Avax, 1 new minipool can be made. Therefore:
 
-$$ \text{Available Minipools} = \left(\frac\text{Available Staking Avax}{1000} \right) $$
+$$ \text{Available Minipools} = \left(\frac{Available Staking Avax}{1000}\right) $$
 
 ### Active Minipools 
 
@@ -64,13 +62,13 @@ is considered `Active` if it is in the `Staking` state. This means the assets ar
 for the staking duration of the minipool which is set by the user upon creation. When a minipool is done 
 staking it moves to the `Withdrawable` state until the funds are removed, where it's finally moved to `Finished`. 
 
-#### GGP Staked
+### GGP Staked
 The total amount of GGP staked by users. 
 
-#### GGP Price
+### GGP Price
 The current price of the GGP Token. 
 
-#### Reward Cycle's Explained
+### Reward Cycle's Explained
 Reward cycles are on a 30 day timeframe. There are 4 related variables in grafana: 
 
 - Reward Cycle Start
@@ -82,7 +80,7 @@ Start and end are self explanatory. A minipool must be created before the `Rewar
 in order to earn rewards for the 30 day cycle. If you missed the current cutoff date, our grafana page also 
 displays the following cutoff date for the next 30 day cycle. 
 
-#### ggAvax Last Rewards
+### ggAvax Last Rewards
 
 ggAvax is our protocol's liquid staking token. This token accrues value by rewards from each 30 day 
 reward cycle. When a rewards cycle ends some of the money that the minipool made from staking on the Avax 
@@ -98,9 +96,7 @@ $$ \text{Node Operator Reward Amount} = {Total Rewards} - {Liquid Staker Reward 
 *As of 01/10/2024 the node op commision fee percent is 15%. Meaning liquid 
 stakers will receive 42.5% of rewards and node operators 57.5%.*
 
-
-
-#### How ggAvax Works
+### How ggAvax Works
 
 ggAvax is the protocol's liquid staking token. It uses ERC-4626 which is a tokenized vault contract. 
 You can think of ggAvax as shares that accrue value over time. The value increases as the asset pool 
@@ -117,4 +113,3 @@ In this way ggAvax will become more valuable over time due to the always decreas
 to assets. 
 
 $$ \text{ggAvax} = \frac{Avax Supply}{Avax Assets} $$
-
