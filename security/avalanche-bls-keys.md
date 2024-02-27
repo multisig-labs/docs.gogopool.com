@@ -10,13 +10,23 @@ BLS, or [Boneh-Lynn-Shacham](https://en.wikipedia.org/wiki/BLS\_digital\_signatu
 
 ## Why is Avalanche requiring my Node to have them?
 
-[Avalanche](https://www.avax.network/) is rolling out a new feature called [Avalanche Warp Messaging (AWM)](https://docs.avax.network/build/cross-chain/awm/overview). This new feature allows cross-chain communication without the need for any off-chain code, making cross-chain transfers more secure. In order to verify these messages, Avalanche is requiring nodes to [hold BLS Keys](https://github.com/ava-labs/avalanchego/blob/6dcd8e8adaeacb6d9e7f46654bfbd93639cbd22a/vms/platformvm/warp/README.md#bls-multi-signatures-with-public-key-aggregation) in order to make sure the messages are not malicious.
+[Avalanche](https://www.avax.network/) is rolling out a new feature called [Avalanche Warp Messaging (AWM)](https://docs.avax.network/build/cross-chain/awm/overview). This new feature allows cross-chain communication without any additional trust assumptions apart from the existing validator set, making cross-chain transfers more secure. In order to verify these messages, Avalanche is requiring validator nodes to [hold BLS Keys](https://github.com/ava-labs/avalanchego/blob/6dcd8e8adaeacb6d9e7f46654bfbd93639cbd22a/vms/platformvm/warp/README.md#bls-multi-signatures-with-public-key-aggregation) in order to sign Warp messages.
 
 ## How do I acquire my Node’s BLS Keys?
 
-Node providers will be required to give your BLS keys in order to allow you to continue staking.
+Node providers will be required to provide their BLS keys in order to continue staking.
 
-If you are hosting the node yourself locally, you can use [this command](https://docs.avax.network/reference/avalanchego/info-api#infogetnodeid) to get your keys.
+### One-Click Minipools
+
+If you created your Minipool via the One-Click launcher with ooNodz, then there is nothing you need to do! ooNodz will handle the BLS keys and provide them to GoGoPool smart contracts, so your node will continue to validate the network with no interruptions.
+
+### Other Node Providers
+
+If you are hosting your node with a node provider, you must ask them for your node’s BLS keys. They should be available somewhere in the provider’s node dashboard.
+
+### Manual Minipools
+
+If you are hosting a node yourself, you can use [this command](https://docs.avax.network/reference/avalanchego/info-api#infogetnodeid) to get your keys.
 
 ```bash
 curl -X POST --data '{
@@ -42,4 +52,4 @@ It should return something like this.
 }
 ```
 
-The `publicKey` is your BLS Public Key, and `proofOfPossession` is your BLS Signature. Avalanche uses your public key as the signing message.
+The `publicKey` is your BLS Public Key, and `proofOfPossession` is your BLS Signature. Avalanche uses your public key as the signing message
