@@ -52,4 +52,8 @@ It should return something like this.
 }
 ```
 
-The `publicKey` is your BLS Public Key, and `proofOfPossession` is your BLS Signature. Avalanche uses your public key as the signing message
+The `publicKey` is your BLS Public Key, and `proofOfPossession` is your BLS Signature. Avalanche uses your public key as the signing message.
+
+## For Safe Users
+
+If you are a Gnosis Safe user, you must remain on the signing key page until all of your users have signed the message. If you do not do this, your signature will never be verified, and your keys won't get updated on your Minipool, which will result being kicked off the network, as well as slashing!
