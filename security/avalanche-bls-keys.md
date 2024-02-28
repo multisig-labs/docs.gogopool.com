@@ -56,4 +56,4 @@ The `publicKey` is your BLS Public Key, and `proofOfPossession` is your BLS Sign
 
 ## For Safe Users
 
-If you are a Gnosis Safe user, you must remain on the signing key page until all of your users have signed the message. If you do not do this, your signature will never be verified, and your keys won't get updated on your Minipool, which will result being kicked off the network, as well as slashing!
+If you are a Gnosis Safe user, you must remain on the signing key page until a threshold of signers also signs, then it will complete. If you do not do this, your signature will never be verified, and your keys won't get updated on your Minipool, which will result being kicked off the network, as well as slashing!
