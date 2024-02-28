@@ -12,17 +12,17 @@ BLS, or [Boneh-Lynn-Shacham](https://en.wikipedia.org/wiki/BLS\_digital\_signatu
 
 [Avalanche](https://www.avax.network/) is rolling out a new feature called [Avalanche Warp Messaging (AWM)](https://docs.avax.network/build/cross-chain/awm/overview). This new feature allows cross-chain communication without any additional trust assumptions apart from the existing validator set, making cross-chain transfers more secure. In order to verify these messages, Avalanche is requiring validator nodes to [hold BLS Keys](https://github.com/ava-labs/avalanchego/blob/6dcd8e8adaeacb6d9e7f46654bfbd93639cbd22a/vms/platformvm/warp/README.md#bls-multi-signatures-with-public-key-aggregation) in order to sign Warp messages.
 
-## How do I acquire my Node’s BLS Keys?
+## How do I acquire my Node’s BLS Public Keys?
 
-Node providers will be required to provide their BLS keys in order to continue staking.
+Node providers will be required to provide their BLS public keys in order to continue staking.
 
 ### One-Click Minipools
 
-If you created your Minipool via the One-Click launcher with ooNodz, then there is nothing you need to do! ooNodz will handle the BLS keys and provide them to GoGoPool smart contracts, so your node will continue to validate the network with no interruptions.
+If you created your Minipool via the One-Click launcher with ooNodz, then there is nothing you need to do! ooNodz will handle the BLS public keys and provide them to GoGoPool smart contracts, so your node will continue to validate the network with no interruptions.
 
 ### Other Node Providers
 
-If you are hosting your node with a node provider, you must ask them for your node’s BLS keys. They should be available somewhere in the provider’s node dashboard.
+If you are hosting your node with a node provider, you must ask them for your node’s BLS Public Keys. They should be available somewhere in the provider’s node dashboard.
 
 ### Manual Minipools
 
