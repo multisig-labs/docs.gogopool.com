@@ -4,7 +4,7 @@
 * [🫂 Our Mission](about-gogopool/team-mission.md)
 * [👀 Primer](about-gogopool/gogopool-primer.md)
 * [🧠 Litepaper](about-gogopool/gogopool-litepaper.md)
-* [📐 Analytics Explained](grafana/README.md)
+* [📐 Analytics Explained](analytics.md)
 * [🔒 Security](security/README.md)
   * [🔎 Audits](security/audits/README.md)
     * [🔐 Code4rena Audit](security/audits/code4rena-audit.md)

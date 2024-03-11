@@ -10,10 +10,10 @@ It presents consolidated data from [Flipside](https://flipsidecrypto.xyz/GoGoPoo
 
 Each section breaks down complex data into accessible insights across four critical areas:&#x20;
 
-1. [Total Deposits](./#total-deposits-dashboard)
-2. [ggAVAX](./#ggavax-dashboard)
-3. [Minipools](./#minipools-dashboard)
-4. [GGP](./#ggp-dashboard)
+1. [Total Deposits](analytics.md#total-deposits-dashboard)
+2. [ggAVAX](analytics.md#ggavax-dashboard)
+3. [Minipools](analytics.md#minipools-dashboard)
+4. [GGP](analytics.md#ggp-dashboard)
 
 ## Total Deposits Dashboard
 
@@ -37,11 +37,11 @@ Demonstrates summation of the total `AVAX` held within the entire GoGoPool proto
 
 #### **90-day Growth in Liquid Staked `AVAX`**
 
-Indicates the growth rate of the total \`AVAX\` deposits in \`ggAVAX\` liquid staking over the last 90 days.
+Indicates the growth rate of the total `AVAX` deposits in `ggAVAX` liquid staking over the last 90 days.
 
 #### **90-day Growth in Minipool `AVAX`**
 
-Highlights the growth rate of the total \`AVAX\` deposits in minipools over the last 90 days.
+Highlights the growth rate of the total `AVAX` deposits in minipools over the last 90 days.
 
 #### **90-day Growth in Total `AVAX`**
 
@@ -117,7 +117,7 @@ Displays the current number of active minipools and a graph showing the change i
 * **Rewards Eligibility**: The date when minipools are evaluated for their current rewards eligibility.
 * **Next Rewards Eligibility**: The upcoming date when minipools will be evaluated for their next rewards eligibility.
 
-## `GGP` Dashboard
+## GGP Dashboard
 
 A detailed look at GoGoPool's native token, `GGP`, showcasing its price, market valuation, and staking statistics.
 
