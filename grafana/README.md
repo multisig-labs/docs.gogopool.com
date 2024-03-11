@@ -2,114 +2,137 @@
 description: The math behind the numbers.
 ---
 
-# Grafana Explained
+# 📐 Analytics Explained
 
-GoGoPool contains a great deal of information that feels pretty inside baseball until you fully grasp 
-the mechanics of the protocol. Much of the important protocol information we have displayed on 
-[Grafana](https://multisiglabs.grafana.net/public-dashboards/4d21b06344684b8ab05ddd2828898ec8?orgId=1).
-Lets go through Grafana's page number by number. 
+[GoGoPool Analytics dashboards](https://flipsidecrypto.xyz/GoGoPool/-GGP-protocol-stats-PitGzK) provide a clear and brief understanding of GoGoPool's key metrics.
 
-### Protocol TVL 
+It presents consolidated data from [Flipside](https://flipsidecrypto.xyz/GoGoPool/-GGP-protocol-stats-PitGzK)'s analytical platform, enabling a comprehensive understanding of GoGoPool's operational metrics, including liquid staking performance and minipool growth, contributing to the decentralization of the Avalanche network.
 
-Total Value Locked (TVL) is a metric for the total value of locked digital assets in the protocol, in this 
-case it is a combination of the assets that are used for staking in our protocol. There are three:
+Each section breaks down complex data into accessible insights across four critical areas:&#x20;
 
-1. GGP Stake
-2. ggAvax Stake
-3. Minipool Avax Stake
+1. [Total Deposits](./#total-deposits-dashboard)
+2. [ggAVAX](./#ggavax-dashboard)
+3. [Minipools](./#minipools-dashboard)
+4. [GGP](./#ggp-dashboard)
 
-$$ \text{TVL} = GGP Stake + ggAvax Stake + Minipool Avax Stake $$
+## Total Deposits Dashboard
 
-### Liquid Staking APY
+This dashboard presents the total amount of `AVAX` deposited into the GoGoPool protocol.
 
-This number is an estimate. The way we calculate liquid staking APY is by viewing the real performance 
-of ggAvax over the course of 90 days, and multiplying by 4 to get an estimate of it's performance over 
-the course of the year.
+### Key Metrics
 
-$$ \text{ggAVAX APY} = \left(\frac{\text{Current Exchange} - \text{90 days ago Exchange}}{\text{90 days ago Exchange}} \right) \times 100\% \times 4\ $$
+#### **`AVAX` on the Liquid Staking Side**
 
-### NodeOp APR
+Displays the total amount of `AVAX` contributed to liquid staking through GoGoPool, offering users the yield on validating while maintaining access to a liquid token `ggAVAX`.
 
-This number is an estimate. Node Operator APR is determined by the rewards gained by a minipool for 
-a one month cycle multiplied by 12 to get an estimate for a year. 
+#### **`AVAX` on the Minipool Side**
 
-$$ \text{APR} = \left( \frac{{ggpRewardsAsAvax} + {AvaxRewards}}{{AvaxStaked + ggpStakedAsAvax}} \right) \times 100\% \times 12 $$
+Represents the amount of `AVAX` contributed directly to minipools, which are validators funded via an equal mix of `AVAX` contributed from both the liquid stakers and Minipool operators.
 
-### Available Minipools
+#### **Total `AVAX` in Protocol**
 
-In order for minipools to be available, there must be 1000 available staking avax. For every 
-1000 staking Avax, 1 new minipool can be made. Therefore:
+Demonstrates summation of the total `AVAX` held within the entire GoGoPool protocol, combining liquid staking and minipool balances.
 
-$$ \text{Available Minipools} = \left(\frac{Available Staking Avax}{1000}\right) $$
+### Growth Metrics
 
-### Active Minipools 
+#### **90-day Growth in Liquid Staked `AVAX`**
 
-Minipools can be in 7 distinct states:
+Indicates the growth rate of the total \`AVAX\` deposits in \`ggAVAX\` liquid staking over the last 90 days.
 
-- Cancelled
-- Error
-- Finished
-- Withdrawable
-- Launched
-- Prelaunch
-- Staking
+#### **90-day Growth in Minipool `AVAX`**
 
-These states are mutually exclusive. When a minipool is made it first is in `Prelaunch` state, where 
-the user has created a minipool but their funds have not yet been matched. When their funds have been matched 
-they are placed in the `Launched` state. During this state contract calls are made to make the minipool available 
-for staking. When the appropriate contract calls are confirmed, the minipool begins `Staking`. A minipool 
-is considered `Active` if it is in the `Staking` state. This means the assets are locked in the minipool 
-for the staking duration of the minipool which is set by the user upon creation. When a minipool is done 
-staking it moves to the `Withdrawable` state until the funds are removed, where it's finally moved to `Finished`. 
+Highlights the growth rate of the total \`AVAX\` deposits in minipools over the last 90 days.
 
-### GGP Staked
-The total amount of GGP staked by users. 
+#### **90-day Growth in Total `AVAX`**
 
-### GGP Price
-The current price of the GGP Token. 
+Displays the total percentage growth of all `AVAX` within GoGoPool, including both liquid staking and minipools over the last 90 days.
 
-### Reward Cycle's Explained
-Reward cycles are on a 30 day timeframe. There are 4 related variables in grafana: 
+### Protocol TVL (Total Value Locked)
 
-- Reward Cycle Start
-- Reward Cycle End
-- Rewards Eligibility Cutoff Date
-- Next Rewards Eligibility Date
+Reports the current value of all `AVAX` and `GGP` staked within GoGoPool.
 
-Start and end are self explanatory. A minipool must be created before the `Rewards Eligibility Cutoff Date` 
-in order to earn rewards for the 30 day cycle. If you missed the current cutoff date, our grafana page also 
-displays the following cutoff date for the next 30 day cycle. 
+## ggAVAX Dashboard
 
-### ggAvax Last Rewards
+This dashboard displays specific details of `AVAX` staked through the `ggAVAX` liquid staking token, tracking yield performance and associated fees.
 
-ggAvax is our protocol's liquid staking token. This token accrues value by rewards from each 30 day 
-reward cycle. When a rewards cycle ends some of the money that the minipool made from staking on the Avax 
-network is returned to the assets pool. Just over 50% the amount made from staking on the Avax network
-is given to node operators because of an included node op fee. Just under 50% is returned to the liquid 
-staking pool to accrue value. 
+### Total APY
 
-$$ \text{Half Rewards} = \left(\frac{avaxTotalRewards}{2}\right) $$
+Current estimated percentage return on all staked `AVAX`, covering various yields and costs that are explained in the following sections.
 
-$$ \text{Liquid Staker Reward Amount} = {Half Rewards} - \left(Half Rewards\times{Node Op Fee Percent}\right) $$
-$$ \text{Node Operator Reward Amount} = {Total Rewards} - {Liquid Staker Reward Amount}  $$
+$$\text{Total APY} = \text{Base Validation APY} + \text{MEV APY} - \text{Protocol Fee} - \text{Delegation Fee} - \text{Liquidity Fee}$$
 
-*As of 01/10/2024 the node op commision fee percent is 15%. Meaning liquid 
-stakers will receive 42.5% of rewards and node operators 57.5%.*
+### Yield Performance
 
-### How ggAvax Works
+#### Base Validation Yield
 
-ggAvax is the protocol's liquid staking token. It uses ERC-4626 which is a tokenized vault contract. 
-You can think of ggAvax as shares that accrue value over time. The value increases as the asset pool 
-increases in relation to the supply. Liquid staking puts Avax into the Avax Total Assets and the Avax 
-Total Supply. The ratio is increased by ggAvax last rewards, when the rewards from the minipool are 
-put into the assets, but not the total supply. 
+The annualized yield earned from validating activities over the most recent 15-day cycle (GoGoPool Validation Cycles are 15-days). It reflects the validation yield for the latest minipool cycle, which `AVAX` stakers get to participate in on an equal basis with Minipool operators.
 
-|Event|Avax Total Assets|Avax Total Supply|
-|----|----|----|
-|Liquid Stake| + | + |
-|Rewards Cycle| + |  |
+$$\text{Base APY} = \left( \left(1 + \frac{\text{AVAX}_{\text{Earned on Latest Minipool Cycle}}}{\text{AVAX}_\text{Base Stake on Latest Minipool Cycle}} \right)^\frac{365}{15} - 1 \right) \times 100\%$$
 
-In this way ggAvax will become more valuable over time due to the always decreasing ratio of supply 
-to assets. 
+#### MEV Yield
 
-$$ \text{ggAvax} = \frac{Avax Supply}{Avax Assets} $$
+The annualized yield from the last 14-day cycle attributable to Maximal Extractable Value strategies.
+
+$$\text{MEV APY} = \left( \left(1 + \frac{\text{MEV Reward}}{\text{AVAX}_{\text{Liquid Staking 14 days ago}}} \right)^{\frac{365}{14}} - 1 \right) \times 100\%$$
+
+### Fee Structure
+
+#### Protocol Fee
+
+The protocol fee is zero, emphasizing that GoGoPool does not charge protocol-level fees.
+
+$$\text{Protocol Fee} = 0$$
+
+#### Delegation Fee
+
+The delegation fee is calculated based on the delegated `AVAX` rate, the possible minimum commission rate (2%) of the base return. GoGoPool's goal is to sustain a 0% delegation fee, by leveraging deposited `AVAX` to generate base and MEV yields internally instead of delegating `AVAX` to external validators.
+
+$$\text{Delegation Fee} = \left( \frac{\text{AVAX}_\text{Sent to Delegators}}{\text{AVAX} _\text{Liquid Staking}} \times \text{Base Yield APY} \times {2\%} \right)$$
+
+#### Liquidity Fee
+
+Represented as an opportunity cost rather than an external fee, it is calculated based on the idle `AVAX` compared to the active staking pool, incorporating both base yield and MEV yield to present the cost of liquidity.
+
+$$\text{Liquidity Fee} = \left( \frac{\text{AVAX}_\text{Idle}}{\text{AVAX}_\text{Liquid Staking}} \times \text{(Base Yield APY + MEV Yield APY)} \right)$$
+
+### Exchange Rate, Volume, and Market Activity
+
+* **`AVAX` to `ggAVAX` Exchange Rate**: Current and historical rate at which `AVAX` is converted to `ggAVAX`.
+* **`ggAVAX` Volume**: A comparison of trading volumes across different exchanges.
+
+## Minipools Dashboard
+
+The Minipools Dashboard provides a real-time count and historical trend of active minipools, which are critical components of GoGoPool’s staking infrastructure.
+
+### Minipools
+
+#### Total Number of Minipools
+
+Displays the current number of active minipools and a graph showing the change in the number of minipools over time.
+
+#### Reward Dates
+
+* **Rewards Cycle Start**: Marks the beginning of the reward period.
+* **Reward Cycle End**: The date when the current reward cycle concludes and distribution begins.
+* **Rewards Eligibility**: The date when minipools are evaluated for their current rewards eligibility.
+* **Next Rewards Eligibility**: The upcoming date when minipools will be evaluated for their next rewards eligibility.
+
+## `GGP` Dashboard
+
+A detailed look at GoGoPool's native token, `GGP`, showcasing its price, market valuation, and staking statistics.
+
+### Market Valuation
+
+* **`GGP` Price**: The current trading price for `GGP`, a direct reflection of the market's valuation.
+* **`GGP` FDV (Fully Diluted Valuation)**: Represents the total value of all `GGP` tokens at the current market price, assuming all are in circulation.
+* **`GGP` Mcap (Market Capitalization)**: The total market value of circulating `GGP` tokens, providing a snapshot of its market size and liquidity.
+
+### Staking Statistics
+
+* **`GGP` Percentage Staked**: The portion of `GGP` tokens currently staked in the protocol.
+* **`GGP` Staked**: The total quantity of `GGP` that has been staked and the changes in the amount of staked `GGP` over time.
+
+### Market Activity
+
+* **`GGP` Volume**: A comparison of trading volumes across different exchanges.
+
