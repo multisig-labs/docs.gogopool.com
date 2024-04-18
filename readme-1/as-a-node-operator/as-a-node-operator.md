@@ -1,6 +1,6 @@
 # Manual Setup
 
-To test GoGoPool on Fuji, use our [faucet](https://anr-ggp-faucet.fly.dev/) to get test GGP.
+To test GoGoPool on Fuji, use our [faucet](https://faucet.gogopool.com) to get test GGP.
 
 {% hint style="info" %}
 The visuals for each setup below show how to create a Minipool on Fuji. The steps are the same as on Mainnet, but the AVAX and GGP requirements are different.
