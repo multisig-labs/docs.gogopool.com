@@ -16,7 +16,7 @@ Visit [GoGoPool](https://app.gogopool.com/) by navigating our website. Connect y
 
 Access the [liquid staking interface](https://app.gogopool.com/liquid-staking/) by clicking the **Liquid Stake** link on the top navigation bar.
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption><p>Liquid staking interface</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/staking.png" alt=""><figcaption><p>Liquid staking interface</p></figcaption></figure>
 
 ### Step 3: **Enter Staking Amount**
 
@@ -26,7 +26,7 @@ Decide how much `AVAX` you want to stake. You can input any amount, as there is 
 
 Review the amount of `ggAVAX` that you will get. Then, click the **Deposit AVAX** button to stake your `AVAX`.
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>Click <strong>Deposit AVAX</strong> after reviewing the amount that you will get</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/staking_input.png" alt=""><figcaption><p>Click <strong>Deposit AVAX</strong> after reviewing the amount that you will get</p></figcaption></figure>
 
 ### Step 5: Completion
 
@@ -58,7 +58,7 @@ Visit [GoGoPool](https://app.gogopool.com/) by navigating our website. Connect y
 
 Access the [liquid staking interface](https://app.gogopool.com/liquid-staking/) by clicking the **Liquid Stake** link on the top navigation bar.
 
-<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption><p>Liquid staking interface</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/unstaking.png" alt=""><figcaption><p>Liquid staking interface</p></figcaption></figure>
 
 ### Step 3: **Enter Unstaking Amount**
 
@@ -72,7 +72,7 @@ If there is not enough `AVAX` in the liquidity pool as you want to redeem, you c
 
 Review the amount of `AVAX` that you will get back. Then, click the **Redeem ggAVAX** button to unstake your `AVAX`.
 
-<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption><p>Click <strong>Redeem ggAVAX</strong> after reviewing the amount that you will get</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/unstaking_input.png" alt=""><figcaption><p>Click <strong>Redeem ggAVAX</strong> after reviewing the amount that you will get</p></figcaption></figure>
 
 ### Step 5: Completion
 
