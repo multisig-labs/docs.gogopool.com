@@ -24,9 +24,9 @@ Decide how much `AVAX` you want to stake. You can input any amount, as there is 
 
 ### Step 4: Confirm Staking AVAX
 
-Review the amount of `ggAVAX` that you will get. Then, click the **Deposit AVAX** button to stake your `AVAX`.
+Review the amount of `ggAVAX` that you will get. Then, click the **Stake** button to stake your `AVAX`.
 
-<figure><img src="../.gitbook/assets/staking_input.png" alt=""><figcaption><p>Click <strong>Deposit AVAX</strong> after reviewing the amount that you will get</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/staking_input.png" alt=""><figcaption><p>Click <strong>Stake</strong> after reviewing the amount that you will get</p></figcaption></figure>
 
 ### Step 5: Completion
 
@@ -70,9 +70,9 @@ If there is not enough `AVAX` in the liquidity pool as you want to redeem, you c
 
 ### Step 4: Confirm Unstaking AVAX
 
-Review the amount of `AVAX` that you will get back. Then, click the **Redeem ggAVAX** button to unstake your `AVAX`.
+Review the amount of `AVAX` that you will get back. Then, click the **Unstake** button to unstake your `AVAX`.
 
-<figure><img src="../.gitbook/assets/unstaking_input.png" alt=""><figcaption><p>Click <strong>Redeem ggAVAX</strong> after reviewing the amount that you will get</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/unstaking_input.png" alt=""><figcaption><p>Click <strong>Unstake</strong> after reviewing the amount that you will get</p></figcaption></figure>
 
 ### Step 5: Completion
 
