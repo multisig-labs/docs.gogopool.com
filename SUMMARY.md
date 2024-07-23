@@ -13,6 +13,7 @@
     * [🔐 Kudelski Security Audit](protocol/security/audits/kudelski-security-audit.md)
   * [🕵️ Bug Bounty Program](protocol/security/bug-bounty-program.md)
   * [⚠️ Vulnerability Reports](protocol/security/vulnerability-reports.md)
+* [⏰ Notifications](protocol/notifications.md)
 * [GoGoPool App](https://app.gogopool.com/)
 
 ## Liquid Staking
