@@ -32,7 +32,8 @@
 * [🚦 Minipool Statuses](minipool/minipool-statuses.md)
 * [🚀 How One-Click Launcher Works](minipool/how-one-click-launcher-works.md)
 * [🪄 Guide: How to Launch a Minipool with One-Click Launcher](minipool/how-to-launch-a-minipool-with-one-click-launcher.md)
-* [⚒️ Guide: How to Launch a Minipool with Manual Setup](minipool/how-to-launch-a-minipool-with-manual-setup.md)
+* [🖥️ Guide: How to Launch a Minipool using Allnodes](minipool/how-to-launch-a-minipool-with-manual-setup.md)
+* [⚒️ Guide: How to Launch a Minipool with Manual Setup](minipool/how-to-launch-a-minipool-with-manual-setup-1.md)
 * [🔑 Avalanche BLS Keys](minipool/avalanche-bls-keys.md)
 * [Launch Minipool](https://app.gogopool.com/create-minipool/)
 
