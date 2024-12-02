@@ -6,7 +6,7 @@ description: >-
 
 # 💦 What is Minipool?
 
-A Minipool represents a validator that is jointly funded equally by `AVAX` borrowed from liquid stakers and `AVAX` contribution from the minipool operator. Thanks to Minipool design architecture, users can become validators on the Avalanche network with nearly half the usual `AVAX` requirement.
+A Minipool represents a validator that is jointly funded equally by `AVAX` contributed by the minipool operator and `AVAX` matched from GoGoPool's liquid staking deposit pool. Thanks to Minipool design architecture, users can become validators on the Avalanche network with nearly half the usual `AVAX` requirement.
 
 For the borrowed `AVAX`, the minipool operator needs to provide collateral in terms of `GGP`, which is the GoGoPool's protocol token, at least 10% of the amount of the borrowed `AVAX`. In return, GoGoPool distributes `GGP` rewards to the minipool operators based on their staked `GGP` as insurance, up to a maximum of 150% of the borrowed `AVAX`'s value.
 
