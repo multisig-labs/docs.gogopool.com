@@ -60,7 +60,7 @@ The **basic plan** may not be available at all times.
 2. Copy these details as you'll need them for the next steps on GoGoPool.
 
 {% hint style="info" %}
-You can also reach these details by clicking the arrow next to your Node ID under the **Node address** tab**.**
+You can also reach these details by clicking the arrow next to your Node ID under the **Node address** ta&#x62;**.**
 {% endhint %}
 
 <figure><img src="../.gitbook/assets/allnodes-5.png" alt=""><figcaption><p>Keep handy your Node ID, BLS Public Key, and BLS Signature</p></figcaption></figure>

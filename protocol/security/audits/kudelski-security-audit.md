@@ -2,7 +2,7 @@
 
 GoGoPool has been audited by Kudelski Security, a leader in tailored cybersecurity solutions for global enterprises and public sector institutions. Known for its innovative approach and rich heritage in cybersecurity, Kudelski Security has a vast portfolio of patents that underscore its commitment to addressing complex security challenges.
 
-This audit ensures that GoGoPool meets the highest security standards, enhancing the safety and trust of our platform. The audit report can be found below. The original PDF version is also available at [the link](https://assets-global.website-files.com/62f90a8443126c2ee50f4c4e/643ee88bf91b375b39ba2613\_Kudelski\_multisig\_labs\_report\_1.1.pdf).
+This audit ensures that GoGoPool meets the highest security standards, enhancing the safety and trust of our platform. The audit report can be found below. The original PDF version is also available at [the link](https://assets-global.website-files.com/62f90a8443126c2ee50f4c4e/643ee88bf91b375b39ba2613_Kudelski_multisig_labs_report_1.1.pdf).
 
 ***
 
@@ -112,9 +112,9 @@ This section contains the technical details of our findings as well as recommend
 
 ### 2.1 KS-SBCF-F-01: ECDSA signature can be forged for every messages.
 
-**Severity: **<mark style="color:red;">**High**</mark>
+**Severity:&#x20;**<mark style="color:red;">**High**</mark>
 
-**Status: **<mark style="color:green;">**Remediated**</mark>
+**Status:&#x20;**<mark style="color:green;">**Remediated**</mark>
 
 **Location:** protocols/cmp/sign/round5.go:154
 
@@ -164,9 +164,9 @@ The function `XScalar` call returns a value which is normalized (https://pkg.go.
 
 ### 2.2 KS-SBCF-F-02: Missing proof in round 3 of key generation
 
-**Severity: **<mark style="color:orange;">**Medium**</mark>
+**Severity:&#x20;**<mark style="color:orange;">**Medium**</mark>
 
-**Status: **<mark style="color:green;">**Remediated**</mark>
+**Status:&#x20;**<mark style="color:green;">**Remediated**</mark>
 
 **Location:** protocols/cmp/keygen/round3.go, Taurus specification.
 
@@ -186,9 +186,9 @@ The Client added the missing proof in the commit `7cb2349656789af9a77f5152b7a74d
 
 ### 2.3 KS-SBCF-F-03: Zero-knowledge proofs are replayable
 
-**Severity: **<mark style="color:orange;">**Medium**</mark>
+**Severity:&#x20;**<mark style="color:orange;">**Medium**</mark>
 
-**Status: **<mark style="color:green;">**Acknowledged**</mark>
+**Status:&#x20;**<mark style="color:green;">**Acknowledged**</mark>
 
 **Location:** pkg/zk/
 
@@ -255,9 +255,9 @@ According to the client, the issue is mitigated by the application that generate
 
 ### 2.4 KS-SBCF-F-04: Possible nil dereference in key generation
 
-**Severity: **<mark style="color:orange;">**Medium**</mark>
+**Severity:&#x20;**<mark style="color:orange;">**Medium**</mark>
 
-**Status: **<mark style="color:green;">**Remediated**</mark>
+**Status:&#x20;**<mark style="color:green;">**Remediated**</mark>
 
 **Location:** protocols/cmp/keygen/round3.go:60
 
@@ -315,9 +315,9 @@ This issue was corrected by commit `189f06564c48f257c4efa6f7fed6dca9e5672afb`.
 
 ### 2.5 KS-SBCF-F-05: Collisions in hash function used for commitments
 
-**Severity: **<mark style="color:orange;">**Medium**</mark>
+**Severity:&#x20;**<mark style="color:orange;">**Medium**</mark>
 
-**Status: **<mark style="color:green;">**Remediated**</mark>
+**Status:&#x20;**<mark style="color:green;">**Remediated**</mark>
 
 **Location:** protocols/cmp/keygen/round3.go:154
 
@@ -366,9 +366,9 @@ The commit `a428759601b38a4199bb1920794a20eecad3c89c` introduced the domain sepa
 
 ### 2.6 KS-SBCF-F-06: Dependency with vulnerability in codebase
 
-**Severity: **<mark style="color:blue;">**Low**</mark>
+**Severity:&#x20;**<mark style="color:blue;">**Low**</mark>
 
-**Status: **<mark style="color:green;">**Acknowledged**</mark>
+**Status:&#x20;**<mark style="color:green;">**Acknowledged**</mark>
 
 **Location:** General
 
@@ -386,9 +386,9 @@ The client acknowledge the finding and will fix the issued (https://github.com/m
 
 ### 2.7 KS-SBCF-F-07: SID is constant by default
 
-**Severity: **<mark style="color:blue;">**Low**</mark>
+**Severity:&#x20;**<mark style="color:blue;">**Low**</mark>
 
-**Status: **<mark style="color:green;">**Acknowledged**</mark>
+**Status:&#x20;**<mark style="color:green;">**Acknowledged**</mark>
 
 **Location:** code/protocols/cmp/keygen/keygen.go:19
 

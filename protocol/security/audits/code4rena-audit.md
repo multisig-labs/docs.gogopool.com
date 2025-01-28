@@ -16,25 +16,25 @@ Following the C4 audit contest, 3 wardens ([hansfriese](https://twitter.com/hans
 
 114 Wardens contributed reports to the GoGoPool contest:
 
-1. [0Kage](https://twitter.com/0kage\_eth)
+1. [0Kage](https://twitter.com/0kage_eth)
 2. [0x73696d616f](https://twitter.com/3xJanx2009)
 3. 0xLad
 4. [0xNazgul](https://twitter.com/0xNazgul)
 5. [0xSmartContract](https://twitter.com/0xSmartContract)
 6. 0xbepresent
 7. 0xc0ffEE
-8. [0xdeadbeef0x](https://twitter.com/0xdeadbeef\_\_\_\_)
+8. [0xdeadbeef0x](https://twitter.com/0xdeadbeef____)
 9. 0xhunter
 10. 0xmint
 11. [AkshaySrivastav](https://twitter.com/akshaysrivastv)
-12. [Allarious](https://twitter.com/\_Allarious)
+12. [Allarious](https://twitter.com/_Allarious)
 13. Arbor-Finance (namaskar and bookland)
 14. Atarpara
 15. [Aymen0909](https://github.com/Aymen1001)
 16. Bnke0x0
 17. Breeje
 18. [Ch\_301](https://twitter.com/0xch301)
-19. [Czar102](https://twitter.com/\_Czar102)
+19. [Czar102](https://twitter.com/_Czar102)
 20. [Deivitto](https://twitter.com/Deivitto)
 21. [Faith](https://twitter.com/farazsth98)
 22. [Franfran](https://franfran.dev/)
@@ -45,19 +45,19 @@ Following the C4 audit contest, 3 wardens ([hansfriese](https://twitter.com/hans
 27. Josiah
 28. KmanOfficial
 29. Lirios
-30. [Manboy](https://twitter.com/manboy\_eth)
+30. [Manboy](https://twitter.com/manboy_eth)
 31. Matin
 32. NoamYakov
-33. [Nyx](https://twitter.com/Nyksx\_\_)
+33. [Nyx](https://twitter.com/Nyksx__)
 34. PaludoX0
-35. [Qeew](https://twitter.com/adigunq\_adigun)
+35. [Qeew](https://twitter.com/adigunq_adigun)
 36. RaymondFam
 37. Rolezn
 38. SEVEN
 39. Saintcode\_
-40. [SamGMK](../../../about-gogopool/@sam\_gmk/)
+40. [SamGMK](../../../about-gogopool/@sam_gmk/)
 41. SmartSek (0xDjango and hake)
-42. [TomJ](https://mobile.twitter.com/tomj\_bb)
+42. [TomJ](https://mobile.twitter.com/tomj_bb)
 43. V\_B (Barichek and vlad\_bochok)
 44. WatchDogs
 45. \_\_141345\_\_
@@ -65,11 +65,11 @@ Following the C4 audit contest, 3 wardens ([hansfriese](https://twitter.com/hans
 47. ak1
 48. ast3ros
 49. [aviggiano](https://twitter.com/agfviggiano)
-50. [betweenETHlines](https://twitter.com/eth\_lines)
+50. [betweenETHlines](https://twitter.com/eth_lines)
 51. [bin2chen](https://twitter.com/bin2chen)
 52. brgltd
 53. btk
-54. [c3phas](https://twitter.com/c3ph\_)
+54. [c3phas](https://twitter.com/c3ph_)
 55. [camdengrieh](https://twitter.com/camdenincrypto)
 56. caventa
 57. cccz
@@ -81,7 +81,7 @@ Following the C4 audit contest, 3 wardens ([hansfriese](https://twitter.com/hans
 63. cryptonue
 64. cryptostellar5
 65. [csanuragjain](https://twitter.com/csanuragjain)
-66. [danyams](https://twitter.com/daniel\_yamagata)
+66. [danyams](https://twitter.com/daniel_yamagata)
 67. datapunk
 68. dic0de
 69. eierina
@@ -97,7 +97,7 @@ Following the C4 audit contest, 3 wardens ([hansfriese](https://twitter.com/hans
 79. [joestakey](https://twitter.com/JoeStakey)
 80. kaliberpoziomka8552
 81. kartkhira
-82. [kiki\_dev](https://twitter.com/Kiki\_developer)
+82. [kiki\_dev](https://twitter.com/Kiki_developer)
 83. koxuan
 84. [ladboy233](https://twitter.com/Xc1008Cu)
 85. latt1ce
@@ -110,7 +110,7 @@ Following the C4 audit contest, 3 wardens ([hansfriese](https://twitter.com/hans
 92. neumo
 93. [nogo](https://twitter.com/0xnogo)
 94. [pauliax](https://twitter.com/SolidityDev)
-95. [peakbolt](https://twitter.com/peak\_bolt)
+95. [peakbolt](https://twitter.com/peak_bolt)
 96. peanuts
 97. peritoflores
 98. rvierdiiev
@@ -1751,7 +1751,7 @@ Probability of funds being stuck increases if `requireNextActiveMultisig` always
 
 #### Recommended Mitigation Steps
 
-Use a strategy like [round robin](https://en.wikipedia.org/wiki/Round-robin\_item\_allocation) to assign next active multisig to minipool.
+Use a strategy like [round robin](https://en.wikipedia.org/wiki/Round-robin_item_allocation) to assign next active multisig to minipool.
 
 Something like this :
 
@@ -2040,7 +2040,7 @@ function testCancelMinipoolByMultisigDOS_AUDIT() public {
 
 #### Recommended Mitigation Steps
 
-Consider using the [Pull over Push pattern](https://fravoll.github.io/solidity-patterns/pull\_over\_push.html) to return AVAX to owners of minipools that are canceled by Rialto.
+Consider using the [Pull over Push pattern](https://fravoll.github.io/solidity-patterns/pull_over_push.html) to return AVAX to owners of minipools that are canceled by Rialto.
 
 [**emersoncloud (GoGoPool) confirmed**](https://github.com/code-423n4/2022-12-gogopool-findings/issues/623)
 
@@ -2224,10 +2224,10 @@ Also, consider sending equal amounts of rewards to the vault and the ggAVAX toke
 > Will flag to triage but I agree with the sponsor.
 >
 > The math is as follows:\
-> \-> Principal Deposited\
-> \-> Earned Rewards (both for Operator and Stakers)\
-> \-> Re-assing all -> Assigned amount has grown "too much" but in reality it's the correct value\
-> \-> When withdrawing, the operator only get's their portion of AVAX, meaning that the assigned as grown more, but they don't get an anomalous amount of rewards
+> -> Principal Deposited\
+> -> Earned Rewards (both for Operator and Stakers)\
+> -> Re-assing all -> Assigned amount has grown "too much" but in reality it's the correct value\
+> -> When withdrawing, the operator only get's their portion of AVAX, meaning that the assigned as grown more, but they don't get an anomalous amount of rewards
 
 [**Franfran (warden) commented**](https://github.com/code-423n4/2022-12-gogopool-findings/issues/620#issuecomment-1415716742)**:**
 
@@ -4395,7 +4395,7 @@ https://github.com/code-423n4/2022-12-gogopool/blob/aec9928d8bdce8a5a4efe45f54c3
 
 ### \[N‑07] Upgradeable contract is missing a `__gap[50]` storage variable to allow for new storage variables in later versions
 
-See [this](https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage\_gaps) link for a description of this storage variable. While some contracts may not currently be sub-classed, adding the variable now protects against forgetting to add it in the future.
+See [this](https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps) link for a description of this storage variable. While some contracts may not currently be sub-classed, adding the variable now protects against forgetting to add it in the future.
 
 _There is 1 instance of this issue:_
 
@@ -5150,7 +5150,7 @@ Of the mitigations reviewed, 13 have been confirmed as well as 2 confirmed with 
 * **M-20:** Mitigation confirmed by [RaymondFam](https://github.com/code-423n4/2023-02-gogopool-mitigation-contest-findings/issues/60) and [hansfriese](https://github.com/code-423n4/2023-02-gogopool-mitigation-contest-findings/issues/45)
 
 The 4 remaining mitigations have either not been confirmed and/or introduced new issues. See full details below.\
-_(Note: mitigation reviews below are referenced as `MR:S-N`, `MitigationReview:NewIssueSeverity-NewIssueNumber`)_
+&#xNAN;_(Note: mitigation reviews below are referenced as `MR:S-N`, `MitigationReview:NewIssueSeverity-NewIssueNumber`)_
 
 ### [\[MR:M-01\] The node operators are likely to be slashed in an unfair way](https://github.com/code-423n4/2023-02-gogopool-mitigation-contest-findings/issues/23)
 
