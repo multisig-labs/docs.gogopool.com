@@ -41,6 +41,13 @@
 
 * [🌐 Overview](custom-blockchains/overview.md)
 
+## Coqnet
+
+* [Hardware Provider Onboarding](coqnet/hardware-provider-onboarding.md)
+* [Running a Coqnet Node on Fuji Testnet](coqnet/running-a-coqnet-node-on-fuji-testnet.md)
+* [🥩 COQNet CLIMAX: How to Stake COQ and Become a Validator](coqnet/coqnet-climax-how-to-stake-coq-and-become-a-validator.md)
+* [Managing Your COQ Staking and Rewards on Coqnet](coqnet/managing-your-coq-staking-and-rewards-on-coqnet.md)
+
 ## Technical Information & Brand Assets
 
 * [📒 Contract Addresses](technical-information-and-brand-assets/contract-addresses.md)
