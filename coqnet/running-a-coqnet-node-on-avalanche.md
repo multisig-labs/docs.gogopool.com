@@ -17,7 +17,7 @@ This guide is specifically for hardware providers. If you’re looking to become
 
 ## Hardware Requirements
 
-Below are the recommended hardware specifications for running a Coqnet node on Fuji testnet and Mainnet.
+Below are the minimum hardware specifications for running a Coqnet node on Fuji testnet and Mainnet.
 
 | **Component**        | **Fuji Testnet** | **Mainnet**      |
 | -------------------- | ---------------- | ---------------- |
@@ -218,6 +218,14 @@ Once your node is running, you can monitor its status using standard `systemctl`
 ```bash
 sudo systemctl status avalanchego
 journalctl -u avalanchego -f
+```
+
+## Checking Sync Progress
+
+To check the progress of syncing on the Avalanche Mainnet, you can execute the following command.
+
+```bash
+curl -X POST -H 'content-type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"info.isBootstrapped","params":{"chain":"EyWDF1cGmMKXRi4d5Mb1kVNnB1zHWvMPGQM5uHgizNGFTvsTn"}}' 127.0.0.1:9650/ext/info
 ```
 
 ## Conclusion
