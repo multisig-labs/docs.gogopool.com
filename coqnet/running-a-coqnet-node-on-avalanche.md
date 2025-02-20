@@ -1,11 +1,11 @@
 ---
-description: Learn how to run a Coqnet Node.
 icon: laptop-code
+description: Learn how to run a Coqnet Node.
 ---
 
-# Running a Coqnet Node on Fuji Testnet
+# Running a Coqnet Node on Avalanche
 
-This guide is part of a series covering the end-to-end process of participating in Coqnet as a hardware provider. It focuses on setting up and running a Coqnet node on the Fuji Testnet.
+This guide is part of a series covering the end-to-end process of participating in Coqnet as a hardware provider. It focuses on setting up and running a Coqnet node on the Avalanche Mainnet.
 
 This guide is intended for developers familiar with Linux-based systems and command-line operations.
 
@@ -17,13 +17,13 @@ This guide is specifically for hardware providers. If you’re looking to become
 
 ## Hardware Requirements
 
-Below are the minimum and recommended hardware specifications for running a Coqnet node:
+Below are the recommended hardware specifications for running a Coqnet node on Fuji testnet and Mainnet.
 
-| **Component**        | **Minimum**      | **Recommended**  |
+| **Component**        | **Fuji Testnet** | **Mainnet**      |
 | -------------------- | ---------------- | ---------------- |
-| **CPU vCores**       | 4 (2 dedicated)  | 8 (4 dedicated)  |
+| **CPU vCores**       | 4 (2 dedicated)  | 4 (2 dedicated)  |
 | **RAM**              | 4GB              | 8GB              |
-| **Storage**          | 200GB SSD        | 300GB NVMe SSD   |
+| **Storage**          | 200GB SSD        | 1000GB NVMe SSD  |
 | **Network In/Out**   | 100Mb/100Mb      | 5Gb/5Gb          |
 | **Operating System** | Ubuntu 22.04 LTS | Ubuntu 24.04 LTS |
 
@@ -34,6 +34,14 @@ While ARM64 binaries are available, we recommend using x86 (AMD64) for Coqnet no
 {% hint style="warning" %}
 Over time, storage, CPU, and memory requirements will increase as the blockchain grows. These are baseline numbers for getting started today and are subject to change. Using a system that can be easily expanded is highly recommended. Nearly half of the recommended storage is allocated for the P-Chain.
 {% endhint %}
+
+***
+
+## Suggested Hosting Providers
+
+* [Akamai Connected Cloud](https://www.linode.com/) (formerly Linode)
+* [Contabo](https://contabo.com/)
+* AWS
 
 ***
 
@@ -83,8 +91,10 @@ rm subnet-evm_*_linux_amd64.tar.gz
 Add the flags `--partial-sync-primary-network` and `--track-subnets` with Coqnet’s Subnet ID to the startup command. Your command should look like this:
 
 ```bash
-./avalanchego-<VERSION>-linux/avalanchego --network-id=fuji --partial-sync-primary-network --track-subnets=2c7nfG2LpbiN2F4mFPgaGh6jhaspKMaFNL9XJJKJ7sq3Qsacn
+./avalanchego-<VERSION>-linux/avalanchego --partial-sync-primary-network --track-subnets=5moznRzaAEhzWkNTQVdT1U4Kb9EU7dbsKZQNmHwtN5MGVQRyT
 ```
+
+> For Fuji Testnet, use the Subnet ID `4YurNFwLzhGUrYyihDnUUc2L199YBnFeWP3fhJKmDDjkbvy8G`
 
 For more details on available configurations, see the [AvalancheGo Configs and Flags documentation](https://docs.avax.network/nodes/configure/configs-flags).
 {% endstep %}
@@ -94,7 +104,7 @@ For more details on available configurations, see the [AvalancheGo Configs and F
 
 Configure your preferred method to ensure the node starts automatically by running the startup command on system boot. For example, you can use `systemd` to create a service unit file.
 
-And that's it! :tada: You now have a working Coqnet node running on Avalanche Fuji Testnet.
+And that's it! :tada: You now have a working Coqnet node running on Avalanche Mainnet.
 {% endstep %}
 {% endstepper %}
 
@@ -145,10 +155,12 @@ Add the following attribute to the configuration file located at `$HOME/.avalanc
 
 ```json
 {
-    "track-subnets": "4YurNFwLzhGUrYyihDnUUc2L199YBnFeWP3fhJKmDDjkbvy8G",
+    "track-subnets": "5moznRzaAEhzWkNTQVdT1U4Kb9EU7dbsKZQNmHwtN5MGVQRyT",
     ... // rest of config file
 }
 ```
+
+> For Fuji Testnet, use the Subnet ID `4YurNFwLzhGUrYyihDnUUc2L199YBnFeWP3fhJKmDDjkbvy8G`
 {% endstep %}
 
 {% step %}
@@ -167,7 +179,7 @@ StartLimitIntervalSec=0
 Type=simple
 User=ubuntu
 WorkingDirectory=/home/ubuntu
-ExecStart=/home/ubuntu/avalanche-node/avalanchego --config-file=/home/ubuntu/.avalanchego/configs/node.json --network-id=fuji --partial-sync-primary-network
+ExecStart=/home/ubuntu/avalanche-node/avalanchego --config-file=/home/ubuntu/.avalanchego/configs/node.json --partial-sync-primary-network
 LimitNOFILE=32768
 Restart=always
 RestartSec=1
@@ -193,7 +205,7 @@ sudo systemctl daemon-reload
 sudo systemctl start avalanchego
 ```
 
-And that's it! You now have a working Coqnet node running on Avalanche Fuji Testnet.
+And that's it! You now have a working Coqnet node running on the Avalanche Mainnet.
 {% endstep %}
 {% endstepper %}
 
@@ -207,12 +219,6 @@ Once your node is running, you can monitor its status using standard `systemctl`
 sudo systemctl status avalanchego
 journalctl -u avalanchego -f
 ```
-
-{% hint style="info" %}
-Validation is not currently supported but will be available in the future. Remember that syncing with the network may take some time.
-{% endhint %}
-
-***
 
 ## Conclusion
 

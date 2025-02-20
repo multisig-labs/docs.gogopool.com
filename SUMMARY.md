@@ -44,7 +44,7 @@
 ## Coqnet
 
 * [Hardware Provider Onboarding](coqnet/hardware-provider-onboarding.md)
-* [Running a Coqnet Node on Fuji Testnet](coqnet/running-a-coqnet-node-on-fuji-testnet.md)
+* [Running a Coqnet Node on Avalanche](coqnet/running-a-coqnet-node-on-avalanche.md)
 * [🥩 COQNet CLIMAX: How to Stake COQ and Become a Validator](coqnet/coqnet-climax-how-to-stake-coq-and-become-a-validator.md)
 * [Managing Your COQ Staking and Rewards on Coqnet](coqnet/managing-your-coq-staking-and-rewards-on-coqnet.md)
 

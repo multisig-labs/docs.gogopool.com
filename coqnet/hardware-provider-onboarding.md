@@ -1,6 +1,6 @@
 ---
-description: Register as a hardware provider for Coqnet.
 icon: address-card
+description: Register as a hardware provider for Coqnet.
 ---
 
 # Hardware Provider Onboarding
@@ -273,4 +273,4 @@ By following this guide, you’ve successfully generated, backed up, and uploade
 
 If you encounter any issues, refer to the provided scripts or reach out to GoGoPool support for assistance on [Discord](https://discord.gogopool.com/) or Live Support Chat on the [GoGoPool website](https://www.gogopool.com/).
 
-For instructions on running a Coqnet node, see the [running-a-coqnet-node-on-fuji-testnet.md](running-a-coqnet-node-on-fuji-testnet.md "mention") guide.
+For instructions on running a Coqnet node, see the [running-a-coqnet-node-on-avalanche.md](running-a-coqnet-node-on-avalanche.md "mention") guide.
