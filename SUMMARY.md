@@ -52,4 +52,3 @@
 
 * [📒 Contract Addresses](technical-information-and-brand-assets/contract-addresses.md)
 * [💻 API](technical-information-and-brand-assets/api.md)
-* [Brand Assets](https://www.gogopool.com/branding)
