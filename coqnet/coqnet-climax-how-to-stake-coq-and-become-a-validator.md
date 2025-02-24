@@ -36,7 +36,7 @@ _The Chill Factor score is based on your wallet’s activity and history within 
 
 Each wallet has the following staking limits:
 
-* You can stake a maximum of three times, meaning you can run up to t**hree validator nodes** per wallet.
+* You can stake a maximum of once for BATCH1/BATCH and three times for BATCH3, meaning you can run up to t**hree validator nodes** per wallet.
 * Once you’ve reached the maximum limit, you won’t be able to stake additional COQ from the same wallet.
 
 ### Staking Parameters
