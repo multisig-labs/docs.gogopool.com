@@ -8,7 +8,7 @@ description: Understand the various statuses a Minipool can have within our syst
 
 Each Minipool has a status field, which you can see on the [dashboard](https://app.gogopool.com/dashboard/).
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Minipool Dashboard</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Minipool Dashboard</p></figcaption></figure>
 
 Details of the possible status information are explained below.
 

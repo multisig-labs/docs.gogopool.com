@@ -11,7 +11,7 @@ Yield, or the return on investment from staking `AVAX` through GoGoPool, is an e
 {% hint style="info" %}
 To learn more about how liquid staking works, check [How Liquid Staking Works](how-liquid-staking-works.md).
 
-To dive into the calculation of yields, check [Analytics Explained](../protocol/analytics.md).
+To dive into the calculation of yields, check [Analytics Explained](../../protocol/analytics.md).
 {% endhint %}
 
 ## **Highest Yield on Avalanche**

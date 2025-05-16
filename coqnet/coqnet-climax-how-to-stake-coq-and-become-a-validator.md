@@ -1,5 +1,6 @@
 ---
 description: Stake COQ and validate COQnet easily.
+hidden: true
 ---
 
 # 🥩 COQNet CLIMAX: How to Stake COQ and Become a Validator

@@ -24,17 +24,17 @@ Choose your country of residency and desired validation duration. Opting for a l
 
 You can adjust your `GGP` stake amount by clicking the **Customize GGP Stake** button.
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Choosing country and validation duration during Node ID registration.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Choosing country and validation duration during Node ID registration.</p></figcaption></figure>
 
 ## **Step 2: Review Details**
 
 Once you have filled out the form, your Minipool's details will be displayed. Review the information carefully and agree to ooNodz’s terms and conditions before clicking the **Create My Minipool** button.
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Minipool details</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Minipool details</p></figcaption></figure>
 
 Click **Price Details** to see the price breakdown, including `AVAX` deposit, `GGP` stake, and hardware hosting cost.
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Minipool price breakdown</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Minipool price breakdown</p></figcaption></figure>
 
 ## **Step 3: Minipool Creation**
 
@@ -44,7 +44,7 @@ If there is no queue and sufficient `AVAX` is available in the liquid staking po
 
 From here, view your node on the ooNodz site, visit your minipool dashboard, or book a time to talk to our founder.
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Confirmation screen showing successful Minipool creation</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Confirmation screen showing successful Minipool creation</p></figcaption></figure>
 
 ***
 

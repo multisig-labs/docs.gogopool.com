@@ -40,4 +40,4 @@ Here’s how you can qualify and what you need to know about the timing of these
 * **Minipool Validation Period**: Your Minipool must be created before the eligibility date, which is at least 15 days prior to the end of a reward cycle, to be eligible for rewards during that cycle. It does not matter if it is in the queue at the time of the eligibility date, but validation must start before the reward distribution date.
 * **Staking GGP**: You must have `GGP` tokens staked (at least 10% of the staked `AVAX` value) as collateral at the reward distribution time to qualify. Even if your minipool is ended before the reward distribution date, your `GGP` must be staked at that time.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Sample Minipool Reward Eligibility Calendar </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Sample Minipool Reward Eligibility Calendar </p></figcaption></figure>

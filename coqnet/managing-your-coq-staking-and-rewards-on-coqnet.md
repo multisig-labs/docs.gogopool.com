@@ -1,5 +1,6 @@
 ---
 description: Track, monitor, and claim staking rewards.
+hidden: true
 icon: bars-progress
 ---
 

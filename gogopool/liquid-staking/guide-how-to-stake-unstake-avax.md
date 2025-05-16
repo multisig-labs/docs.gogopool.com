@@ -16,7 +16,7 @@ Visit [GoGoPool](https://app.gogopool.com/) by navigating our website. Connect y
 
 Access the [liquid staking interface](https://app.gogopool.com/liquid-staking/) by clicking the **Liquid Stake** link on the top navigation bar.
 
-<figure><img src="../.gitbook/assets/staking.png" alt=""><figcaption><p>Liquid staking interface</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/staking.png" alt=""><figcaption><p>Liquid staking interface</p></figcaption></figure>
 
 ### Step 3: **Enter Staking Amount**
 
@@ -26,7 +26,7 @@ Decide how much `AVAX` you want to stake. You can input any amount, as there is 
 
 Review the amount of `ggAVAX` that you will get. Then, click the **Stake** button to stake your `AVAX`.
 
-<figure><img src="../.gitbook/assets/staking_input.png" alt=""><figcaption><p>Click <strong>Stake</strong> after reviewing the amount that you will get</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/staking_input.png" alt=""><figcaption><p>Click <strong>Stake</strong> after reviewing the amount that you will get</p></figcaption></figure>
 
 ### Step 5: Completion
 
@@ -36,9 +36,7 @@ Once the transaction you approve through the wallet is confirmed in the blockcha
 If your wallet (i.e., Metamask, Rabby, Core) does not show the balance of `ggAVAX` automatically, you can add `ggAVAX` by its contract address, `0xA25EaF2906FA1a3a13EdAc9B9657108Af7B703e3`
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption><p>Displaying ggAVAX in a wallet</p></figcaption></figure>
-
-
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption><p>Displaying ggAVAX in a wallet</p></figcaption></figure>
 
 {% hint style="success" %}
 Since `ggAVAX` gains value against `AVAX` over time, you will automatically earn yield by holding `ggAVAX`. But if you wish, you can also use `ggAVAX` in other DeFi applications.
@@ -58,7 +56,7 @@ Visit [GoGoPool](https://app.gogopool.com/) by navigating our website. Connect y
 
 Access the [liquid staking interface](https://app.gogopool.com/liquid-staking/) by clicking the **Liquid Stake** link on the top navigation bar.
 
-<figure><img src="../.gitbook/assets/unstaking.png" alt=""><figcaption><p>Liquid staking interface</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/unstaking.png" alt=""><figcaption><p>Liquid staking interface</p></figcaption></figure>
 
 ### Step 3: **Enter Unstaking Amount**
 
@@ -72,13 +70,13 @@ If there is not enough `AVAX` in the liquidity pool as you want to redeem, you c
 
 Review the amount of `AVAX` that you will get back. Then, click the **Unstake** button to unstake your `AVAX`.
 
-<figure><img src="../.gitbook/assets/unstaking_input.png" alt=""><figcaption><p>Click <strong>Unstake</strong> after reviewing the amount that you will get</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/unstaking_input.png" alt=""><figcaption><p>Click <strong>Unstake</strong> after reviewing the amount that you will get</p></figcaption></figure>
 
 ### Step 5: Completion
 
 Once the transaction you approve through the wallet is confirmed in the blockchain, the shown amount of `AVAX` will be transferred to your wallet.
 
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>Displaying the unstaking transaction in a wallet history</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption><p>Displaying the unstaking transaction in a wallet history</p></figcaption></figure>
 
 ***
 
@@ -94,7 +92,7 @@ Select a decentralized exchange (e.g., [TraderJoe](https://traderjoexyz.com/), [
 
 Click on the **Connect Wallet** or similar button on the decentralized application you chose, and follow the prompts to connect your wallet (e.g., MetaMask, Rabby, Core). If the decentralized application supports multiple blockchains, ensure the selected blockchain is Avalanche.
 
-<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption><p>Connect your wallet</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption><p>Connect your wallet</p></figcaption></figure>
 
 ### Step 3: Select the Trading Pair
 
@@ -112,7 +110,7 @@ Input the amount of token (e.g., `ggAVAX`, `AVAX`) you wish to swap, and the app
 
 Review all the details, then click the button to initiate the transaction.
 
-<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption><p>Initiate the transaction after reviewing all the details</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption><p>Initiate the transaction after reviewing all the details</p></figcaption></figure>
 
 ### **Step 6: Complete the Transaction**
 
@@ -122,7 +120,7 @@ Approve the transaction from your wallet and wait for the blockchain to process 
 You may need to approve the `ggAVAX` token for trading if it's your first time swapping it on the DEX.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption><p>A successfully completed swap transaction</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption><p>A successfully completed swap transaction</p></figcaption></figure>
 
 {% hint style="success" %}
 Since `ggAVAX` gains value against `AVAX` over time, you will automatically earn yield by holding `ggAVAX`. But if you wish, you can also use `ggAVAX` in other DeFi applications.
