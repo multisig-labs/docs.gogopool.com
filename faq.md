@@ -23,7 +23,7 @@ Yes, your Minipool will continue functioning exactly as before with no interrupt
 
 ## Do I need to do anything as a minipool owner?
 
-No action is required—your minipool will continue operating as usual without any changes to the system. Check out the Hypha Leaderboard to observe how many points you have accrued for supporting the L1 ecosystem.
+No action is required—your minipool will continue operating as usual without any changes to the system.&#x20;
 
 ## What happens to $ggAVAX?
 
