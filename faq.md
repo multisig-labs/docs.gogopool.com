@@ -15,7 +15,7 @@ Your $GGP tokens remain unchanged and continues to be a core component of our ec
 
 ## Is Hypha a new token?
 
-Hypha's point program incentivizes $GGP stake, and will eventually govern the ecosystem of L1s created through the Hypha L1 Launchpad.
+GGP tokens will convert to $HYPHA as part of the transition process, to allow for new protocol use cases.
 
 ## Will my Minipool still work?
 
