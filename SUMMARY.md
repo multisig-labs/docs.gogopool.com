@@ -9,7 +9,7 @@
 * [L1 Staking Architecture](hypha/l1-staking-architecture.md)
 * [How to Stake and Support L1 Chains](hypha/how-to-stake-and-support-l1-chains.md)
 * [Hardware Provider Onboarding](hypha/hardware-provider-onboarding.md)
-* [Running an L1 Node for L1Marketplace](hypha/running-an-l1-node-for-l1marketplace.md)
+* [Running an L1 Node for Hypha](hypha/running-an-l1-node-for-hypha.md)
 
 ## GoGoPool
 

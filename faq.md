@@ -13,10 +13,6 @@ Hypha is the next evolution of GoGoPool, with an expansion of the protocol to be
 
 Your $GGP tokens remain unchanged and continues to be a core component of our ecosystem. We're committed to expanding utility and functionality for $GGP token holders.
 
-## Is Hypha a new token?
-
-GGP tokens will convert to $HYPHA as part of the transition process, to allow for new protocol use cases.
-
 ## Will my Minipool still work?
 
 Yes, your Minipool will continue functioning exactly as before with no interruption to services or rewards. Stay tuned for more protocol updates.

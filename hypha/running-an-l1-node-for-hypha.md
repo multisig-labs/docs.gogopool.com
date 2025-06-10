@@ -3,7 +3,7 @@ description: Learn how to run an L1 node.
 icon: laptop-code
 ---
 
-# Running an L1 Node for L1Marketplace
+# Running an L1 Node for Hypha
 
 This guide is part of a series covering the end-to-end process for participating in a Layer 1 blockchain as a hardware provider. It focuses on setting up and running a node using AvalancheGo on any Avalanche-based L1.
 
@@ -17,7 +17,7 @@ This guide is specifically for hardware providers. If you’re looking to become
 
 ## Hardware Requirements
 
-Below are the minimum hardware specifications for running a Coqnet node on Fuji testnet and Mainnet.
+Below are the minimum hardware specifications for running an L1 node on Fuji testnet and Mainnet.
 
 | **Component**        | **Fuji Testnet** | **Mainnet**      |
 | -------------------- | ---------------- | ---------------- |
@@ -41,9 +41,10 @@ Using a system that can be easily expanded is highly recommended.&#x20;
 
 ## Suggested Hosting Providers
 
-* [Akamai Connected Cloud](https://www.linode.com/) (formerly Linode)
 * [Contabo](https://contabo.com/)
 * [Amazon Web Services (AWS)](https://aws.amazon.com/)
+* [OVH](https://www.ovhcloud.com/en/)
+* [Netcup](https://www.netcup.com/en)
 * Other cloud providers or dedicated server providers meeting the hardware requirements.
 
 ***

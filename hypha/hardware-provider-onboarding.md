@@ -65,7 +65,7 @@ sudo apt-get update && sudo apt-get install -y build-essential jq
 
 ## Installing Tartarus
 
-[Tartarus](https://github.com/multisig-labs/tartarus/tree/update-db) is a NodeID and key generation tool that simplifies the creation of node keys for Avalanche L1s. Tartarus generates node IDs with customizable prefixes and saves them in a JSON or CSV file compatible with AvalancheGo.
+[Tartarus](https://github.com/multisig-labs/tartarus) is a NodeID and key generation tool that simplifies the creation of node keys for Avalanche L1s. Tartarus generates node IDs with customizable prefixes and saves them in a JSON or CSV file compatible with AvalancheGo.
 
 Follow these steps to install it:
 
@@ -73,12 +73,10 @@ Follow these steps to install it:
 {% step %}
 ### Download Tartarus
 
-Clone the Tartarus repository from [Multisig Labs's GitHub Repository](https://github.com/multisig-labs/tartarus) and change the branch to `update-db`
+Clone the Tartarus repository from [Multisig Labs's GitHub Repository](https://github.com/multisig-labs/tartarus)
 
 ```bash
 git clone https://github.com/multisig-labs/tartarus.git
-cd tartarus
-git checkout update-db
 ```
 {% endstep %}
 
@@ -89,7 +87,8 @@ Navigate to the root directory of the cloned repository (where `main.go` is loca
 
 {% code overflow="wrap" %}
 ```bash
-CGO_CFLAGS="-O -D__BLST_PORTABLE__" CGO_CFLAGS_ALLOW="-O -D__BLST_PORTABLE__" go build -o tartarus main.go
+cd tartarus
+go build -o tartarus main.go
 ```
 {% endcode %}
 {% endstep %}
@@ -165,6 +164,17 @@ Run the following command using the Tartarus executable:
 {% endstep %}
 
 {% step %}
+### (Optional) Converting a JSON File to Staking Keys
+
+You can also generate **AvalancheGo-compatible staking keys** from `nodes.json` by running the following command:
+
+```bash
+# Convert JSON file to staking keys
+./tartarus convert -i nodes.json -o staking-dir
+```
+{% endstep %}
+
+{% step %}
 ### Verify Output
 
 Ensure your output file (CSV or JSON file) or AvalancheGo-compatible directory is created and contains the expected number of keys.
@@ -230,6 +240,10 @@ Hypha does not store your private keys. The keys you generate and upload are use
 * The BLS private key is particularly sensitive and should be protected
 * Consider using the `--include-secrets` flag only when necessary
 
+{% hint style="info" %}
+By default, Tartarus **will not** include the BLS private key, the staker cert, or the staker key in the output file. You can include these secrets by using the `--include-secrets` flag, however we **do not recommend** this and instead recommend you back up the keys yourself to a secure location.
+{% endhint %}
+
 ***
 
 ## Conclusion
@@ -238,9 +252,9 @@ By following this guide, node providers can use Tartarus to generate the necessa
 
 Always treat your private keys with extreme care, and ensure they are securely backed up.
 
-If you encounter any issues, refer to the provided scripts or consult the [Tartarus](https://github.com/multisig-labs/tartarus/tree/update-db) documentation. You can also reach out to Hypha support via [Discord](https://discord.gogopool.com/) or the Live Support Chat available on the [Hypha website](https://gogopool.com/).
+If you encounter any issues, refer to the provided scripts or consult the [Tartarus](https://github.com/multisig-labs/tartarus) documentation. You can also reach out to Hypha support via [Discord](https://discord.gogopool.com/) or the Live Support Chat available on the [Hypha website](https://gogopool.com/).
 
-For instructions on running an L1 node, see the [running-an-l1-node-for-l1marketplace.md](running-an-l1-node-for-l1marketplace.md "mention") guide.
+For instructions on running an L1 node, see the [running-an-l1-node-for-hypha.md](running-an-l1-node-for-hypha.md "mention") guide.
 
 [^1]: Number of nodes allocated to you
 
