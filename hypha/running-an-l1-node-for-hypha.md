@@ -328,9 +328,53 @@ To check the bootstrapping status of **your specific L1 Subnet**, replace the `c
 
 A response of  `"isBootstrapped":true}` indicates the chain is bootstrapped.
 
+## Common Issues and Troubleshooting
+
+This section addresses specific edge cases that can affect Hypha L1 node operation. Review these scenarios and their resolutions if you experience unexpected behavior or issues with your node.
+
+### **Port Forwarding**
+
+Proper port forwarding is essential for your Hypha L1 node to communicate externally. If port `9651` is not correctly forwarded, your node may experience connectivity issues and report low uptime.
+
+{% hint style="success" %}
+#### Resolution
+
+Ensure that **port `9651`** is open and accessible from the Internet on the public IP address configured for your node.
+{% endhint %}
+
+### **Firewall (UFW) Interference**
+
+Firewall configurations, such as those using UFW on Ubuntu, can sometimes inadvertently block necessary network traffic for a running Hypha node. This can occur even when other nodes on the same system function correctly.
+
+{% hint style="success" %}
+#### Resolution
+
+Verify that your firewall is correctly configured to allow inbound and outbound traffic on all required ports for your Hypha node, specifically **port `9651`**. Refer to your operating system's firewall documentation for detailed configuration instructions.
+{% endhint %}
+
+### **I**ncorrect IP Configuration
+
+Configuring the `publicIP` with an IPv6-only address may lead to connectivity problems and impact node uptime.
+
+{% hint style="success" %}
+#### Resolution
+
+Ensure your node's `publicIP` is explicitly configured with an IPv4 address. Confirm that **port `9651` is correctly forwarded** and accessible externally on this IPv4 address.
+{% endhint %}
+
+### **Staker/Signer File Integrity**
+
+The node software may modify or overwrite critical **staker and signer files** (e.g., `staker.crt`, `staker.key`, `signer.key`) located within the `/chainData/staking/` directory. This can result in changes to your **Node ID** or other operational disruptions.
+
+{% hint style="success" %}
+#### Resolution
+
+Regularly **back up** your `staker.crt`, `staker.key`, and `signer.key` files. If these files are suspected of corruption or unintended modification, restore them from a known good backup.
+{% endhint %}
+
 ## Conclusion
 
-If you encounter any issues, refer to the [AvalancheGo documentation](https://docs.avax.network/) or reach out to Hypha support for assistance on [Discord](https://discord.gogopool.com/) or via Live Support Chat on the [Hypha website](https://gogopool.com/).
+If these steps don’t resolve your problem, refer to the [AvalancheGo documentation](https://docs.avax.network/) or reach out to Hypha support for assistance on [Discord](https://discord.gogopool.com/) or via Live Support Chat on the [Hypha website](https://gogopool.com/).
 
 [^1]: Replace with the correct VM ID
 
