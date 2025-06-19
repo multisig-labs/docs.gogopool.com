@@ -11,7 +11,7 @@ It presents consolidated data from [Flipside](https://flipsidecrypto.xyz/GoGoPoo
 Each section breaks down complex data into accessible insights across four critical areas:&#x20;
 
 1. [Total Deposits](analytics.md#total-deposits-dashboard)
-2. [ggAVAX](analytics.md#ggavax-dashboard)
+2. [stAVAX](analytics.md#ggavax-dashboard)
 3. [Minipools](analytics.md#minipools-dashboard)
 4. [GGP](analytics.md#ggp-dashboard)
 
@@ -23,7 +23,7 @@ This dashboard presents the total amount of `AVAX` deposited into the GoGoPool p
 
 #### **`AVAX` on the Liquid Staking Side**
 
-Displays the total amount of `AVAX` contributed to liquid staking through GoGoPool, offering users the yield on validating while maintaining access to a liquid token `ggAVAX`.
+Displays the total amount of `AVAX` contributed to liquid staking through GoGoPool, offering users the yield on validating while maintaining access to a liquid token `stAVAX`.
 
 #### **`AVAX` on the Minipool Side**
 
@@ -37,7 +37,7 @@ Demonstrates summation of the total `AVAX` held within the entire GoGoPool proto
 
 #### **90-day Growth in Liquid Staked `AVAX`**
 
-Indicates the growth rate of the total `AVAX` deposits in `ggAVAX` liquid staking over the last 90 days.
+Indicates the growth rate of the total `AVAX` deposits in `stAVAX` liquid staking over the last 90 days.
 
 #### **90-day Growth in Minipool `AVAX`**
 
@@ -51,9 +51,9 @@ Displays the total percentage growth of all `AVAX` within GoGoPool, including bo
 
 Reports the current value of all `AVAX` and `GGP` staked within GoGoPool.
 
-## ggAVAX Dashboard
+## stAVAX Dashboard
 
-This dashboard displays specific details of `AVAX` staked through the `ggAVAX` liquid staking token, tracking yield performance and associated fees.
+This dashboard displays specific details of `AVAX` staked through the `stAVAX` liquid staking token, tracking yield performance and associated fees.
 
 ### Total APY
 
@@ -97,8 +97,8 @@ $$\text{Liquidity Fee} = \left( \frac{\text{AVAX}_\text{Idle}}{\text{AVAX}_\text
 
 ### Exchange Rate, Volume, and Market Activity
 
-* **`AVAX` to `ggAVAX` Exchange Rate**: Current and historical rate at which `AVAX` is converted to `ggAVAX`.
-* **`ggAVAX` Volume**: A comparison of trading volumes across different exchanges.
+* **`AVAX` to `stAVAX` Exchange Rate**: Current and historical rate at which `AVAX` is converted to `stAVAX`.
+* **`stAVAX` Volume**: A comparison of trading volumes across different exchanges.
 
 ## Minipools Dashboard
 

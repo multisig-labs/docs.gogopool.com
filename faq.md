@@ -23,7 +23,7 @@ No action is required—your minipool will continue operating as usual without a
 
 ## What happens to $ggAVAX?
 
-$ggAVAX will continue to be the highest-yielding LST on Avalanche with no immediate changes.
+$ggAVAX is rebranded into $stAVAX. The name and the logo change, but not the functionality or the yield. There are no actions required from users to convert $ggAVAX into $stAVAX.
 
 ## Do I still stake at GoGoPool?
 

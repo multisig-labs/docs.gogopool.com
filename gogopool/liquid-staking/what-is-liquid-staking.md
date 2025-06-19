@@ -6,7 +6,7 @@ description: An overview of liquid staking and its benefits within the GoGoPool 
 
 **Liquid Staking** is a financial mechanism that allows users to stake their tokens to both support the network's security and earn rewards from validating the network, while still retaining liquidity.
 
-Unlike traditional staking, where tokens are locked and cannot be used, liquid staking issues a token (i.e., `ggAVAX`) in return, representing the staked amount plus any rewards earned over time. This token (i.e., `ggAVAX`) can then be traded, sold, or used in decentralized finance (DeFi) applications, providing flexibility and liquidity to stakers.
+Unlike traditional staking, where tokens are locked and cannot be used, liquid staking issues a token (i.e., `stAVAX`) in return, representing the staked amount plus any rewards earned over time. This token (i.e., `stAVAX`) can then be traded, sold, or used in decentralized finance (DeFi) applications, providing flexibility and liquidity to stakers.
 
 #### Benefits:
 

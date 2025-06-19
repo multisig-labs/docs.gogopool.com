@@ -16,7 +16,7 @@ The GoGoPool API provides access to the following data points:
 * **Staking information**: Retrieve staking-related data, such as staker information, minipool data, and validator information.
 * **Validator data**: Access data on active validators, including their node IDs, staking information, and rewards.
 * **Rewards**: Calculate rewards based on `ggpStaked` and `avaxStaked` amounts or retrieve rewards data for a specific address.
-* **Metrics**: Retrieve various metrics, such as ggAVAX APY, total assets, and staking information.
+* **Metrics**: Retrieve various metrics, such as stAVAX APY, total assets, and staking information.
 * **Feature flags**: Get feature flags for the current environment.
 
 ### Code Examples
@@ -57,9 +57,9 @@ This will print the current token prices in JSON format.
 Here are some examples of API endpoints:
 
 * `GET /prices/tj`: Get the current token prices on Trader Joe.
-* `GET /ggAvax`: Get the various amounts in the ggAVAX Liquid Staking pool.
+* `GET /ggAvax`: Get the various amounts in the stAVAX Liquid Staking pool.
 * `GET /validators`: Get all currently active validators from Glacier API.
 * `GET /rewards/byStake`: Calculate the rewards given `ggpStaked` and `avaxStaked` amounts.
-* `GET /metrics`: Get the current metrics, such as ggAVAX APY and total assets.
+* `GET /metrics`: Get the current metrics, such as stAVAX APY and total assets.
 
 For a comprehensive list of API endpoints and parameters, please refer to the [GoGoPool OpenAPI page](https://api.gogopool.com).
