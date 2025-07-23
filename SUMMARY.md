@@ -11,6 +11,12 @@
 * [Hardware Provider Onboarding](hypha/hardware-provider-onboarding.md)
 * [Running an L1 Node for Hypha](hypha/running-an-l1-node-for-hypha.md)
 
+***
+
+* [L1 Contract Addresses](l1-contract-addresses/README.md)
+  * [CX-Chain](l1-contract-addresses/cx-chain.md)
+  * [Paradise Tycoon](l1-contract-addresses/paradise-tycoon.md)
+
 ## GoGoPool
 
 * [Liquid Staking](gogopool/liquid-staking/README.md)
