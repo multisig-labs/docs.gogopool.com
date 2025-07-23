@@ -5,12 +5,7 @@ icon: address-book
 
 # L1 Contract Addresses
 
-This page lists the smart contracts deployed as part of Hypha's validator infrastructure and node sales systems. These smart contracts are involved in:
-
-* Node license sales
-* NFT-based validator delegation
-* Validator uptime tracking
-* Operator registration and rewards
+This page lists the smart contracts deployed as part of Hypha's validator infrastructure and node sales systems.
 
 ## Contract Addresses by Chain
 
