@@ -17,6 +17,24 @@
   * [CX-Chain](l1-contract-addresses/cx-chain.md)
   * [Paradise Tycoon](l1-contract-addresses/paradise-tycoon.md)
 
+## Points Program
+
+* [Overview](points-program/overview.md)
+* [How to Earn Points & Multipliers](points-program/how-to-earn-points-and-multipliers.md)
+
+## Liquid Staking
+
+* [stAVAX](liquid-staking/stavax/README.md)
+  * [What is stAVAX](liquid-staking/stavax/what-is-stavax.md)
+  * [Triple Yield Mechanism](liquid-staking/stavax/triple-yield-mechanism.md)
+  * [Unstaking & The Withdrawal Queue](liquid-staking/stavax/unstaking-and-the-withdrawal-queue.md)
+  * [Using stAVAX in DeFi](liquid-staking/stavax/using-stavax-in-defi.md)
+* [pstAVAX](liquid-staking/pstavax/README.md)
+  * [What is pstAVAX](liquid-staking/pstavax/what-is-pstavax.md)
+  * [Yield-Stripping Mechanism](liquid-staking/pstavax/yield-stripping-mechanism.md)
+  * [Benefits of Holding pstAVAX](liquid-staking/pstavax/benefits-of-holding-pstavax.md)
+* [Alignment Plugins for Protocols](liquid-staking/alignment-plugins-for-protocols.md)
+
 ## GoGoPool
 
 * [Liquid Staking](gogopool/liquid-staking/README.md)
