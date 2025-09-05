@@ -37,7 +37,8 @@ If the window closes before you claim, the request will expire, and your unclaim
 {% hint style="info" %}
 ## Important Information
 
-* **Canceling a Request**: You have the flexibility to cancel your withdrawal request at any point before it becomes claimable.
+* **Canceling a Request:** You have the flexibility to cancel your withdrawal request at any point before it becomes claimable.&#x20;
+  * When you unstake, **your stAVAX is converted to a fixed AVAX value**, therefore, **canceling reconverts that AVAX back to stAVAX at the&#x20;**_**active**_**&#x20;exchange rate**, which may differ from your original stAVAX amount due to ongoing yield accrual to the protocol.
 {% endhint %}
 
 {% hint style="success" %}
