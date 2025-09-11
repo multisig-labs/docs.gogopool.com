@@ -11,12 +11,6 @@
 * [Hardware Provider Onboarding](hypha/hardware-provider-onboarding.md)
 * [Running an L1 Node for Hypha](hypha/running-an-l1-node-for-hypha.md)
 
-***
-
-* [L1 Contract Addresses](l1-contract-addresses/README.md)
-  * [CX-Chain](l1-contract-addresses/cx-chain.md)
-  * [Paradise Tycoon](l1-contract-addresses/paradise-tycoon.md)
-
 ## Points Program
 
 * [Overview](points-program/overview.md)
@@ -79,4 +73,8 @@
 ## Technical Information & Brand Assets
 
 * [📒 Contract Addresses](technical-information-and-brand-assets/contract-addresses.md)
+* [L1 Contract Addresses](technical-information-and-brand-assets/l1-contract-addresses/README.md)
+  * [CX-Chain](technical-information-and-brand-assets/l1-contract-addresses/cx-chain.md)
+  * [Paradise Tycoon](technical-information-and-brand-assets/l1-contract-addresses/paradise-tycoon.md)
 * [💻 API](technical-information-and-brand-assets/api.md)
+* [Audit reports](technical-information-and-brand-assets/audit-reports.md)
