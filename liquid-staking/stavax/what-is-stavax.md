@@ -14,8 +14,17 @@ By combining these strategies, the underlying pool of AVAX earns yield from mult
 
 The protocol runs on continuous 15-day staking cycles. Funds are staked on the P-Chain to earn validation rewards, then transferred to the C-Chain vault at the end of each cycle. Over the following 15 days, these rewards are streamed to the stAVAX contract, automatically raising the AVAX value of all stAVAX. This creates a seamless loop where new staking begins as previous rewards are added, ensuring stAVAX steadily appreciates against AVAX.
 
-### Key Benefits
+### Protocol Fee
 
-* **Liquid Staking**: Earn staking rewards without locking up your capital.
-* **DeFi Composability**: Use `stAVAX` as collateral, a liquidity pair, or in yield farming strategies across Avalanche DeFi.
+The protocol charges a fee on the staking rewards generated from AVAX deposited into the `stAVAX` vault. This fee is determined by the **ProtocolDAO** and is deducted before rewards are distributed to `stAVAX` holders.
+
+* How It Works
+  * The ProtocolDAO sets the fee rate, expressed in basis points (bps).
+  * When staking rewards are deposited into the `stAVAX` vault, the protocol automatically calculates the fee as a percentage of those rewards. The deducted amount is sent to the ProtocolDAO.&#x20;
+  * The remaining rewards stay in the vault and compound, increasing the value of `stAVAX`.
+    * Example
+      * If 100 AVAX worth of rewards are earned and the fee rate is set to 10% (1000 bps):
+      * Fee deducted: 100 AVAX × 10% = 10 AVAX
+      * 10 AVAX is transferred to the ProtocolDAO
+      * 90 AVAX remains in the vault, compounding into `stAVAX`
 
