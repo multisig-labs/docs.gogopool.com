@@ -1,16 +1,16 @@
 ---
 description: >-
-  Details and documentation for accessing and using the GoGoPool API for
+  Details and documentation for accessing and using the Hypha API for
   developers.
 ---
 
 # 💻 API
 
-The GoGoPool API is a decentralized liquid staking protocol built on Avalanche that provides a robust and scalable solution for blockchain data. The API offers a wide range of endpoints that enable users to access various data points, including token prices, staking information, and validator data.
+The Hypha API is a decentralized liquid staking protocol built on Avalanche that provides a robust and scalable solution for blockchain data. The API offers a wide range of endpoints that enable users to access various data points, including token prices, staking information, and validator data.
 
 ## Available Data
 
-The GoGoPool API provides access to the following data points:
+The Hypha (formerly GoGoPool) API provides access to the following data points:
 
 * **Token prices**: Get current and historical token prices, including `GGP`, `AVAX`, and USD prices.
 * **Staking information**: Retrieve staking-related data, such as staker information, minipool data, and validator information.
@@ -62,4 +62,4 @@ Here are some examples of API endpoints:
 * `GET /rewards/byStake`: Calculate the rewards given `ggpStaked` and `avaxStaked` amounts.
 * `GET /metrics`: Get the current metrics, such as stAVAX APY and total assets.
 
-For a comprehensive list of API endpoints and parameters, please refer to the [GoGoPool OpenAPI page](https://api.gogopool.com).
+For a comprehensive list of API endpoints and parameters, please refer to the [Hypha OpenAPI page](https://api.gogopool.com/docs).

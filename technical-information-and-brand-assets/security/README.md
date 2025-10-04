@@ -4,11 +4,11 @@ description: Audits & Vulnerability Reports
 
 # 🔒 Security
 
-Security is at the core of GoGoPool’s operations. Our commitment to safeguarding our platform and users is evidenced by the strict security measures and processes we have in place:
+Security is at the core of Hypha’s operations. Our commitment to safeguarding our platform and users is evidenced by the strict security measures and processes we have in place:
 
-* **Audited and Verified**: We've undergone comprehensive security audits by reputable firms, including QuantStamp, Code4Arena, Zellic, and Kudelski Security, to ensure the integrity of our protocol and to identify and address potential vulnerabilities.
+* **Audited and Verified**: We've undergone comprehensive security audits by reputable firms, including Quantstamp, Code4Arena, Zellic, and Kudelski Security, to ensure the integrity of our protocol and to identify and address potential vulnerabilities.
 * **Proactive Protection**: Our active bug-bounty program encourages white-hat hackers and security researchers to help us maintain the highest security standards by identifying and reporting any potential threats.
-* **Trusted by Leaders**: Recognition from leading blockchain entities like SwissBorg, who chose GoGoPool as an exclusive service provider, validates our security-first approach and the trustworthiness of our services.
+* **Trusted by Leaders**: Recognition from leading blockchain entities like SwissBorg, who chose Hypha as an exclusive service provider, validates our security-first approach and the trustworthiness of our services.
 
 ## Audits
 
