@@ -12,14 +12,16 @@ On the P-Chain, your AVAX is put to work by validating the network through a gro
 
 By combining these strategies, the underlying pool of AVAX earns yield from multiple sources. As this yield is collected, the total assets in the vault increase, which means the value of each `stAVAX` token you hold grows over time in relation to `AVAX`. For example, you might eventually be able to redeem `1 stAVAX` for `1.2 AVAX`.
 
-The protocol runs on continuous 15-day staking cycles. Funds are staked on the P-Chain to earn validation rewards, then transferred to the C-Chain vault at the end of each cycle. Over the following 15 days, these rewards are streamed to the stAVAX contract, automatically raising the AVAX value of all stAVAX. This creates a seamless loop where new staking begins as previous rewards are added, ensuring stAVAX steadily appreciates against AVAX.
+The protocol runs on continuous 15-day staking cycles. Funds are staked on the P-Chain to earn validation rewards, then transferred to the C-Chain vault at the end of each cycle. Over the following 15 days, these rewards are streamed to the `stAVAX` contract, automatically raising the AVAX value of all `stAVAX`. This creates a seamless loop where new staking begins as previous rewards are added, ensuring stAVAX steadily appreciates against AVAX.
 
 ### Protocol Fee
 
 The protocol charges a fee on the staking rewards generated from AVAX deposited into the `stAVAX` vault. This fee is determined by the **ProtocolDAO** and is deducted before rewards are distributed to `stAVAX` holders.
 
+> The current protocol fee is 10% (1000 bps) of all generated staking rewards.
+
 * How It Works
-  * The ProtocolDAO sets the fee rate, expressed in basis points (bps).
+  * The **ProtocolDAO** sets the fee rate, expressed in basis points (bps).
   * When staking rewards are deposited into the `stAVAX` vault, the protocol automatically calculates the fee as a percentage of those rewards. The deducted amount is sent to the ProtocolDAO.&#x20;
   * The remaining rewards stay in the vault and compound, increasing the value of `stAVAX`.
     * Example
