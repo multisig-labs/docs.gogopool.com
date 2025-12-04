@@ -53,8 +53,7 @@ You stake **10,000 GGP** and the current market rate (hypothetically) is `1 GGP 
 * **Total AVAX-equivalent Value**: `10,000 GGP * 0.1 = 1,000 AVAX`
 * **Base Points**: `1,000 points per hour`
 * **Multiplier**: `1.5x`
-* **Total Points**: `1,000 * 1.5 = 1,500 points per hour`\
-
+* **Total Points**: `1,000 * 1.5 = 1,500 points per hour`<br>
 {% endhint %}
 
 #### Holding stAVAX (1x Rate)

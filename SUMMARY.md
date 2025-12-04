@@ -78,3 +78,7 @@
     * [🔐 Kudelski Security Audit](technical-information-and-brand-assets/security/audits/kudelski-security-audit.md)
   * [🕵️ Bug Bounty Program](technical-information-and-brand-assets/security/bug-bounty-program.md)
   * [⚠️ Vulnerability Reports](technical-information-and-brand-assets/security/vulnerability-reports.md)
+
+***
+
+* [Brand Kit](brand-kit.md)

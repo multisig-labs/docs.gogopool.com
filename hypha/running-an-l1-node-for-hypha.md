@@ -105,8 +105,7 @@ The `VM ID` is a cryptographic hash that uniquely identifies the Subnet EVM bina
 
 **How to Find the Correct VM ID?**
 
-You can find the correct VM ID (e.g., `knwdavfavsrcds7PKZmVBd51ZGxkhRQsC9xUHzSNHdegDCWBL`) on the L1's [Avalanche Subnet Explorer](https://subnets.avax.network/subnets/) under the _Chain Info_ section, or in the official documentation provided by your L1 project.\
-
+You can find the correct VM ID (e.g., `knwdavfavsrcds7PKZmVBd51ZGxkhRQsC9xUHzSNHdegDCWBL`) on the L1's [Avalanche Subnet Explorer](https://subnets.avax.network/subnets/) under the _Chain Info_ section, or in the official documentation provided by your L1 project.<br>
 
 Using the wrong VM ID will prevent connection to your intended blockchain.
 {% endhint %}
@@ -204,8 +203,7 @@ The `VM ID` is a cryptographic hash that uniquely identifies the Subnet EVM bina
 
 **How to Find the Correct VM ID?**
 
-You can find the correct VM ID (e.g., `knwdavfavsrcds7PKZmVBd51ZGxkhRQsC9xUHzSNHdegDCWBL`) on the L1's [Avalanche Subnet Explorer](https://subnets.avax.network/subnets/) under the _Chain Info_ section, or in the official documentation provided by your L1 project.\
-
+You can find the correct VM ID (e.g., `knwdavfavsrcds7PKZmVBd51ZGxkhRQsC9xUHzSNHdegDCWBL`) on the L1's [Avalanche Subnet Explorer](https://subnets.avax.network/subnets/) under the _Chain Info_ section, or in the official documentation provided by your L1 project.<br>
 
 Using the wrong VM ID will prevent connection to your intended blockchain.
 {% endhint %}
