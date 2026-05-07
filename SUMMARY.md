@@ -31,12 +31,6 @@
 
 ## GoGoPool
 
-* [Liquid Staking](gogopool/liquid-staking/README.md)
-  * [💧 What is Liquid Staking?](gogopool/liquid-staking/what-is-liquid-staking.md)
-  * [⛓️ How Liquid Staking Works](gogopool/liquid-staking/how-liquid-staking-works.md)
-  * [💸 Yield - APY](gogopool/liquid-staking/yield-apy.md)
-  * [📘 Guide: How to Stake - Unstake AVAX](gogopool/liquid-staking/guide-how-to-stake-unstake-avax.md)
-  * [Liquid Staking](https://app.gogopool.com/liquid-staking/)
 * [Minipool](gogopool/minipool/README.md)
   * [💦 What is Minipool?](gogopool/minipool/what-is-minipool.md)
   * [⚙️ How Minipool Works](gogopool/minipool/how-minipool-works.md)
